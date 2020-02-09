@@ -1,6 +1,7 @@
 ## 新世纪机器人社(公益)开发环境教程
 1. 安装visual studio2019
 2. 安装cmake 
+![avatar](./pic/1.cmake.jpg)
 3. 安装vscode
 4. 安装git
 5. 安装python
