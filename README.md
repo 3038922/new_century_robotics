@@ -1,4 +1,17 @@
-## Welcome to GitHub Pages
+## 新世纪机器人社(公益)开发环境教程
+1. 安装visual studio2019
+2. 安装cmake 
+3. 安装vscode
+4. 安装git
+5. 安装python
+6. 解压缩ccls+llvm+ninja
+7. 设置环境变量
+8. vscdoe插件下载和设置
+
+
+
+
+
 
 You can use the [editor on GitHub](https://github.com/3038922/new_century_robotoics/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
