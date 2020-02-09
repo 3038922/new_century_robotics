@@ -8,10 +8,10 @@
 ![avatar](./pic/3.git-1.jpg)
 ![avatar](./pic/3.git-2.jpg)
 5. 安装python
-![avatar](./pic/4.pthon.jpg)
+![avatar](./pic/4.python.jpg)
 6. 解压缩ccls+llvm+ninja.zip
-![avatar](./pic/5.ccls+llvm+ninja-1)
-![avatar](./pic/5.ccls+llvm+ninja-2)
+![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
+![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
 7. 解压缩pros.zip
 8. 设置环境变量
 ![avatar](./pic/7.环境变量-1.jpg)
