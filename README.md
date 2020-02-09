@@ -3,11 +3,26 @@
 2. 安装cmake 
 ![avatar](./pic/1.cmake.jpg)
 3. 安装vscode
+![avatar](./pic/2.vscode.jpg)
 4. 安装git
+![avatar](./pic/3.git-1.jpg)
+![avatar](./pic/3.git-2.jpg)
 5. 安装python
-6. 解压缩ccls+llvm+ninja
-7. 设置环境变量
-8. vscdoe插件下载和设置
+![avatar](./pic/4.pthon.jpg)
+6. 解压缩ccls+llvm+ninja.zip
+![avatar](./pic/5.ccls+llvm+ninja-1)
+![avatar](./pic/5.ccls+llvm+ninja-2)
+7. 解压缩pros.zip
+8. 设置环境变量
+![avatar](./pic/7.环境变量-1.jpg)
+![avatar](./pic/7.环境变量-2.jpg)
+![avatar](./pic/7.环境变量-3.jpg)
+![avatar](./pic/7.环境变量-4.jpg)
+9. vscdoe插件下载和设置
+![avatar](./pic/8.vscode-1.jpg)
+![avatar](./pic/8.vscode-2.jpg)
+![avatar](./pic/8.vscode-3.jpg)
+
 
 
 
