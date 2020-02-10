@@ -40,7 +40,7 @@
     - Download `pros.zip` and unzip to `C:\Program Files`
 
 8. Setting environment variables
-    - `右键`->`此电脑`->`属性`->`高级系统设置`->`环境变量`->`系统变量`->`新建`
+    - `Right click`->`My computer`->`properties`->`advanced system settings`->` environment variable`->`system variables`->`new-built`
     - Variable name: `PROS_TOOLCHAIN` Variable value: `C:\Program Files\PROS\toolchain\usr` 
 
 ![avatar](./pic/7.环境变量-1.jpg)
