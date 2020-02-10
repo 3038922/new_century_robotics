@@ -41,16 +41,16 @@
 
 8. Setting environment variables
     - `右键`->`此电脑`->`属性`->`高级系统设置`->`环境变量`->`系统变量`->`新建`
-    - Variable name: `PROS_TOOLCHAIN` Variable value: `C:\Program Files\PROS\toolchain\usr` 确定
+    - Variable name: `PROS_TOOLCHAIN` Variable value: `C:\Program Files\PROS\toolchain\usr` 
 
 ![avatar](./pic/7.环境变量-1.jpg)
 
-- 然后双击 `Path`
+- Then double click `Path`
 
 ![avatar](./pic/7.环境变量-2.jpg)
 
-- 点 `新建`
-- 一行一行的加
+- point `新建`
+- Line by line add it
 
 ```
     c:\ninja
@@ -61,11 +61,11 @@
 
 ![avatar](./pic/7.环境变量-3.jpg)
 
-- 添加好了以后确定. 重启电脑.
-- 桌面空白处右键->Git Bash Here
-- 复制这句话 `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl` 回车
-- 最后我们还要验证我们是否安装成功.
-- 依次输入
+- OK after adding. Restart the computer.
+- Right click on the blank space on the desktop-> Git Bash Here
+- Copy this sentence pip install `https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
+- Finally, we need to verify that our installation was successful.
+- Enter one by one
 ```
     cmake --version
     git --version
