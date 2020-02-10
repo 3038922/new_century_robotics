@@ -92,3 +92,10 @@
 - Under point `download public gist` input `16c091a7b4ddcb213e72d430dac23422f`Enter. The plugin will be downloaded automatically. (If useless before the election `SYNC 重置扩展设置` and then `download public gist`）
 
 ![avatar](./pic/8.vscode-3.jpg)
+
+## linux ubuntu-1803
+
+1. Install common software:`sudo apt install cmake python3 ninja-build gcc-8 llvm-9 clang-9`
+2. Install SDL2 `sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev`
+3. Install `vscode`
+4. Install `prosv5`
