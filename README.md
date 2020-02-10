@@ -73,7 +73,7 @@
     ninja --version
     clang --version
     ccls --version
-    arm-none-eabi-gcc –version
+    arm-none-eabi-gcc --version
     prosv5 --version
 ```
 
