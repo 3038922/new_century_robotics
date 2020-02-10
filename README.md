@@ -85,10 +85,10 @@
 
 ![avatar](./pic/8.vscode-1.jpg)
 
-- 按 `clrl + shift + p` 会弹出控制台 上面输入 `sync download setting`
+- Press  `clrl + shift + p` will pop up above the console input `sync download setting`
 
 ![avatar](./pic/8.vscode-2.jpg)
 
-- 点下 `download public gist` 输入 `16c091a7b4ddcb213e72d430dac23422f` 回车。系统会自动下载插件。（如果没用 先选 `SYNC 重置扩展设置` 再 `download public gist`）
+- Under point `download public gist` input `16c091a7b4ddcb213e72d430dac23422f`Enter. The plugin will be downloaded automatically. (If useless before the election `SYNC 重置扩展设置` and then `download public gist`）
 
 ![avatar](./pic/8.vscode-3.jpg)
