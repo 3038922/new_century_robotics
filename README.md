@@ -89,7 +89,7 @@
 
 ![avatar](./pic/8.vscode-2.jpg)
 
-- Under point `download public gist` input `16c091a7b4ddcb213e72d430dac23422f`Enter. The plugin will be downloaded automatically. (If useless before the election `SYNC Reset extended settings` and then `download public gist`）
+- Under point `download public gist` input `6c091a7b4ddcb213e72d430dac23422f`Enter. The plugin will be downloaded automatically. (If useless before the election `SYNC Reset extended settings` and then `download public gist`）
 
 ![avatar](./pic/8.vscode-3.jpg)
 
