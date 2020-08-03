@@ -99,7 +99,7 @@
 
 ## 关于中文报错问题
 
-- pros-cli3 有一个中文支持 BUG 如下:
+- `pros-cli3 3.1.4` 有一个中文支持的 BUG 错误返回如下:
 
 ```sh
 Exception in thread Thread-1:
