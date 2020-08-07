@@ -9,7 +9,7 @@
 
 2. Install cmake
 
-- [Save as](./soft/cmake-3.16.2-win64-x64.msi)
+- [Save as](./soft/cmake-3.18.1-win64-x64.msi)
 - Double-click to open the installation. Note that this step chooses the second addition path as shown below.
 
 ![avatar](./pic/1.cmake.jpg)
