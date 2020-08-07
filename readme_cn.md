@@ -10,21 +10,21 @@
 2. 安装 cmake
 
 - [另存为](./soft/cmake-3.16.2-win64-x64.msi)
-- Double-click to open the installation. Note that this step chooses the second addition path as shown below.
+- 双击打开安装。请注意，此步骤选择第二条添加路径，如下所示。
 
 ![avatar](./pic/1.cmake.jpg)
 
 3. 安装 vscode
 
 - [另存为](./soft/VSCodeUserSetup-x64-1.47.3.exe)
-- The selection steps are as follows:
+- 选择步骤如下：
 
 ![avatar](./pic/2.vscode.jpg)
 
 4. 安装 git
 
 - [另存为](./soft/Git-2.27.0-64-bit.exe)
-- The selection steps are as follows:
+- 选择步骤如下：
 
 ![avatar](./pic/3.git-1.jpg)
 ![avatar](./pic/3.git-2.jpg)
@@ -32,14 +32,14 @@
 5. 安装 python
 
 - [另存为](./soft/python-3.8.5-amd64.exe)
-- Be sure to check the box `for all users`.
+- 确保选中 `for all users`.
 
 ![avatar](./pic/4.python.jpg)
 
 6. 解压缩 `ccls + llvm + ninja.zip`
 
 - [点击打开](https://qzrobot.top/index.php/s/bTdZJ6SefSGbLzd)
-- Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:\` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
+- 下载`ninja + ccls + llvm.zip`并将其解压缩到`c:\`根目录（需要给解压缩软件管理员权限）
 
 ![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
 ![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
@@ -47,7 +47,7 @@
 7. 解压缩 `pros.zip`
 
 - [点击打开](https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8)
-- Download `pros.zip` and unzip to `C:\Program Files`
+- 解压缩 `pros.zip` 到 `C:\Program Files`
 
 8. 设置环境变量
 
@@ -59,7 +59,7 @@
 - 输入 `.\add_environment_var.ps1`
 - 执行完毕后,重新启动计算机。
 - 右键单击桌面上的空白-> Git Bash 此处
-- 复制这句话 `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
+- 复制这句话 `pip install https://git.qzrobot.top/NewCenturyRobotics/new_century_robotics/src/branch/master/script/pros_cli_v5-3.1.4-py3-none-any.whl`
 - 最后，我们需要验证安装是否成功。.
 - 一句句输入:
 
@@ -78,18 +78,20 @@
 
 9. vscdoe 插件下载和设置
 
-- turn on vscode
-- Choose add-ons store search `sync` selection `setting sync` and install
+- 打开 vscode
+- 选择加载项商店搜索`sync`选择`setting sync`并安装
 
 ![avatar](./pic/8.vscode-1.jpg)
 
-- Press `clrl + shift + p` will pop up above the console input `sync download setting`
+- 按下 `clrl + shift + p` 输入 `sync download setting`
 
 ![avatar](./pic/8.vscode-2.jpg)
 
-- Under point `download public gist` input `6c091a7b4ddcb213e72d430dac23422f`Enter. The plugin will be downloaded automatically. (If useless before the election `SYNC Reset extended settings` and then `download public gist`）
+- 点击 `download public gist` 输入 `6c091a7b4ddcb213e72d430dac23422f` 回车.
 
-![avatar](./pic/8.vscode-3.jpg)
+  ![avatar](./pic/8.vscode-3.jpg)
+
+- 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
 
 ## 关于中文报错问题
 
