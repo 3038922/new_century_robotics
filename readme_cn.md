@@ -9,7 +9,7 @@
 
 2. 安装 cmake
 
-- [另存为](./soft/cmake-3.16.2-win64-x64.msi)
+- [另存为](./soft/cmake-3.18.1-win64-x64.msi)
 - 双击打开安装。请注意，此步骤选择第二条添加路径，如下所示。
 
 ![avatar](./pic/1.cmake.jpg)
