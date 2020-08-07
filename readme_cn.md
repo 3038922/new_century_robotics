@@ -45,26 +45,6 @@
    - Download `pros.zip` and unzip to `C:\Program Files`
 
 8. 设置环境变量
-   - `Right click`->`My computer`->`properties`->`advanced system settings`->`environment variable`->`system variables`->`new-built`
-   - Variable name: `PROS_TOOLCHAIN` Variable value: `C:\Program Files\PROS\toolchain\usr`
-
-![avatar](./pic/7.环境变量-1.jpg)
-
-- Then double click `Path`
-
-![avatar](./pic/7.环境变量-2.jpg)
-
-- point `Newly build`
-- Line by line add it
-
-```
-    c:\ninja
-    c:\llvm\Release\bin
-    c:\ccls\Release
-    c:\Program Files\PROS\toolchain\usr\bin
-```
-
-![avatar](./pic/7.环境变量-3.jpg)
 
 - 添加后确定。重新启动计算机。
 - 右键单击桌面上的空白-> Git Bash 此处
