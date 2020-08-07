@@ -51,30 +51,13 @@
 
 8. 设置环境变量
 
-- [另存为](./script/add_environment_var.ps1)
+- [另存为](./script/build_cn.ps1)
 - 我将此脚本另存在桌面,点击左上角文件,点击`以管理员身份打开 windows powershell`
 
 ![avatar](./pic/7.环境变量-1.jpg)
 
-- 输入 `.\add_environment_var.ps1`
+- 输入 `.\build_cn.ps1`
 - 执行完毕后,重新启动计算机。
-- 右键单击桌面上的空白-> Git Bash 此处
-- 复制这句话 `pip install https://git.qzrobot.top/NewCenturyRobotics/new_century_robotics/src/branch/master/script/pros_cli_v5-3.1.4-py3-none-any.whl`
-- 最后，我们需要验证安装是否成功。.
-- 一句句输入:
-
-```
-   cmake --version
-   git --version
-   python --version
-   ninja --version
-   clang --version
-   ccls --version
-   arm-none-eabi-gcc --version
-   prosv5 --version
-```
-
-![avatar](./pic/7.环境变量-4.jpg)
 
 9. vscdoe 插件下载和设置
 
