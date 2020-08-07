@@ -14,7 +14,7 @@
 ![avatar](./pic/1.cmake.jpg)
 
 3. 安装 vscode
-   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/VSCodeUserSetup-x64-1.41.1.exe)
+   - [另存为](./soft/VSCodeUserSetup-x64-1.47.3.exe)
    - The selection steps are as follows:
 
 ![avatar](./pic/2.vscode.jpg)
