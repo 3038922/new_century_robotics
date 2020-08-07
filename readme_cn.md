@@ -4,26 +4,26 @@
 
 1. 安装 Visual Studio2019 并配置 C ++开发环境
 
-- [另存为](./soft/vs_community__1548256886.1596784179.exe)
+- [下载](https://qzrobot.top/index.php/s/ckFtR2YwynSrSiz/download)
 - Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
 
 2. 安装 cmake
 
-- [另存为](./soft/cmake-3.18.1-win64-x64.msi)
+- [下载](https://qzrobot.top/index.php/s/9PpsXD9yxAd85sd/download)
 - 双击打开安装。请注意，此步骤选择第二条添加路径，如下所示。
 
 ![avatar](./pic/1.cmake.jpg)
 
 3. 安装 vscode
 
-- [另存为](./soft/VSCodeUserSetup-x64-1.47.3.exe)
+- [下载](https://qzrobot.top/index.php/s/ySZieKANW5GedZM/download)
 - 选择步骤如下：
 
 ![avatar](./pic/2.vscode.jpg)
 
 4. 安装 git
 
-- [另存为](./soft/Git-2.27.0-64-bit.exe)
+- [下载](https://qzrobot.top/index.php/s/R5XNM2HLjLkRp6D/download)
 - 选择步骤如下：
 
 ![avatar](./pic/3.git-1.jpg)
@@ -31,14 +31,14 @@
 
 5. 安装 python
 
-- [另存为](./soft/python-3.8.5-amd64.exe)
+- [下载](https://qzrobot.top/index.php/s/THniMLtpTa4j3j5/download)
 - 确保选中 `for all users`.
 
 ![avatar](./pic/4.python.jpg)
 
 6. 解压缩 `ccls + llvm + ninja.zip`
 
-- [点击打开](https://qzrobot.top/index.php/s/bTdZJ6SefSGbLzd)
+- [下载](https://qzrobot.top/index.php/s/bTdZJ6SefSGbLzd/download)
 - 下载`ninja + ccls + llvm.zip`并将其解压缩到`c:\`根目录（需要给解压缩软件管理员权限）
 
 ![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
@@ -46,7 +46,7 @@
 
 7. 解压缩 `pros.zip`
 
-- [点击打开](https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8)
+- [下载](https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8/download)
 - 解压缩 `pros.zip` 到 `C:\Program Files`
 
 8. 设置环境变量

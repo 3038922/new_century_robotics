@@ -4,26 +4,26 @@
 
 1. Install visual studio2019 and configure c ++ development environment
 
-- [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/vs_community__1548256886.1596784179.exe)
+- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/vs_community__1548256886.1596784179.exe)
 - Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
 
 2. Install cmake
 
-- [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/cmake-3.18.1-win64-x64.msi)
+- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/cmake-3.18.1-win64-x64.msi)
 - Double-click to open the installation. Note that this step chooses the second addition path as shown below.
 
 ![avatar](./pic/1.cmake.jpg)
 
 3. Install vscode
 
-- [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/VSCodeUserSetup-x64-1.47.3.exe)
+- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/VSCodeUserSetup-x64-1.47.3.exe)
 - The selection steps are as follows:
 
 ![avatar](./pic/2.vscode.jpg)
 
 4. Install git
 
-- [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/Git-2.27.0-64-bit.exe)
+- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/Git-2.27.0-64-bit.exe)
 - The selection steps are as follows:
 
 ![avatar](./pic/3.git-1.jpg)
@@ -31,14 +31,14 @@
 
 5. Install python
 
-- [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/python-3.8.5-amd64.exe)
+- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/python-3.8.5-amd64.exe)
 - Be sure to check the box `for all users`.
 
 ![avatar](./pic/4.python.jpg)
 
 6. Extract `ccls+llvm+ninja.zip`
 
-- [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip)
+- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip)
 - Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:\` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
 
 ![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
@@ -46,7 +46,7 @@
 
 7. Extract `pros.zip`
 
-- [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip)
+- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip)
 - Download `pros.zip` and unzip to `C:\Program Files`
 
 8. Setting environment variables
