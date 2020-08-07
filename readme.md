@@ -4,80 +4,92 @@
 
 1. Install visual studio2019 and configure c ++ development environment
 
-   - [Save as](./soft/vs_community__1548256886.1596784179.exe)
-   - Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
+- [Save as](./soft/vs_community__1548256886.1596784179.exe)
+- Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
 
 2. Install cmake
 
-   - [Save as](./soft/cmake-3.16.2-win64-x64.msi)
-   - Double-click to open the installation. Note that this step chooses the second addition path as shown below.
-     ![avatar](./pic/1.cmake.jpg)
+- [Save as](./soft/cmake-3.16.2-win64-x64.msi)
+- Double-click to open the installation. Note that this step chooses the second addition path as shown below.
+
+![avatar](./pic/1.cmake.jpg)
 
 3. Install vscode
 
-   - [Save as](./soft/VSCodeUserSetup-x64-1.47.3.exe)
-   - The selection steps are as follows:
-     ![avatar](./pic/2.vscode.jpg)
+- [Save as](./soft/VSCodeUserSetup-x64-1.47.3.exe)
+- The selection steps are as follows:
+
+![avatar](./pic/2.vscode.jpg)
 
 4. Install git
 
-   - [Save as](./soft/Git-2.27.0-64-bit.exe)
-   - The selection steps are as follows:
-     ![avatar](./pic/3.git-1.jpg)
-     ![avatar](./pic/3.git-2.jpg)
+- [Save as](./soft/Git-2.27.0-64-bit.exe)
+- The selection steps are as follows:
+
+![avatar](./pic/3.git-1.jpg)
+![avatar](./pic/3.git-2.jpg)
 
 5. Install python
 
-   - [Save as](./soft/python-3.8.5-amd64.exe)
-   - Be sure to check the box `for all users`.
-     ![avatar](./pic/4.python.jpg)
+- [Save as](./soft/python-3.8.5-amd64.exe)
+- Be sure to check the box `for all users`.
+
+![avatar](./pic/4.python.jpg)
 
 6. Extract `ccls+llvm+ninja.zip`
 
-   - [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip)
-   - Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:\` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
-     ![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
-     ![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
+- [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip)
+- Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:\` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
+
+![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
+![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
 
 7. Extract `pros.zip`
 
-   - [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip)
-   - Download `pros.zip` and unzip to `C:\Program Files`
+- [Save as](https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip)
+- Download `pros.zip` and unzip to `C:\Program Files`
 
 8. Setting environment variables
 
-   - [Save as](./script/add_environment_var.ps1)
-   - I save this script on my desktop,Click the file in the upper left corner.Click to `open windows PowerShell as administrator`
-     ![avatar](./pic/7.环境变量-1.jpg)
-   - input `.\add_environment_var.ps1`
-   - OK after adding. Restart the computer.
-   - Right click on the blank space on the desktop-> Git Bash Here
-   - Copy this sentence `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
-   - Finally, we need to verify that our installation was successful.
-   - Enter one by one:
+- [Save as](./script/add_environment_var.ps1)
+- I save this script on my desktop,Click the file in the upper left corner.Click to `open windows PowerShell as administrator`
 
-   ```
-      cmake --version
-      git --version
-      python --version
-      ninja --version
-      clang --version
-      ccls --version
-      arm-none-eabi-gcc --version
-      prosv5 --version
-   ```
+![avatar](./pic/7.环境变量-1.jpg)
 
-   ![avatar](./pic/7.环境变量-4.jpg)
+- input `.\add_environment_var.ps1`
+- OK after adding. Restart the computer.
+- Right click on the blank space on the desktop-> Git Bash Here
+- Copy this sentence `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
+- Finally, we need to verify that our installation was successful.
+- Enter one by one:
+
+```
+cmake --version
+git --version
+python --version
+ninja --version
+clang --version
+ccls --version
+arm-none-eabi-gcc --version
+prosv5 --version
+```
+
+![avatar](./pic/7.环境变量-4.jpg)
 
 9. vscdoe plugin download and setup
 
-   - turn on vscode
-   - Choose add-ons store search `sync` selection `setting sync` and install
-     ![avatar](./pic/8.vscode-1.jpg)
-   - Press `clrl + shift + p` will pop up above the console input `sync download setting`
-     ![avatar](./pic/8.vscode-2.jpg)
-   - Under point `download public gist` input `6c091a7b4ddcb213e72d430dac23422f`Enter. The plugin will be downloaded automatically. (If useless before the election `SYNC Reset extended settings` and then `download public gist`）
-     ![avatar](./pic/8.vscode-3.jpg)
+- turn on vscode
+- Choose add-ons store search `sync` selection `setting sync` and install
+
+![avatar](./pic/8.vscode-1.jpg)
+
+- Press `clrl + shift + p` will pop up above the console input `sync download setting`
+
+![avatar](./pic/8.vscode-2.jpg)
+
+- Under point `download public gist` input `6c091a7b4ddcb213e72d430dac23422f`Enter. The plugin will be downloaded automatically. (If useless before the election `SYNC Reset extended settings` and then `download public gist`）
+
+![avatar](./pic/8.vscode-3.jpg)
 
 ## 关于中文报错问题
 
@@ -86,10 +98,10 @@
 ```sh
 Exception in thread Thread-1:
 Traceback (most recent call last):
-  File "c:\users\aresp\appdata\local\programs\python\python37\lib\threading.py", line 917, in _bootstrap_inner
-    self.run()
-  File "c:\users\aresp\appdata\local\programs\python\python37\lib\site-packages\pros\common\ui\__init__.py", line 180, in run
-    for line in iter(self.pipeReader.readline, ''):
+File "c:\users\aresp\appdata\local\programs\python\python37\lib\threading.py", line 917, in _bootstrap_inner
+self.run()
+File "c:\users\aresp\appdata\local\programs\python\python37\lib\site-packages\pros\common\ui\__init__.py", line 180, in run
+for line in iter(self.pipeReader.readline, ''):
 UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 10: illegal multibyte sequence
 ```
 
