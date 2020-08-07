@@ -46,7 +46,7 @@
 
 8. Setting environment variables
 
-- [Download](./add_environment_var.ps1)
+- [Download](https://github.com/3038922/new_century_robotics/blob/master/add_environment_var.ps1)
 -
 - OK after adding. Restart the computer.
 - Right click on the blank space on the desktop-> Git Bash Here
