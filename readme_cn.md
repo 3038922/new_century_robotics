@@ -46,6 +46,8 @@
 
 8. 设置环境变量
 
+- [Download](https://github.com/3038922/new_century_robotics/blob/master/add_environment_var.ps1)
+
 - 添加后确定。重新启动计算机。
 - 右键单击桌面上的空白-> Git Bash 此处
 - 复制这句话 `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
