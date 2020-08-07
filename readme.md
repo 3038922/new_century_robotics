@@ -4,7 +4,7 @@
 
 1. Install visual studio2019 and configure c ++ development environment
 
-   - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/vs_community__1171082560.1567069112.exe)
+   - [Download](./soft/vs_community__1548256886.1596784179.exe)
    - Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
 
 2. Install cmake
