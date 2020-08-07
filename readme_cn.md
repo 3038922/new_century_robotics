@@ -1,50 +1,50 @@
-## New Century Robotics (Public Welfare) Development Environment Tutorial (WIN10-64bit 1909)
+## 新世纪机器人（公益）开发环境教程（WIN10-64bit 1909）
 
-[English](./readme_en.md)
+[English](./readme.md)
 
-1. Install visual studio2019 and configure c ++ development environment
+1. 安装 Visual Studio2019 并配置 C ++开发环境
 
    - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/vs_community__1171082560.1567069112.exe)
    - Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
 
-2. Install cmake
+2. 安装 cmake
    - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/cmake-3.16.2-win64-x64.msi)
    - Double-click to open the installation. Note that this step chooses the second addition path as shown below.
 
 ![avatar](./pic/1.cmake.jpg)
 
-3. Install vscode
+3. 安装 vscode
    - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/VSCodeUserSetup-x64-1.41.1.exe)
    - The selection steps are as follows:
 
 ![avatar](./pic/2.vscode.jpg)
 
-4. Install git
+4. 安装 git
    - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/Git-2.24.1.2-64-bit.exe)
    - The selection steps are as follows:
 
 ![avatar](./pic/3.git-1.jpg)
 ![avatar](./pic/3.git-2.jpg)
 
-5. Install python
+5. 安装 python
    - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/python-3.8.1-amd64.exe)
    - Be sure to check the box `for all users`.
 
 ![avatar](./pic/4.python.jpg)
 
-6. Extract ccls+llvm+ninja.zip
+6. 解压缩 `ccls + llvm + ninja.zip`
    - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip)
    - Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
 
 ![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
 ![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
 
-7. Extract pros.zip
+7. 解压缩 `pros.zip`
 
    - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip)
    - Download `pros.zip` and unzip to `C:\Program Files`
 
-8. Setting environment variables
+8. 设置环境变量
    - `Right click`->`My computer`->`properties`->`advanced system settings`->`environment variable`->`system variables`->`new-built`
    - Variable name: `PROS_TOOLCHAIN` Variable value: `C:\Program Files\PROS\toolchain\usr`
 
@@ -66,11 +66,11 @@
 
 ![avatar](./pic/7.环境变量-3.jpg)
 
-- OK after adding. Restart the computer.
-- Right click on the blank space on the desktop-> Git Bash Here
-- Copy this sentence `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
-- Finally, we need to verify that our installation was successful.
-- Enter one by one
+- 添加后确定。重新启动计算机。
+- 右键单击桌面上的空白-> Git Bash 此处
+- 复制这句话 `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
+- 最后，我们需要验证安装是否成功。.
+- 一句句输入:
 
 ```
     cmake --version
@@ -85,7 +85,7 @@
 
 ![avatar](./pic/7.环境变量-4.jpg)
 
-9. vscdoe plugin download and setup
+9. vscdoe 插件下载和设置
    - turn on vscode
    - Choose add-ons store search `sync` selection `setting sync` and install
 
