@@ -51,30 +51,13 @@
 
 8. Setting environment variables
 
-- [Save as](./script/add_environment_var.ps1)
+- [Save as](./script/build_en.ps1)
 - I save this script on my desktop,Click the file in the upper left corner.Click to `open windows PowerShell as administrator`
 
 ![avatar](./pic/7.环境变量-1.jpg)
 
-- input `.\add_environment_var.ps1`
+- input `.\build_en.ps1`
 - OK after adding. Restart the computer.
-- Right click on the blank space on the desktop-> Git Bash Here
-- Copy this sentence `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
-- Finally, we need to verify that our installation was successful.
-- Enter one by one:
-
-```
-cmake --version
-git --version
-python --version
-ninja --version
-clang --version
-ccls --version
-arm-none-eabi-gcc --version
-prosv5 --version
-```
-
-![avatar](./pic/7.环境变量-4.jpg)
 
 9. vscdoe plugin download and setup
 
