@@ -45,27 +45,9 @@
    - Download `pros.zip` and unzip to `C:\Program Files`
 
 8. Setting environment variables
-   - `Right click`->`My computer`->`properties`->`advanced system settings`->`environment variable`->`system variables`->`new-built`
-   - Variable name: `PROS_TOOLCHAIN` Variable value: `C:\Program Files\PROS\toolchain\usr`
 
-![avatar](./pic/7.环境变量-1.jpg)
-
-- Then double click `Path`
-
-![avatar](./pic/7.环境变量-2.jpg)
-
-- point `Newly build`
-- Line by line add it
-
-```
-    c:\ninja
-    c:\llvm\Release\bin
-    c:\ccls\Release
-    c:\Program Files\PROS\toolchain\usr\bin
-```
-
-![avatar](./pic/7.环境变量-3.jpg)
-
+- [Download](./add_environment_var.ps1)
+-
 - OK after adding. Restart the computer.
 - Right click on the blank space on the desktop-> Git Bash Here
 - Copy this sentence `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
