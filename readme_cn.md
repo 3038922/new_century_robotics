@@ -34,14 +34,14 @@
 
 6. 解压缩 `ccls + llvm + ninja.zip`
 
-   - [另存为](https://qzrobot.top/index.php/s/bTdZJ6SefSGbLzd)
+   - [点击打开](https://qzrobot.top/index.php/s/bTdZJ6SefSGbLzd)
    - Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:\` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
      ![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
      ![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
 
 7. 解压缩 `pros.zip`
 
-   - [另存为](https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8)
+   - [点击打开](https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8)
    - Download `pros.zip` and unzip to `C:\Program Files`
 
 8. 设置环境变量
