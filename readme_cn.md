@@ -4,44 +4,44 @@
 
 1. 安装 Visual Studio2019 并配置 C ++开发环境
 
-   - [Download](./soft/vs_community__1548256886.1596784179.exe)
+   - [另存为](./soft/vs_community__1548256886.1596784179.exe)
    - Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
 
 2. 安装 cmake
-   - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/cmake-3.16.2-win64-x64.msi)
+   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/cmake-3.16.2-win64-x64.msi)
    - Double-click to open the installation. Note that this step chooses the second addition path as shown below.
 
 ![avatar](./pic/1.cmake.jpg)
 
 3. 安装 vscode
-   - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/VSCodeUserSetup-x64-1.41.1.exe)
+   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/VSCodeUserSetup-x64-1.41.1.exe)
    - The selection steps are as follows:
 
 ![avatar](./pic/2.vscode.jpg)
 
 4. 安装 git
-   - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/Git-2.24.1.2-64-bit.exe)
-   - The selection steps are as follows:
 
-![avatar](./pic/3.git-1.jpg)
-![avatar](./pic/3.git-2.jpg)
+   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/Git-2.24.1.2-64-bit.exe)
+   - The selection steps are as follows:
+     ![avatar](./pic/3.git-1.jpg)
+     ![avatar](./pic/3.git-2.jpg)
 
 5. 安装 python
-   - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/python-3.8.1-amd64.exe)
-   - Be sure to check the box `for all users`.
 
-![avatar](./pic/4.python.jpg)
+   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/python-3.8.1-amd64.exe)
+   - Be sure to check the box `for all users`.
+     ![avatar](./pic/4.python.jpg)
 
 6. 解压缩 `ccls + llvm + ninja.zip`
-   - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip)
-   - Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
 
-![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
-![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
+   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip)
+   - Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
+     ![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
+     ![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
 
 7. 解压缩 `pros.zip`
 
-   - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip)
+   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip)
    - Download `pros.zip` and unzip to `C:\Program Files`
 
 8. 设置环境变量
@@ -70,18 +70,14 @@
    ![avatar](./pic/7.环境变量-4.jpg)
 
 9. vscdoe 插件下载和设置
+
    - turn on vscode
    - Choose add-ons store search `sync` selection `setting sync` and install
-
-![avatar](./pic/8.vscode-1.jpg)
-
-- Press `clrl + shift + p` will pop up above the console input `sync download setting`
-
-![avatar](./pic/8.vscode-2.jpg)
-
-- Under point `download public gist` input `6c091a7b4ddcb213e72d430dac23422f`Enter. The plugin will be downloaded automatically. (If useless before the election `SYNC Reset extended settings` and then `download public gist`）
-
-![avatar](./pic/8.vscode-3.jpg)
+     ![avatar](./pic/8.vscode-1.jpg)
+   - Press `clrl + shift + p` will pop up above the console input `sync download setting`
+     ![avatar](./pic/8.vscode-2.jpg)
+   - Under point `download public gist` input `6c091a7b4ddcb213e72d430dac23422f`Enter. The plugin will be downloaded automatically. (If useless before the election `SYNC Reset extended settings` and then `download public gist`）
+     ![avatar](./pic/8.vscode-3.jpg)
 
 ## 关于中文报错问题
 
@@ -90,10 +86,10 @@
 ```sh
 Exception in thread Thread-1:
 Traceback (most recent call last):
-  File "c:\users\aresp\appdata\local\programs\python\python37\lib\threading.py", line 917, in _bootstrap_inner
-    self.run()
-  File "c:\users\aresp\appdata\local\programs\python\python37\lib\site-packages\pros\common\ui\__init__.py", line 180, in run
-    for line in iter(self.pipeReader.readline, ''):
+File "c:\users\aresp\appdata\local\programs\python\python37\lib\threading.py", line 917, in _bootstrap_inner
+   self.run()
+File "c:\users\aresp\appdata\local\programs\python\python37\lib\site-packages\pros\common\ui\__init__.py", line 180, in run
+   for line in iter(self.pipeReader.readline, ''):
 UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 10: illegal multibyte sequence
 ```
 
