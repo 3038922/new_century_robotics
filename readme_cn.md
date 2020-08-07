@@ -1,6 +1,6 @@
 ## New Century Robotics (Public Welfare) Development Environment Tutorial (WIN10-64bit 1909)
 
-[English]](./readme.md)
+[English](./readme.md)
 
 1. Install visual studio2019 and configure c ++ development environment
 
