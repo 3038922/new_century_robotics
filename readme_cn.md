@@ -8,10 +8,10 @@
    - Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
 
 2. 安装 cmake
-   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/cmake-3.16.2-win64-x64.msi)
-   - Double-click to open the installation. Note that this step chooses the second addition path as shown below.
 
-![avatar](./pic/1.cmake.jpg)
+   - [另存为](./soft/cmake-3.16.2-win64-x64.msi)
+   - Double-click to open the installation. Note that this step chooses the second addition path as shown below.
+     ![avatar](./pic/1.cmake.jpg)
 
 3. 安装 vscode
    - [另存为](./soft/VSCodeUserSetup-x64-1.47.3.exe)
@@ -21,27 +21,27 @@
 
 4. 安装 git
 
-   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/Git-2.24.1.2-64-bit.exe)
+   - [另存为](./soft/Git-2.27.0-64-bit.exe)
    - The selection steps are as follows:
      ![avatar](./pic/3.git-1.jpg)
      ![avatar](./pic/3.git-2.jpg)
 
 5. 安装 python
 
-   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/python-3.8.1-amd64.exe)
+   - [另存为](./soft/python-3.8.5-amd64.exe)
    - Be sure to check the box `for all users`.
      ![avatar](./pic/4.python.jpg)
 
 6. 解压缩 `ccls + llvm + ninja.zip`
 
-   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip)
-   - Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
+   - [另存为](https://qzrobot.top/index.php/s/bTdZJ6SefSGbLzd)
+   - Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:\` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
      ![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
      ![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
 
 7. 解压缩 `pros.zip`
 
-   - [另存为](https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip)
+   - [另存为](https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8)
    - Download `pros.zip` and unzip to `C:\Program Files`
 
 8. 设置环境变量
