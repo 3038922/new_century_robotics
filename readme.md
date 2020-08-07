@@ -46,26 +46,28 @@
 
 8. Setting environment variables
 
-- [Download](https://github.com/3038922/new_century_robotics/blob/master/add_environment_var.ps1)
--
-- OK after adding. Restart the computer.
-- Right click on the blank space on the desktop-> Git Bash Here
-- Copy this sentence `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
-- Finally, we need to verify that our installation was successful.
-- Enter one by one
+   - [Save as](./add_environment_var.ps1)
+   - I save this script on my desktop,Click the file in the upper left corner.Click to `open windows PowerShell as administrator`
+     ![avatar](./pic/7.环境变量-1.jpg)
+   - input `.\add_environment_var.ps1`
+   - OK after adding. Restart the computer.
+   - Right click on the blank space on the desktop-> Git Bash Here
+   - Copy this sentence `pip install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl`
+   - Finally, we need to verify that our installation was successful.
+   - Enter one by one:
 
-```
-    cmake --version
-    git --version
-    python --version
-    ninja --version
-    clang --version
-    ccls --version
-    arm-none-eabi-gcc --version
-    prosv5 --version
-```
+   ```
+      cmake --version
+      git --version
+      python --version
+      ninja --version
+      clang --version
+      ccls --version
+      arm-none-eabi-gcc --version
+      prosv5 --version
+   ```
 
-![avatar](./pic/7.环境变量-4.jpg)
+   ![avatar](./pic/7.环境变量-4.jpg)
 
 9. vscdoe plugin download and setup
    - turn on vscode
