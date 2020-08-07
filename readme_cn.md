@@ -46,7 +46,7 @@
 
 8. 设置环境变量
 
-   - [另存为](./add_environment_var.ps1)
+   - [另存为](./script/add_environment_var.ps1)
    - 我将此脚本另存在桌面,点击左上角文件,点击`以管理员身份打开 windows powershell`
      ![avatar](./pic/7.环境变量-1.jpg)
    - 输入 `.\add_environment_var.ps1`
