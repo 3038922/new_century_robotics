@@ -14,10 +14,10 @@
      ![avatar](./pic/1.cmake.jpg)
 
 3. 安装 vscode
+
    - [另存为](./soft/VSCodeUserSetup-x64-1.47.3.exe)
    - The selection steps are as follows:
-
-![avatar](./pic/2.vscode.jpg)
+     ![avatar](./pic/2.vscode.jpg)
 
 4. 安装 git
 
