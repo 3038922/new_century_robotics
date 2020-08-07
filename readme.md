@@ -46,7 +46,7 @@
 
 8. Setting environment variables
 
-   - [Save as](./add_environment_var.ps1)
+   - [Save as](./script/add_environment_var.ps1)
    - I save this script on my desktop,Click the file in the upper left corner.Click to `open windows PowerShell as administrator`
      ![avatar](./pic/7.环境变量-1.jpg)
    - input `.\add_environment_var.ps1`
