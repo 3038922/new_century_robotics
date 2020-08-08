@@ -97,7 +97,15 @@ if ($powershellVersion -ge "5.0.0.0") {
         Write-Host "开始下载PROS.zip" -ForegroundColor Green
         DownloadItem -url "https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8/download" -path "c:/temp" -filename "PROS.zip"
     }
- 
+    Start-Sleep -Milliseconds 200  # 延迟0.2秒
+    if ($(Test-Path C:\temp\extern_script.zip)) {
+        Write-Host "c:\temp\extern_script.zip 已存在无需重新下载" -ForegroundColor Yellow
+    }
+    else {
+        Write-Host "开始下载extern_script.zip" -ForegroundColor Green
+        DownloadItem -url "https://qzrobot.top/index.php/s/txT4NbJ4XLsBNCB/download" -path "c:/temp" -filename "extern_script.zip"
+    }
+   
     # 解压缩
     $isCcls = Test-Path C:\ccls
     if ($isCcls) {
@@ -127,6 +135,8 @@ if ($powershellVersion -ge "5.0.0.0") {
     Write-Host "开始解压缩PROS.zip" -ForegroundColor Green
     Expand-Archive -Path C:\temp\PROS.zip -DestinationPath 'C:\Program Files\'
 
+    Write-Host "开始解压缩extern_script.zip" -ForegroundColor Green
+    Expand-Archive -Path c:\temp\extern_script.zip -DestinationPath c:\temp\ -Force
     
     #添加全局变量
     $path = [environment]::GetEnvironmentVariable('Path', 'machine') # 获取数据
@@ -158,6 +168,22 @@ if ($powershellVersion -ge "5.0.0.0") {
     else {
         Write-Host  $p -ForegroundColor Green
     }
+
+    # 安装扩展脚本
+    $targetPath = "C:\Users\$env:UserName\AppData\Local\Programs\Python\Python38\Lib\site-packages\pros\common\ui\"
+    $tmpFileName = 'c:\temp\__init__.py'
+    Write-Host  "正在向 $targetPath 覆盖 __init__.py" -ForegroundColor Green
+    Copy-Item -Path $tmpFileName -Destination $targetPath -Force
+
+    $targetPath = "C:\Users\$env:UserName\AppData\Roaming\PROS\templates"
+    $tmpFileName = 'c:\temp\kernel@3.2.1'
+    Write-Host  "正在向 $targetPath 覆盖 kernel@3.2.1" -ForegroundColor Green
+    Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
+
+    $targetPath = "C:\Users\$env:UserName\AppData\Roaming\PROS\templates"
+    $tmpFileName = 'c:\temp\okapilib@4.0.4'
+    Write-Host  "正在向 $targetPath 覆盖 okapilib@4.0.4" -ForegroundColor Green
+    Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
 
     Write-Host "正在检查ninja是否安装"  -ForegroundColor Green
     $p = & { ninja --version } 2>&1
