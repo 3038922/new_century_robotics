@@ -74,7 +74,7 @@ for line in iter(self.pipeReader.readline, ''):
 UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 10: illegal multibyte sequence
 ```
 
-- 打开`c:\users\你的用户名\appdata\local\programs\python\python37\lib\site-packages\pros\common\ui\__init__.py`
+- 打开`c:\users\你的用户名\appdata\local\programs\python\python38\lib\site-packages\pros\common\ui\__init__.py`
 - 修改 `kwargs['file'] = open(os.devnull, 'w')` 为 `kwargs['file'] = open(os.devnull, 'w', encoding='UTF-8')`
 - 修改 `self.pipeReader = os.fdopen(self.fdRead)` 为 `self.pipeReader = os.fdopen(self.fdRead, encoding='UTF-8')`
 
