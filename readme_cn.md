@@ -36,7 +36,7 @@
 
 ![avatar](./pic/4.python.jpg)
 
-6. 设置环境变量
+6. 使用脚本自动化安装和配置环境变量
 
 - [另存为](./script/build_cn.ps1)
 
