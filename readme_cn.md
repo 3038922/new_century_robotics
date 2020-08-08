@@ -5,7 +5,9 @@
 1. 安装 Visual Studio2019 并配置 C ++开发环境
 
 - [下载](https://qzrobot.top/index.php/s/ckFtR2YwynSrSiz/download)
-- Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
+- 安装的时候选择`使用C++的桌面开发`和 `使用c++的Linux开发`
+
+![avatar](0.visualstudio.jpg)
 
 2. 安装 cmake
 
@@ -41,7 +43,7 @@
 
 6. 使用脚本自动化安装和配置环境变量
 
-- [另存为](./script/build_cn.ps1)
+- [下载](https://qzrobot.top/index.php/s/wzNnD2JW59ocTpH/download)
 
 - 我将此脚本另存在桌面,点击左上角文件,点击`以管理员身份打开 windows powershell`
 - 再输入 `./build_cn.ps1`

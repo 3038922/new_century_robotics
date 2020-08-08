@@ -7,6 +7,8 @@
 - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/vs_community__1548256886.1596784179.exe)
 - Double-click to open the workload in the selection `Desktop development using C++`and `Linux development using C++` installation of him
 
+![avatar](0.visualstudio.jpg)
+
 2. Install cmake
 
 - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/cmake-3.18.1-win64-x64.msi)
@@ -41,7 +43,7 @@
 
 6. Automated installation and configuration of environment variables using scripts
 
-- [Save as](./script/build_en.ps1)
+- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/build_en.ps1)
 - I save this script on my desktop,Click the file in the upper left corner.Click to `open windows PowerShell as administrator`
 - input `.\build_en.ps1`
   If unable to execute, please enter `Set-ExecutionPolicy Unrestricted` Set execution policy to Unrestricted
