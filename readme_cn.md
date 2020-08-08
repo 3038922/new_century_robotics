@@ -25,8 +25,10 @@
 
 - [下载](https://qzrobot.top/index.php/s/R5XNM2HLjLkRp6D/download)
 - 选择步骤如下：
-  ![avatar](./pic/3.git-1.jpg)
-  ![avatar](./pic/3.git-2.jpg)
+
+![avatar](./pic/3.git-1.jpg)
+![avatar](./pic/3.git-2.jpg)
+
 - git 全局配置用户名 `git config --global user.name "nameVal"`
 - git 全局配置邮箱 `git config --global user.email "eamil@qq.com"`
 
@@ -44,7 +46,9 @@
 - 我将此脚本另存在桌面,点击左上角文件,点击`以管理员身份打开 windows powershell`
 - 再输入 `./build_cn.ps1`
   如果无法执行 请输入 `Set-ExecutionPolicy Unrestricted` 将执行策略设置为 Unrestricted
-  ![avatar](./pic/7.环境变量-1.jpg)
+
+![avatar](./pic/7.环境变量-1.jpg)
+
 - 执行完毕后,重新启动计算机。
 
 7. vscdoe 插件下载和设置
@@ -60,7 +64,7 @@
 
 - 点击 `download public gist` 输入 `6c091a7b4ddcb213e72d430dac23422f` 回车.
 
-  ![avatar](./pic/8.vscode-3.jpg)
+![avatar](./pic/8.vscode-3.jpg)
 
 - 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
 

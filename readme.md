@@ -25,8 +25,10 @@
 
 - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/Git-2.27.0-64-bit.exe)
 - The selection steps are as follows:
-  ![avatar](./pic/3.git-1.jpg)
-  ![avatar](./pic/3.git-2.jpg)
+
+![avatar](./pic/3.git-1.jpg)
+![avatar](./pic/3.git-2.jpg)
+
 - git global configuration user name `git config --global user.name "nameVal"`
 - git global configuration email `git config --global user.email "eamil@qq.com"`
 
@@ -43,7 +45,9 @@
 - I save this script on my desktop,Click the file in the upper left corner.Click to `open windows PowerShell as administrator`
 - input `.\build_en.ps1`
   If unable to execute, please enter `Set-ExecutionPolicy Unrestricted` Set execution policy to Unrestricted
-  ![avatar](./pic/7.环境变量-1.jpg)
+
+![avatar](./pic/7.环境变量-1.jpg)
+
 - OK after adding. Restart the computer.
 
 7. vscdoe plugin download and setup
