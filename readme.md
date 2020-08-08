@@ -36,20 +36,7 @@
 
 ![avatar](./pic/4.python.jpg)
 
-6. Extract `ccls+llvm+ninja.zip`
-
-- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip)
-- Download `ninja + ccls + llvm.zip` and extract it to the root directory of `c:\` (let the decompression software obtain the administrator rights to extract the root directory of drive C)
-
-![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
-![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
-
-7. Extract `pros.zip`
-
-- [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip)
-- Download `pros.zip` and unzip to `C:\Program Files`
-
-8. Setting environment variables
+6. Automated installation and configuration of environment variables using scripts
 
 - [Save as](./script/build_en.ps1)
 - I save this script on my desktop,Click the file in the upper left corner.Click to `open windows PowerShell as administrator`
@@ -58,7 +45,7 @@
   ![avatar](./pic/7.环境变量-1.jpg)
 - OK after adding. Restart the computer.
 
-9. vscdoe plugin download and setup
+7. vscdoe plugin download and setup
 
 - turn on vscode
 - Choose add-ons store search `sync` selection `setting sync` and install
