@@ -53,10 +53,9 @@
 
 - [Save as](./script/build_en.ps1)
 - I save this script on my desktop,Click the file in the upper left corner.Click to `open windows PowerShell as administrator`
-
-![avatar](./pic/7.环境变量-1.jpg)
-
 - input `.\build_en.ps1`
+  If unable to execute, please enter `Set-ExecutionPolicy Unrestricted` Set execution policy to Unrestricted
+  ![avatar](./pic/7.环境变量-1.jpg)
 - OK after adding. Restart the computer.
 
 9. vscdoe plugin download and setup

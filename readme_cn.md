@@ -36,30 +36,17 @@
 
 ![avatar](./pic/4.python.jpg)
 
-6. 解压缩 `ccls + llvm + ninja.zip`
-
-- [下载](https://qzrobot.top/index.php/s/bTdZJ6SefSGbLzd/download)
-- 下载`ninja + ccls + llvm.zip`并将其解压缩到`c:\`根目录（需要给解压缩软件管理员权限）
-
-![avatar](./pic/5.ccls+llvm+ninja-1.jpg)
-![avatar](./pic/5.ccls+llvm+ninja-2.jpg)
-
-7. 解压缩 `pros.zip`
-
-- [下载](https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8/download)
-- 解压缩 `pros.zip` 到 `C:\Program Files`
-
-8. 设置环境变量
+6. 设置环境变量
 
 - [另存为](./script/build_cn.ps1)
+
 - 我将此脚本另存在桌面,点击左上角文件,点击`以管理员身份打开 windows powershell`
-
-![avatar](./pic/7.环境变量-1.jpg)
-
-- 输入 `.\build_cn.ps1`
+- 再输入 `./build_cn.ps1`
+  如果无法执行 请输入 `Set-ExecutionPolicy Unrestricted` 将执行策略设置为 Unrestricted
+  ![avatar](./pic/7.环境变量-1.jpg)
 - 执行完毕后,重新启动计算机。
 
-9. vscdoe 插件下载和设置
+7. vscdoe 插件下载和设置
 
 - 打开 vscode
 - 选择加载项商店搜索`sync`选择`setting sync`并安装
