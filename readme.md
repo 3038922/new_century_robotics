@@ -25,9 +25,10 @@
 
 - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/Git-2.27.0-64-bit.exe)
 - The selection steps are as follows:
-
-![avatar](./pic/3.git-1.jpg)
-![avatar](./pic/3.git-2.jpg)
+  ![avatar](./pic/3.git-1.jpg)
+  ![avatar](./pic/3.git-2.jpg)
+- git global configuration user name `git config --global user.name "nameVal"`
+- git global configuration email `git config --global user.email "eamil@qq.com"`
 
 5. Install python
 

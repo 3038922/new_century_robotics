@@ -25,9 +25,10 @@
 
 - [下载](https://qzrobot.top/index.php/s/R5XNM2HLjLkRp6D/download)
 - 选择步骤如下：
-
-![avatar](./pic/3.git-1.jpg)
-![avatar](./pic/3.git-2.jpg)
+  ![avatar](./pic/3.git-1.jpg)
+  ![avatar](./pic/3.git-2.jpg)
+- git 全局配置用户名 `git config --global user.name "nameVal"`
+- git 全局配置邮箱 `git config --global user.email "eamil@qq.com"`
 
 5. 安装 python
 
