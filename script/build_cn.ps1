@@ -13,7 +13,7 @@ function DownloadItem {
             # 将临时文件移动到目标文件夹
             $flag = Test-Path $path 
             if (-not $flag) { 
-                mkdir.exe $path 
+                & mkdir $path 
             }
             Move-Item -Path $tmpFileName -Destination $destFileName -Force
         }
