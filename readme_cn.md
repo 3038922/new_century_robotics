@@ -7,7 +7,7 @@
 - [下载](https://qzrobot.top/index.php/s/ckFtR2YwynSrSiz/download)
 - 安装的时候选择`使用C++的桌面开发`和 `使用c++的Linux开发`
 
-![avatar](0.visualstudio.jpg)
+![avatar](./pic/0.visualstudio.jpg)
 
 2. 安装 cmake
 
