@@ -159,56 +159,56 @@ if ($powershellVersion -ge "5.0.0.0") {
         Write-Host  $p -ForegroundColor Green
     }
 
-    Write-Host "Checking ninja is installed"  -ForegroundColor Green
-    $p = & { ninja --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "ninja No installation or environment variables added" -ForegroundColor Red
-        Write-Host "Please release issue" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "Checking clang is installed"  -ForegroundColor Green
-    $p = & { clang --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "clang No installation or environment variables added" -ForegroundColor Red
-        Write-Host "Please release issue" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "Checking ccls is installed"  -ForegroundColor Green
-    $p = & { ccls --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "ccls No installation or environment variables added" -ForegroundColor Red
-        Write-Host "Please release issue" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "Checking arm-none-eabi is installed"  -ForegroundColor Green
-    $p = & { arm-none-eabi-gcc --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "arm-none-eabi No installation or environment variables added" -ForegroundColor Red
-        Write-Host "Please release issue" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "Checking pros-cli is installed"  -ForegroundColor Green
-    $p = & { prosv5 --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "pros-cli No installation or environment variables added" -ForegroundColor Red
-        Write-Host "Please release issue" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
+    # Write-Host "Checking ninja is installed"  -ForegroundColor Green
+    # $p = & { ninja --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "ninja No installation or environment variables added" -ForegroundColor Red
+    #     Write-Host "Please release issue" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
+    # Write-Host "Checking clang is installed"  -ForegroundColor Green
+    # $p = & { clang --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "clang No installation or environment variables added" -ForegroundColor Red
+    #     Write-Host "Please release issue" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
+    # Write-Host "Checking ccls is installed"  -ForegroundColor Green
+    # $p = & { ccls --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "ccls No installation or environment variables added" -ForegroundColor Red
+    #     Write-Host "Please release issue" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
+    # Write-Host "Checking arm-none-eabi is installed"  -ForegroundColor Green
+    # $p = & { arm-none-eabi-gcc --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "arm-none-eabi No installation or environment variables added" -ForegroundColor Red
+    #     Write-Host "Please release issue" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
+    # Write-Host "Checking pros-cli is installed"  -ForegroundColor Green
+    # $p = & { prosv5 --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "pros-cli No installation or environment variables added" -ForegroundColor Red
+    #     Write-Host "Please release issue" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
     Write-Host "Deleting temporary download drop folder"  -ForegroundColor Green
     Remove-Item C:\temp\ -recurse -force
     Write-Host "Congratulations on the successful installation"  -ForegroundColor Green

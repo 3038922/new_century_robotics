@@ -147,7 +147,6 @@ if ($powershellVersion -ge "5.0.0.0") {
             Write-Host "路径: $it 已存在" -ForegroundColor yellow 
         }
         else {
-            s
             $path += ($it + ";")
             Write-Host "路径: $it 已添加" -ForegroundColor green 
         }
@@ -185,56 +184,56 @@ if ($powershellVersion -ge "5.0.0.0") {
     Write-Host  "正在向 $targetPath 覆盖 okapilib@4.0.4" -ForegroundColor Green
     Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
 
-    Write-Host "正在检查ninja是否安装"  -ForegroundColor Green
-    $p = & { ninja --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "ninja没有安装或者环境变量没有添加" -ForegroundColor Red
-        Write-Host "请联系陈老师" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "正在检查clang是否安装"  -ForegroundColor Green
-    $p = & { clang --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "clang没有安装或者环境变量没有添加" -ForegroundColor Red
-        Write-Host "请联系陈老师" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "正在检查ccls是否安装"  -ForegroundColor Green
-    $p = & { ccls --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "ccls没有安装或者环境变量没有添加" -ForegroundColor Red
-        Write-Host "请联系陈老师" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "正在检查arm-none-eabi是否安装"  -ForegroundColor Green
-    $p = & { arm-none-eabi-gcc --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "arm-none-eabi没有安装或者环境变量没有添加" -ForegroundColor Red
-        Write-Host "请联系陈老师" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "正在检查pros-cli是否安装"  -ForegroundColor Green
-    $p = & { prosv5 --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "pros-cli没有安装或者环境变量没有添加" -ForegroundColor Red
-        Write-Host "请联系陈老师" -ForegroundColor Red
-        return 
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
+    # Write-Host "正在检查ninja是否安装"  -ForegroundColor Green
+    # $p = & { ninja --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "ninja没有安装或者环境变量没有添加" -ForegroundColor Red
+    #     Write-Host "请联系陈老师" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
+    # Write-Host "正在检查clang是否安装"  -ForegroundColor Green
+    # $p = & { clang --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "clang没有安装或者环境变量没有添加" -ForegroundColor Red
+    #     Write-Host "请联系陈老师" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
+    # Write-Host "正在检查ccls是否安装"  -ForegroundColor Green
+    # $p = & { ccls --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "ccls没有安装或者环境变量没有添加" -ForegroundColor Red
+    #     Write-Host "请联系陈老师" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
+    # Write-Host "正在检查arm-none-eabi是否安装"  -ForegroundColor Green
+    # $p = & { arm-none-eabi-gcc --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "arm-none-eabi没有安装或者环境变量没有添加" -ForegroundColor Red
+    #     Write-Host "请联系陈老师" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
+    # Write-Host "正在检查pros-cli是否安装"  -ForegroundColor Green
+    # $p = & { prosv5 --version } 2>&1
+    # if ($p -is [System.Management.Automation.ErrorRecord]) {
+    #     Write-Host "pros-cli没有安装或者环境变量没有添加" -ForegroundColor Red
+    #     Write-Host "请联系陈老师" -ForegroundColor Red
+    #     return 
+    # }
+    # else {
+    #     Write-Host  $p -ForegroundColor Green
+    # }
     Write-Host "正在删除临时下载存放文件夹"  -ForegroundColor Green
     Remove-Item C:\temp\ -recurse -force
     Write-Host "恭喜安装成功"  -ForegroundColor Green
