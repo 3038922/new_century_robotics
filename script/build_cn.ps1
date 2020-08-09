@@ -184,6 +184,9 @@ if ($powershellVersion -ge "5.0.0.0") {
     Write-Host  "正在向 $targetPath 覆盖 okapilib@4.0.4" -ForegroundColor Green
     Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
 
+    Write-Host  "正在安装vscode插件setting sync" -ForegroundColor Green
+    & code --install-extension shan.code-settings-sync
+
     # Write-Host "正在检查ninja是否安装"  -ForegroundColor Green
     # $p = & { ninja --version } 2>&1
     # if ($p -is [System.Management.Automation.ErrorRecord]) {
