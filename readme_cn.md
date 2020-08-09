@@ -25,7 +25,7 @@
 
 4. 安装 git
 
-- [下载](https://qzrobot.top/index.php/s/R5XNM2HLjLkRp6D/download)
+- [下载](https://qzrobot.top/index.php/s/afkWMfGGrZxZcaR/download)
 - 选择步骤如下：
 
 ![avatar](./pic/3.git-1.jpg)
