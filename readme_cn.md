@@ -56,9 +56,6 @@
 7. vscdoe 插件下载和设置
 
 - 打开 vscode
-- 选择加载项商店搜索`sync`选择`setting sync`并安装
-
-![avatar](./pic/8.vscode-1.jpg)
 
 - 按下 `clrl + shift + p` 输入 `sync download setting`
 

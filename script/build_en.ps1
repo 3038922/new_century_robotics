@@ -159,6 +159,9 @@ if ($powershellVersion -ge "5.0.0.0") {
         Write-Host  $p -ForegroundColor Green
     }
 
+    Write-Host  "Installing vscode plug-in setting sync" -ForegroundColor Green
+    & code --install-extension shan.code-settings-sync
+
     # Write-Host "Checking ninja is installed"  -ForegroundColor Green
     # $p = & { ninja --version } 2>&1
     # if ($p -is [System.Management.Automation.ErrorRecord]) {

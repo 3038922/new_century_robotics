@@ -55,9 +55,6 @@
 7. vscdoe plugin download and setup
 
 - turn on vscode
-- Choose add-ons store search `sync` selection `setting sync` and install
-
-![avatar](./pic/8.vscode-1.jpg)
 
 - Press `clrl + shift + p` will pop up above the console input `sync download setting`
 
