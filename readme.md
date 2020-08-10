@@ -52,11 +52,11 @@
 
 - OK after adding. Restart the computer.
 
-7. vscdoe plugin download and setup
+7. vscode plugin download and setup
 
 - turn on vscode
 
-- Press `clrl + shift + p` will pop up above the console input `sync download setting`
+- Press `ctrl + shift + p` will pop up above the console input `sync download setting`
 
 ![avatar](./pic/8.vscode-2.jpg)
 
