@@ -1,6 +1,6 @@
 ## 新世纪机器人（公益）开发环境教程（WIN10-64bit 1909）
 
-- [English](./readme.md)
+- [English Document](./readme.md)
 
 1. 安装 Visual Studio2019 并配置 C ++开发环境
 
