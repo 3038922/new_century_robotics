@@ -1,6 +1,6 @@
 ## New Century Robotics (Public Welfare) Development Environment Tutorial (WIN10-64bit 1909)
 
-[中文](./readme_cn.md)
+- [中文](./readme_cn.md)
 
 1. Install visual studio2019 and configure c ++ development environment
 
@@ -67,27 +67,10 @@
 
 ![avatar](./pic/8.vscode-3.jpg)
 
-## 关于中文报错问题
+## 关于免密登录
 
-- `pros-cli3 3.1.4` 有一个中文支持的 BUG 错误返回如下:
+- [GIT 免密登录](./git_id_ras_support.md)
 
-```sh
-Exception in thread Thread-1:
-Traceback (most recent call last):
-File "c:\users\aresp\appdata\local\programs\python\python37\lib\threading.py", line 917, in _bootstrap_inner
-self.run()
-File "c:\users\aresp\appdata\local\programs\python\python37\lib\site-packages\pros\common\ui\__init__.py", line 180, in run
-for line in iter(self.pipeReader.readline, ''):
-UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 10: illegal multibyte sequence
-```
+## linux support
 
-- 打开`c:\users\你的用户名\appdata\local\programs\python\python38\lib\site-packages\pros\common\ui\__init__.py`
-- 修改 `kwargs['file'] = open(os.devnull, 'w')` 为 `kwargs['file'] = open(os.devnull, 'w', encoding='UTF-8')`
-- 修改 `self.pipeReader = os.fdopen(self.fdRead)` 为 `self.pipeReader = os.fdopen(self.fdRead, encoding='UTF-8')`
-
-## linux ubuntu-1803
-
-1. Install common software:`sudo apt install cmake python3 ninja-build gcc-8 llvm-9 clang-9`
-2. Install SDL2 `sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev`
-3. Install `vscode`
-4. Install `prosv5`
+- [linux 开发环境教程](./linux_support.md)
