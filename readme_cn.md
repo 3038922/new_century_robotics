@@ -67,6 +67,10 @@
 
 - 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
 
+## 关于免密登录
+
+- [GIT 免密登录](./git_id_ras_support.md)
+
 ## linux support
 
 - [linux install](./linux_support.md)

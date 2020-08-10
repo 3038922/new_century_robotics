@@ -64,10 +64,6 @@
 
 ![avatar](./pic/8.vscode-3.jpg)
 
-## 关于免密登录
-
-- [GIT 免密登录](./git_id_ras_support.md)
-
 ## linux support
 
 - [linux 开发环境教程](./linux_support.md)
