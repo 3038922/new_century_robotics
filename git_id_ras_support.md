@@ -7,12 +7,13 @@
 
 - 先输入 `ssh-keygen -t rsa`
 - 之后一路回车
-  '''sh
+
+```sh
   fdipzone@ubuntu:~\$ ssh-keygen -t rsa
   Generating public/private rsa key pair.
   Enter file in which to save the key (/home/fdipzone/.ssh/id_rsa):
-  Enter passphrase (empty for no passphrase):  
-  Enter same passphrase again:  
+  Enter passphrase (empty for no passphrase):
+  Enter same passphrase again:
   Your identification has been saved in /home/fdipzone/.ssh/id_rsa.
   Your public key has been saved in /home/fdipzone/.ssh/id_rsa.pub.
   The key fingerprint is:
@@ -29,7 +30,8 @@
   | ...oo |
   | +. |
   +-----------------+
-  '''
+```
+
 - 生成的密匙文件在 `C:\Users\你的用户名\.ssh\id_rsa.pub` 里
 
 ### 上传密匙
