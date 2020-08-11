@@ -137,8 +137,7 @@ if ($powershellVersion -ge "5.0.0.0") {
             Write-Host "Path: $it Already exists" -ForegroundColor yellow 
         }
         else {
-            s
-            $path += ($it + ";")
+            $path += (";" + $it )
             Write-Host "Path: $it Added" -ForegroundColor green 
         }
     }
