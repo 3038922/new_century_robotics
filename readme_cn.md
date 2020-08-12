@@ -71,6 +71,10 @@
 
 - [GIT 免密登录](./git_id_ras_support.md)
 
+## 编程相关
+
+- [编程相关](./about_program.md)
+
 ## linux support
 
 - [linux install](./linux_support.md)
