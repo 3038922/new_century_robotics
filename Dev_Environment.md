@@ -64,3 +64,7 @@
 ![avatar](./pic/8.vscode-3.jpg)
 
 - 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
+
+## linux support
+
+- [linux install](./linux_support.md)

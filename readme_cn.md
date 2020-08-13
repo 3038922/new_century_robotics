@@ -17,7 +17,3 @@
 ## GIT 命令
 
 - [GIT 命令](./about_git.md)
-
-## linux support
-
-- [linux install](./linux_support.md)
