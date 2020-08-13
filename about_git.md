@@ -1,6 +1,7 @@
 ## git 命令
 
-- Git 更新远程分支列表 `git remote update origin --prune`
+- 更新远程分支列表 `git remote update origin --prune`
+- 查看所有分支 `git branch -a`
 - 切换到主分支: `git checkout master`
 - 把主分支内容下载下来: `git pull origin master`
 - 把分支从镜像上下载下来 `git pull mirror dev`
@@ -16,7 +17,7 @@
 - 查看远程库及地址 `git remote -v`
 - 删除远程仓库地址 `git remote rm origin`
 - git 服务器搭建 `mkdir cadlib.git` `git init --bare xxx.git`
-- Git 服务器启动 `service ssh start`
+- git 服务器启动 `service ssh start`
 - 强制服务器端覆盖本地
 
   ```sh
