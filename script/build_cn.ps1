@@ -147,7 +147,11 @@ if ($powershellVersion -ge "5.0.0.0") {
             Write-Host "路径: $it 已存在" -ForegroundColor yellow 
         }
         else {
+<<<<<<< HEAD
             $path += ($it + ";")
+=======
+            $path += (";" + $it)
+>>>>>>> e8e6aec94d6d28db9154d31dfc65e330c6ff4a2c
             Write-Host "路径: $it 已添加" -ForegroundColor green 
         }
     }
