@@ -17,3 +17,7 @@
 ## GIT 命令
 
 - [GIT 命令](./about_git.md)
+
+## Linux 常用命令
+
+- [linux 主页](./linux/linux_index.md)

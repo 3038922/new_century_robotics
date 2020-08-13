@@ -65,6 +65,6 @@
 
 - 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
 
-## linux support
+## linux 下安装开发环境
 
-- [linux install](./linux_support.md)
+- [linux install](./Dev_Environment_linux.md)

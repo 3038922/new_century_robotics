@@ -64,6 +64,6 @@
 
 ![avatar](./pic/8.vscode-3.jpg)
 
-## linux support
+## linux Development Environment
 
-- [linux 开发环境教程](./linux_support.md)
+- [linux dev](./Dev_Environment_linux.md)
