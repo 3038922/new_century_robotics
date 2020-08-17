@@ -1,5 +1,7 @@
 ## git 命令
 
+![avatar](./pic/git常用操作.png)
+
 - Git 更新远程分支列表 `git remote update origin --prune`
 - 切换到主分支: `git checkout master`
 - 把主分支内容下载下来: `git pull origin master`
