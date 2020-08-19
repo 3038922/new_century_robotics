@@ -49,7 +49,7 @@ find / -name "*.mp3" |xargs rm -rf
 
 # PKG 中科大源
 
-```
+```sh
 FreeBSD: {
 
 url: "pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/latest",
@@ -67,7 +67,7 @@ enabled: yes
 
 # oh my zsh 中文乱码 及页面
 
-```
+```sh
 ZSH_THEME="agnoster"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -76,11 +76,3 @@ export LANG=en_US.UTF-8
 # 安装字体解决图标乱码
 
 pkg install firacode
-
-# nextcloud 相关
-
-```
-service mysql-server restart
-service php-fpm restart
-service nginx restart
-```
