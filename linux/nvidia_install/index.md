@@ -23,7 +23,7 @@
 
 ## 禁用 nvidia 自带的桌面
 
-- 必须禁用 否则服务器重启会进入桌面模式 断网 `service gdm3 stop`
+- 必须禁用 否则服务器重启会进入桌面模式 断网 `service gdm3 stop` `service kdm stop` `service lightdm stop` 这三个都试试
 
 ## 安装 cuda
 
