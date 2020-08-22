@@ -18,3 +18,17 @@
 3. 检查 aria2
 4. 检查 smb 挂载
 5. 检查 v2ray
+
+## TCP 连接数限制
+
+## TCP BBR 加速
+
+```
+echo net.core.default_qdisc=fq >> /etc/sysctl.conf
+echo net.ipv4.tcp_congestion_control=bbr >> /etc/sysctl.conf
+```
+
+- 保存 `sysctl -p`
+- 验证 `sysctl net.ipv4.tcp_available_congestion_control`
+- 如果结果是 `net.ipv4.tcp_available_congestion_control = bbr cubic reno` 就表示开启了.
+- 执行 `lsmod | grep bbr` ，以检测 BBR 是否开启。
