@@ -20,4 +20,4 @@
 
 ## Linux 常用命令
 
-- [linux 主页](./linux/linux_index.md)
+- [linux 主页](./linux/index.md)
