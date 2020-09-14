@@ -52,11 +52,11 @@
 
 - 执行完毕后,重新启动计算机。
 
-7. vscdoe 插件下载和设置
+7. vscode 插件下载和设置
 
 - 打开 vscode
 
-- 按下 `clrl + shift + p` 输入 `sync download setting`
+- 按下 `ctrl + shift + p` 输入 `sync download setting`
 
 ![avatar](./pic/8.vscode-2.jpg)
 
