@@ -65,6 +65,11 @@
 
 - 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
 
+8. 字体安装
+
+- [下载](https://qzrobot.top/index.php/s/b8DMCSHAEdD964J)
+- 双击安装
+
 ## linux 下安装开发环境
 
 - [linux install](./Dev_Environment_linux.md)
