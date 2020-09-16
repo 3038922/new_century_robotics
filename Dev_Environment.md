@@ -46,16 +46,17 @@
 - 我将此脚本另存在桌面,点击左上角文件,点击`以管理员身份打开 windows powershell`
 - 再输入 `./build_cn.ps1`
   如果无法执行 请输入 `Set-ExecutionPolicy Unrestricted` 将执行策略设置为 Unrestricted
+  如果还不行 试试输入 `Set-ExecutionPolicy RemoteSigned -Scope Process` 再执行 `Set-ExecutionPolicy Unrestricted`
 
 ![avatar](./pic/7.环境变量-1.jpg)
 
 - 执行完毕后,重新启动计算机。
 
-7. vscdoe 插件下载和设置
+7. vscode 插件下载和设置
 
 - 打开 vscode
 
-- 按下 `clrl + shift + p` 输入 `sync download setting`
+- 按下 `ctrl + shift + p` 输入 `sync download setting`
 
 ![avatar](./pic/8.vscode-2.jpg)
 
