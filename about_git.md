@@ -59,3 +59,13 @@ git commit -m 'update .gitignore'
   git reset --hard dev                           //将主分支重置为 test 分支
   git push origin release -f             //将重置后的 master 分支强制推送到远程仓库
 ```
+
+- git 本地 tag 和远程 tag 对应不上 vscode 里 pull 不下代码
+
+```sh
+! [rejected]          dataSource0424 -> dataSource0424  (would clobber existing tag)
+用git ls-remote -t 查看远程tags                 git tag -l查看本地tag
+然后用 git tag -d xxx删除本地tag
+最后远程拉取远程tags   git fetch origin --prune-tags
+删除远程tags git push origin --delete tag 标签名
+```
