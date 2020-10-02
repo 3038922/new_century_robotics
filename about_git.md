@@ -8,7 +8,7 @@
 - 把主分支内容下载下来: `git pull origin master`
 - 把分支从镜像上下载下来 `git pull mirror dev`
 - 把分支合并到 master:`git merge xxxx`
-- 删除本地分支: `git branch -d temp`
+- 删除本地分支: `git branch -D temp`
 - 删除远程分支: `git push origin --delete temp`
 - 查看所有分支: `git branch -a`
 - 查看所有远程仓库， `git remote`
