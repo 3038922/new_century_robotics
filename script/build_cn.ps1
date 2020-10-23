@@ -140,18 +140,14 @@ if ($powershellVersion -ge "5.0.0.0") {
     
     #添加全局变量
     $path = [environment]::GetEnvironmentVariable('Path', 'machine') # 获取数据
-    $addPath = @('C:\ccls\Release', 'C:\llvm\Release\bin', 'C:\ninja', 'C:\Program Files\PROS\toolchain\usr\bin')
+    $addPath = @('C:\ccls\Release', 'C:\llvm\Release\bin', 'C:\llvm\Release\lib', 'C:\ninja', 'C:\Program Files\PROS\toolchain\usr\bin')
     
     foreach ($it in $addPath) { 
         if ($path.split(";") -Contains $it) {
             Write-Host "路径: $it 已存在" -ForegroundColor yellow 
         }
         else {
-<<<<<<< HEAD
             $path += ($it + ";")
-=======
-            $path += (";" + $it)
->>>>>>> e8e6aec94d6d28db9154d31dfc65e330c6ff4a2c
             Write-Host "路径: $it 已添加" -ForegroundColor green 
         }
     }
@@ -178,15 +174,15 @@ if ($powershellVersion -ge "5.0.0.0") {
     Write-Host  "正在向 $targetPath 覆盖 __init__.py" -ForegroundColor Green
     Copy-Item -Path $tmpFileName -Destination $targetPath -Force
 
-    $targetPath = "C:\Users\$env:UserName\AppData\Roaming\PROS\templates"
-    $tmpFileName = 'c:\temp\kernel@3.2.1'
-    Write-Host  "正在向 $targetPath 覆盖 kernel@3.2.1" -ForegroundColor Green
-    Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
+    # $targetPath = "C:\Users\$env:UserName\AppData\Roaming\PROS\templates"
+    # $tmpFileName = 'c:\temp\kernel@3.2.1'
+    # Write-Host  "正在向 $targetPath 覆盖 kernel@3.2.1" -ForegroundColor Green
+    # Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
 
-    $targetPath = "C:\Users\$env:UserName\AppData\Roaming\PROS\templates"
-    $tmpFileName = 'c:\temp\okapilib@4.0.4'
-    Write-Host  "正在向 $targetPath 覆盖 okapilib@4.0.4" -ForegroundColor Green
-    Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
+    # $targetPath = "C:\Users\$env:UserName\AppData\Roaming\PROS\templates"
+    # $tmpFileName = 'c:\temp\okapilib@4.0.4'
+    # Write-Host  "正在向 $targetPath 覆盖 okapilib@4.0.4" -ForegroundColor Green
+    # Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
 
     Write-Host  "正在安装vscode插件 setting sync" -ForegroundColor Green
     & code --install-extension shan.code-settings-sync

@@ -130,7 +130,7 @@ if ($powershellVersion -ge "5.0.0.0") {
     
     #添加全局变量
     $path = [environment]::GetEnvironmentVariable('Path', 'machine') # 获取数据
-    $addPath = @('C:\ccls\Release', 'C:\llvm\Release\bin', 'C:\ninja', 'C:\Program Files\PROS\toolchain\usr\bin')
+    $addPath = @('C:\ccls\Release', 'C:\llvm\Release\bin', 'C:\llvm\Release\lib', 'C:\ninja', 'C:\Program Files\PROS\toolchain\usr\bin')
     
     foreach ($it in $addPath) { 
         if ($path.split(";") -Contains $it) {
