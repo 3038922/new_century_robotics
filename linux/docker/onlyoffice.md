@@ -11,42 +11,30 @@ docker pull onlyoffice/documentserver
 - 创建一个容器
 
 ```sh
-docker run -i -t -d -p 8085:80 --restart=always \
+docker run -i -t -d -p 8086:80 --restart=always \
  -v /app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice \
  -v /app/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data \
  -v /app/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice \
  -v /app/onlyoffice/DocumentServer/db:/var/lib/postgresql onlyoffice/documentserver
 ```
 
-- 进入容器 `docker exec -it funny_turing /bin/bash`
+- 进入容器 `docker exec -it jovial_mayer/bin/bash`
 - 如果 nextcloud 无法挂载 onlyoffice
+
   1. 就进去 onlyoffice 虚拟机 修改 `nano /etc/hosts`
   2. 加入`qzrobot.top` 和 `onlyoffice.qzrobot.top` 的重定向
 
-查看正在运行的 docker
+- 查看正在运行的 docker `docker ps -a`
+- 更换字体
+  1. 删除内置字体`rm -rf /var/www/onlyoffice/documentserver/core-fonts/*` `rm -rf `
+  2. 复制进 docker 内 `docker cp ./fonts/ 2e2e2af4c1e4:/usr/share/fonts/truetype/`
+  3. 清缓存 `fc-cache -f -v`
+  4. 导入新字体。 `/usr/bin/documentserver-generate-allfonts.sh`
 
-docker ps
-
-4、进入运行着的 docker 镜像内：
-
-docker exec [镜像 id] /bin/bash
-exec 命令可以进入 docker，并执行后面的命令，上面是执行/bin/bash
-
-5、把从 windows 字体目录拷贝的文件 cp 到镜像内（在镜像外执行，镜像是否运行无所谓）：
-
-docker cp /root/fonts/ [镜像 id]:/usr/share/fonts/
-cp 后面的路径都以”/”结尾，前提是，把中文字体文件名改成英文
-
-6、在镜像内，进入/usr/bin 目录 输入
-
-./documentserver-generate-allfonts.sh，字体更换完成，这是最关键的一步。
-7、把当前镜像保存成一个 image 并保存成 tar 文件保存。
-
+把当前镜像保存成一个 image 并保存成 tar 文件保存。
 docker commit -a "jingying.cn" -m "onlyoffice-chinesefonts" [镜像 id] onlyoffice:v1
 -a 作者 -m 镜像描述 最后是镜像名称和版本
 
 8、把镜像保存成 tar 文件，tar 镜像的加载可以用 docker load -i [镜像.tar] 加载
-
-docker save -o onlyoffice-chinesefonts.tar onlyoffice:v1
 
 docker save -o onlyoffice-chinesefonts.tar onlyoffice:v1
