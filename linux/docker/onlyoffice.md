@@ -1,14 +1,11 @@
-Docker 安装 Onlyoffice 并更新中文字体的办法
-必要条件：操作系统如果选择 centos 必须选择 7 以上（旧版本的 docker 拷贝文件命令有 bug）
+## docker 安装 onlyoffice
 
-1、安装 docker（yum 安装即可，yum 版本要在 1.8 以上），并启动 docker 服务
+1. 安装 docker
 
-2、在 docker 下下载 onlyoffice 镜像，用的是 pull 命令
+2. 在 docker 下下载 onlyoffice 镜像，用的是 pull 命令 `docker pull onlyoffice/documentserver `
+3. 在 docker 下启动镜像：
 
-docker pull onlyoffice/documentserver
-3、在 docker 下启动镜像：
-
-- 创建一个容器
+4. 创建一个容器
 
 ```sh
 docker run -i -t -d -p 8086:80 --restart=always \
@@ -17,6 +14,8 @@ docker run -i -t -d -p 8086:80 --restart=always \
  -v /app/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice \
  -v /app/onlyoffice/DocumentServer/db:/var/lib/postgresql onlyoffice/documentserver
 ```
+
+## 安装中文字体
 
 - 进入容器 `docker exec -it jovial_mayer/bin/bash`
 - 如果 nextcloud 无法挂载 onlyoffice
@@ -38,3 +37,5 @@ docker commit -a "jingying.cn" -m "onlyoffice-chinesefonts" [镜像 id] onlyoffi
 8、把镜像保存成 tar 文件，tar 镜像的加载可以用 docker load -i [镜像.tar] 加载
 
 docker save -o onlyoffice-chinesefonts.tar onlyoffice:v1
+
+## 更新 onlyoffice
