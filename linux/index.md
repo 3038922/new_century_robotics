@@ -44,3 +44,7 @@ echo net.ipv4.tcp_congestion_control=bbr >> /etc/sysctl.conf
 - 验证 `sysctl net.ipv4.tcp_available_congestion_control`
 - 如果结果是 `net.ipv4.tcp_available_congestion_control = bbr cubic reno` 就表示开启了.
 - 执行 `lsmod | grep bbr` ，以检测 BBR 是否开启。
+
+## 后台运行程序
+
+`nohub xxxx &`
