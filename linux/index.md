@@ -10,6 +10,18 @@
   1. 打开配置文件 `vim /etc/fstab`
   2. 输入 `//IP地址/XXX /要挂载的地方/XXX cifs username=root,password=xxxx 0 0`
   3. 挂载配置文件里的全部目录 `mount -a`
+  4. 取消挂载 `umount ./xxx`
+- 共享 smb 目录
+  1. 书写配置 `vim /etc/samba/smb.conf`
+  2. 添加 SMB 用户 `sudo smbpasswd -a www`
+  3. 重启 smb 服务 `sudo /etc/init.d/samba restart`
+
+## 挂载
+
+1.  取消挂载 `umount ./xxx`
+2.  查看目录的所有共享目录 `smbclient //192.168.31.199/`
+3.  连接共享目录 `smbclient //192.168.31.199/影视/`
+4.  临时挂载下 方便拷贝 `mount -t cifs -o username=root,password=xxx //192.168.31.199/影视 ./tmp`
 
 ## 重启后任务
 
