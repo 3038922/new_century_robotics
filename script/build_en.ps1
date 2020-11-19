@@ -1,36 +1,3 @@
-# 下载单个文件
-function DownloadItem {
-    param([string]$url, [string]$path, [string]$filename , [string]$referer)
-    if ($referer.Contains("(*)")) {
-        $referer = $referer -replace "\(\*\)", $url
-    }
-    try {
-        $tmpFileName = [System.IO.Path]::GetTempFileName()
-        $destFileName = [System.IO.Path]::Combine($path, $filename)
-        $watch = Measure-Command {
-            # 下载文件到临时文件夹
-            Invoke-WebRequest -Uri $url -Method Get -Headers @{"Referer" = $referer } -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" -TimeoutSec 120 -OutFile $tmpFileName
-            # 将临时文件移动到目标文件夹
-            $flag = Test-Path $path 
-            if (-not $flag) { 
-                & mkdir $path 
-            }
-            Move-Item -Path $tmpFileName -Destination $destFileName -Force
-        }
-        $script:succeed += 1
-        $fileLength = [Math]::Ceiling((Get-Item -LiteralPath $destFileName).Length / 1024.0)
-        $elapsed = [Math]::Round($watch.TotalMilliseconds)
-        # 下载成功！12.jpg - 115KB/2356ms
-        Write-Host "Download successful！$filename - $fileLength KB/$elapsed ms" -ForegroundColor Green
-    }
-    catch {
-        Write-Error $PSItem.ToString()
-    }
-    finally {
-        $script:completed += 1
-    }
-}
-
 # 新世纪机器人社win10系统环境变量配置
 
 Write-Host "This version uses GitHub source" -ForegroundColor Green
@@ -79,6 +46,8 @@ else {
 
 # powershell版本检查
 $powershellVersion = $host.Version.ToString()
+Write-Host "Create temporary folder c:\temp" -ForegroundColor Green
+& mkdir c:/temp
 if ($powershellVersion -ge "5.0.0.0") {
     #下载各种压缩包
     Write-Host "powershell version:$powershellVersion" -ForegroundColor Green
@@ -87,7 +56,7 @@ if ($powershellVersion -ge "5.0.0.0") {
     }
     else {
         Write-Host "Downloading ninja+ccls+llvm.zip" -ForegroundColor Green
-        DownloadItem -url "https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip" -path "c:/temp" -filename "ninja+ccls+llvm.zip"
+        $client.DownloadFile('https://github.com/3038922/new_century_robotics/releases/download/v1.0/ninja+ccls+llvm.zip', 'c:/temp/ninja+ccls+llvm.zip')
     }
     Start-Sleep -Milliseconds 200  # 延迟0.2秒
     if ($(Test-Path C:\temp\PROS.zip)) {
@@ -95,7 +64,7 @@ if ($powershellVersion -ge "5.0.0.0") {
     }
     else {
         Write-Host "Downloading PROS.zip" -ForegroundColor Green
-        DownloadItem -url "https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip" -path "c:/temp" -filename "PROS.zip"
+        $client.DownloadFile('https://github.com/3038922/new_century_robotics/releases/download/v1.0/PROS.zip', 'c:/temp/PROS.zip')
     }
  
     # 解压缩

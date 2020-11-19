@@ -1,38 +1,3 @@
-# 下载单个文件
-function DownloadItem {
-    param([string]$url, [string]$path, [string]$filename , [string]$referer)
-    if ($referer.Contains("(*)")) {
-        $referer = $referer -replace "\(\*\)", $url
-    }
-    try {
-        $tmpFileName = [System.IO.Path]::GetTempFileName()
-        $destFileName = [System.IO.Path]::Combine($path, $filename)
-        $watch = Measure-Command {
-            $wc = New-Object net.webclient
-            $wc.Downloadfile($url, $destFileName)# 下载文件到文件夹
-            # # 下载文件到临时文件夹
-            # Invoke-WebRequest -Uri $url -Method Get -Headers @{"Referer" = $referer } -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" -TimeoutSec 120 -OutFile $tmpFileName
-            # # 将临时文件移动到目标文件夹
-            # $flag = Test-Path $path 
-            # if (-not $flag) { 
-            #     & mkdir $path 
-            # }
-            # Move-Item -Path $tmpFileName -Destination $destFileName -Force
-        }
-        $script:succeed += 1
-        $fileLength = [Math]::Ceiling((Get-Item -LiteralPath $destFileName).Length / 1024.0)
-        $elapsed = [Math]::Round($watch.TotalMilliseconds)
-        # 下载成功！12.jpg - 115KB/2356ms
-        Write-Host "下载成功！$filename - $fileLength KB/$elapsed ms" -ForegroundColor Green
-    }
-    catch {
-        Write-Error $PSItem.ToString()
-    }
-    finally {
-        $script:completed += 1
-    }
-}
-
 # 新世纪机器人社win10系统环境变量配置
 
 Write-Host "此版本使用新世纪机器人社(中国)安装源" -ForegroundColor Green
@@ -81,15 +46,18 @@ else {
 
 # powershell版本检查
 $powershellVersion = $host.Version.ToString()
+Write-Host "创建临时文件夹 c:\temp" -ForegroundColor Green
+& mkdir c:/temp
 if ($powershellVersion -ge "5.0.0.0") {
     #下载各种压缩包
-    Write-Host "powershell当前版本为:$powershellVersion" -ForegroundColor Green
+    $client = new-object System.Net.WebClient #创建下载对象
+    
     if ( $(Test-Path C:\temp\ninja+ccls+llvm.zip)) {
         Write-Host "c:\temp\ninja+ccls+llvm.zip 已存在无需重新下载" -ForegroundColor Yellow
     }
     else {
         Write-Host "开始下载ninja+ccls+llvm.zip" -ForegroundColor Green
-        DownloadItem -url "https://qzrobot.top/index.php/s/bTdZJ6SefSGbLzd/download" -path "c:/temp" -filename "ninja+ccls+llvm.zip"
+        $client.DownloadFile('https://qzrobot.top/index.php/s/bTdZJ6SefSGbLzd/download', 'c:/temp/ninja+ccls+llvm.zip')
     }
     Start-Sleep -Milliseconds 200  # 延迟0.2秒
     if ($(Test-Path C:\temp\PROS.zip)) {
@@ -97,7 +65,7 @@ if ($powershellVersion -ge "5.0.0.0") {
     }
     else {
         Write-Host "开始下载PROS.zip" -ForegroundColor Green
-        DownloadItem -url "https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8/download" -path "c:/temp" -filename "PROS.zip"
+        $client.DownloadFile('https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8/download', 'c:/temp/PROS.zip')
     }
     Start-Sleep -Milliseconds 200  # 延迟0.2秒
     if ($(Test-Path C:\temp\extern_script.zip)) {
@@ -105,7 +73,7 @@ if ($powershellVersion -ge "5.0.0.0") {
     }
     else {
         Write-Host "开始下载extern_script.zip" -ForegroundColor Green
-        DownloadItem -url "https://qzrobot.top/index.php/s/txT4NbJ4XLsBNCB/download" -path "c:/temp" -filename "extern_script.zip"
+        $client.DownloadFile('https://qzrobot.top/index.php/s/txT4NbJ4XLsBNCB/download', 'c:/temp/extern_script.zip')
     }
    
     # 解压缩
