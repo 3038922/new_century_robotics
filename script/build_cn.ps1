@@ -8,14 +8,16 @@ function DownloadItem {
         $tmpFileName = [System.IO.Path]::GetTempFileName()
         $destFileName = [System.IO.Path]::Combine($path, $filename)
         $watch = Measure-Command {
-            # 下载文件到临时文件夹
-            Invoke-WebRequest -Uri $url -Method Get -Headers @{"Referer" = $referer } -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" -TimeoutSec 120 -OutFile $tmpFileName
-            # 将临时文件移动到目标文件夹
-            $flag = Test-Path $path 
-            if (-not $flag) { 
-                & mkdir $path 
-            }
-            Move-Item -Path $tmpFileName -Destination $destFileName -Force
+            $wc = New-Object net.webclient
+            $wc.Downloadfile($url, $destFileName)# 下载文件到文件夹
+            # # 下载文件到临时文件夹
+            # Invoke-WebRequest -Uri $url -Method Get -Headers @{"Referer" = $referer } -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36" -TimeoutSec 120 -OutFile $tmpFileName
+            # # 将临时文件移动到目标文件夹
+            # $flag = Test-Path $path 
+            # if (-not $flag) { 
+            #     & mkdir $path 
+            # }
+            # Move-Item -Path $tmpFileName -Destination $destFileName -Force
         }
         $script:succeed += 1
         $fileLength = [Math]::Ceiling((Get-Item -LiteralPath $destFileName).Length / 1024.0)
