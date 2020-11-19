@@ -37,7 +37,8 @@
 5. Install python
 
 - [Download](https://github.com/3038922/new_century_robotics/releases/download/v1.0/python-3.8.5-amd64.exe)
-- Be sure to check the box `for all users`.
+- Be sure to check the box `Add Python 3.x to Path`.
+- Then check `Install Now`
 
 ![avatar](./pic/4.python.jpg)
 
