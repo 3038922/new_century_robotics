@@ -35,7 +35,8 @@
 5. 安装 python
 
 - [下载](https://qzrobot.top/index.php/s/THniMLtpTa4j3j5/download)
-- 确保选中 `for all users`.
+- 确保选中 `Add Python 3.x to Path`.
+- 然后选 `Install Now` 默认安装到 C 盘即可
 
 ![avatar](./pic/4.python.jpg)
 
