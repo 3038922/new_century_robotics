@@ -8,7 +8,7 @@
 
 - 挂载 smb 共享目录
   1. 打开配置文件 `vim /etc/fstab`
-  2. 输入 `//IP地址/XXX /要挂载的地方/XXX cifs username=root,password=xxxx 0 0`
+  2. 输入 `//192.168.31.199/ncrNas /www/media/ cifs username=username,password=password,sec=ntlmssp,rw,_netdev, directio 0 0`
   3. 挂载配置文件里的全部目录 `mount -a`
   4. 取消挂载 `umount ./xxx`
 - 共享 smb 目录
@@ -19,7 +19,7 @@
 ## 挂载
 
 1.  取消挂载 `umount ./xxx`
-2.  查看目录的所有共享目录 `smbclient -L //192.168.31.199 -U dataswap`
+2.  查看目录的所有共享目录 `smbclient //192.168.31.199/ncrNas -U dataswap`
 3.  连接共享目录 `smbclient //192.168.31.199/ncrNas/ -U dataswap`
 4.  临时挂载下 方便拷贝 `mount -t cifs -o username=dataswap,password=xxx //192.168.31.199/ncrNas ./tmp`
 
