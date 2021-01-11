@@ -2,7 +2,7 @@
 
 1. 安装 docker
 
-2. 在 docker 下下载 onlyoffice 镜像，用的是 pull 命令 `docker pull onlyoffice/documentserver `
+2. 在 docker 下下载 onlyoffice 镜像，用的是 pull 命令 `docker pull onlyoffice/documentserver`
 3. 在 docker 下启动镜像：
 
 4. 创建一个容器
@@ -17,7 +17,7 @@ docker run -i -t -d -p 8086:80 --restart=always \
 
 ## 安装中文字体
 
-- 进入容器 `docker exec -it jovial_mayer/bin/bash`
+- 进入容器 `docker exec -it distracted_mayer /bin/bash`
 - 如果 nextcloud 无法挂载 onlyoffice
 
   1. 就进去 onlyoffice 虚拟机 修改 `nano /etc/hosts`
@@ -26,8 +26,8 @@ docker run -i -t -d -p 8086:80 --restart=always \
 - 查看正在运行的 docker `docker ps -a`
 - 更换字体
 
-  1. 删除内置字体`rm -rf /var/www/onlyoffice/documentserver/core-fonts/*` `rm -rf `
-  2. 复制进 docker 内 `docker cp ./fonts/ 2e2e2af4c1e4:/usr/share/fonts/truetype/`
+  1. 删除内置字体`rm -rf /var/www/onlyoffice/documentserver/core-fonts/*`
+  2. 复制进 docker 内 `docker cp ./fonts/ 7603321130e4:/usr/share/fonts/truetype/`
   3. 清缓存 `fc-cache -f -v`
   4. 导入新字体。 `/usr/bin/documentserver-generate-allfonts.sh`
 
