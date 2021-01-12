@@ -26,8 +26,8 @@ docker run -i -t -d -p 8086:80 --restart=always \
 - 查看正在运行的 docker `docker ps -a`
 - 更换字体
 
-  1. 删除内置字体`rm -rf /var/www/onlyoffice/documentserver/core-fonts/*` `rm -rf /usr/share/fonts/truetype/*`
-  2. 复制进 docker 内 `docker cp ./fonts/ 7603321130e4:/usr/share/fonts/truetype/`
+  1. 删除内置字体`rm -rf /var/www/onlyoffice/documentserver/core-fonts/*` `rm -rf /usr/share/fonts/*`
+  2. 复制进 docker 内 `docker cp ./fonts/ 7603321130e4:/usr/share/fonts/truetype/custom`
   3. 清缓存 `fc-cache -f -v`
   4. 导入新字体。 `/usr/bin/documentserver-generate-allfonts.sh`
 
