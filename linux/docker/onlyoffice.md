@@ -30,7 +30,7 @@ docker run -i -t -d -p 8086:80 --restart=always \
   2. 复制进 docker 内 `docker cp ./fonts/ 7603321130e4:/usr/share/fonts/truetype/custom`
   3. 修改字体权限 `chmod -R 644 /usr/share/fonts`
   4. 清缓存 `fc-cache -f -v`
-  5. 导入新字体。 `/usr/bin/documentserver-generate-allfonts.sh`
+  5. 导入新字体。 `docker exec -it distracted_mayer documentserver-generate-allfonts.sh`
 
 - 把当前镜像保存成一个 image 并保存成 tar 文件保存。
   `docker commit -a "jingying.cn" -m "onlyoffice-chinesefonts" [镜像 id] onlyoffice:v1 -a 作者 -m 镜像描述 最后是镜像名称和版本`
