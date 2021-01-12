@@ -76,3 +76,27 @@ docker save -o onlyoffice-chinesefonts.tar onlyoffice:v1
    `sudo docker images -a`
    在图像列表中找到不必要的图像 ID 并删除图像：
    `sudo docker rmi {{OLD_DOCUMENT_SERVER_IMAGE_ID}}`
+## onlyoffice nginx配置
+```
+  server {
+    server_name onlyoffice.qzrobot.top;
+    listen 443 ssl;
+    ssl_certificate /root/1591072824883.pem;
+    ssl_certificate_key /root/1591072817311.key;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+    listen 80;
+    if ($scheme = http) {
+      return 301 https://$host:443$request_uri;
+    }
+    location / {
+      proxy_pass http://10.195.106.43:8086;
+      proxy_set_header Host $host:$server_port;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+      proxy_redirect http:// https://;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+    }
+  }
+  ```
