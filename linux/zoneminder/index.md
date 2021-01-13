@@ -24,4 +24,5 @@ docker run -d --name="zoneminder" \
 -v "/app/zoneminder/data":"/var/cache/zoneminder":rw \
 dlandon/zoneminder
 ```
+2. 要等很久系统才能打开
 `rtsp://admin:xxxx103@192.168.31.121:554/onvif1`
