@@ -8,7 +8,7 @@
 4. 创建一个容器
 
 ```sh
-docker run -i -t -d -p 8086:80 --restart=always \
+docker run -i -t -d -p 8086:80 --restart=always --name="onlyoffice" \
  -v /app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice \
  -v /app/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data \
  -v /app/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice \
