@@ -30,7 +30,7 @@ docker run -i -t -d -p 8086:80 --restart=always --name="onlyoffice" \
   2. 复制进 docker 内 `docker cp ./fonts/ 7603321130e4:/usr/share/fonts/truetype/custom`
   3. 修改字体权限 `chmod -R 644 /usr/share/fonts`
   4. 清缓存 `fc-cache -f -v`
-  5. 导入新字体。 `docker exec -it distracted_mayer documentserver-generate-allfonts.sh`
+  5. 导入新字体。 `docker exec -it onlyoffice documentserver-generate-allfonts.sh`
 
 - 把当前镜像保存成一个 image 并保存成 tar 文件保存。
   `docker commit -a "jingying.cn" -m "onlyoffice-chinesefonts" [镜像 id] onlyoffice:v1 -a 作者 -m 镜像描述 最后是镜像名称和版本`
@@ -43,8 +43,7 @@ docker save -o onlyoffice-chinesefonts.tar onlyoffice:v1
 
 1. 关闭 ONLYOFFICE
    由于操作特性，ONLYOFFICE Docs 仅在文档的所有编辑者都关闭了文档之后才保存该文档。为避免数据丢失，如果需要在应用程序更新时停止 ONLYOFFICE Docs，则必须强制断开 ONLYOFFICE Docs 用户的连接。为此，请执行以下脚本：
-   `sudo docker exec {{DOCUMENT_SERVER_ID}} documentserver-prepare4shutdown.sh`
-   其中`{{DOCUMENT_SERVER_ID}}`代表 ONLYOFFICE Docs 容器名称或 ID。
+   `sudo docker exec onlyoffice documentserver-prepare4shutdown.sh`
    您可以使用 Docker 命令轻松列出当前的 ONLYOFFICE Docs 容器名称或 ID，该命令将列出所有现有容器：
    `sudo docker ps -a`
    执行脚本可能需要很长时间（最多 5 分钟）。
@@ -76,6 +75,7 @@ docker save -o onlyoffice-chinesefonts.tar onlyoffice:v1
    `sudo docker images -a`
    在图像列表中找到不必要的图像 ID 并删除图像：
    `sudo docker rmi {{OLD_DOCUMENT_SERVER_IMAGE_ID}}`
+4. 手动启动 `sudo docker exec -it onlyoffice /app/ds/run-document-server.sh`
 ## onlyoffice nginx配置
 ```
   server {
