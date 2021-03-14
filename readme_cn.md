@@ -4,19 +4,19 @@
 
 ## 开发环境安装及配置
 
-- [开发环境安装及配置](./Dev_Environment.md)
+- [开发环境安装及配置](./vex/Dev_Environment.md)
 
 ## 关于免密登录
 
-- [GIT 免密登录](./git_id_ras_support.md)
+- [GIT 免密登录](./git/git_id_ras_support.md)
 
 ## 编程相关
 
-- [编程相关](./about_program.md)
+- [编程相关](./vex/about_program.md)
 
 ## GIT 命令
 
-- [GIT 命令](./about_git.md)
+- [GIT 命令](./git/about_git.md)
 
 ## Linux 常用命令
 
