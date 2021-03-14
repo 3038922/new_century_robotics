@@ -5,29 +5,29 @@
 - [下载](https://qzrobot.top/index.php/s/ckFtR2YwynSrSiz/download)
 - 安装的时候选择`使用C++的桌面开发`和 `使用c++的Linux开发`
 
-![avatar](./pic/0.visualstudio.jpg)
+![avatar](/pic/0.visualstudio.jpg)
 
 2. 安装 cmake
 
 - [下载](https://qzrobot.top/index.php/s/9PpsXD9yxAd85sd/download)
 - 双击打开安装。请注意，此步骤选择第二条添加路径，如下所示。
 
-![avatar](./pic/1.cmake.jpg)
+![avatar](/pic/1.cmake.jpg)
 
 3. 安装 vscode
 
 - [下载](https://qzrobot.top/index.php/s/ySZieKANW5GedZM/download)
 - 选择步骤如下：
 
-![avatar](./pic/2.vscode.jpg)
+![avatar](/pic/2.vscode.jpg)
 
 4. 安装 git
 
 - [下载](https://qzrobot.top/index.php/s/afkWMfGGrZxZcaR/download)
 - 选择步骤如下：
 
-![avatar](./pic/3.git-1.jpg)
-![avatar](./pic/3.git-2.jpg)
+![avatar](/pic/3.git-1.jpg)
+![avatar](/pic/3.git-2.jpg)
 
 - git 全局配置用户名 `git config --global user.name "nameVal"`
 - git 全局配置邮箱 `git config --global user.email "eamil@qq.com"`
@@ -38,7 +38,7 @@
 - 确保选中 `Add Python 3.x to Path`.
 - 然后选 `Install Now` 默认安装到 C 盘即可
 
-![avatar](./pic/4.python.jpg)
+![avatar](/pic/4.python.jpg)
 
 6. 使用脚本自动化安装和配置环境变量
 
@@ -56,7 +56,7 @@
 
 
 
-![avatar](./pic/7.环境变量-1.jpg)
+![avatar](/pic/7.环境变量-1.jpg)
 
 - 执行完毕后,重新启动计算机。
 
@@ -66,11 +66,11 @@
 
 - 按下 `ctrl + shift + p` 输入 `sync download setting`
 
-![avatar](./pic/8.vscode-2.jpg)
+![avatar](/pic/8.vscode-2.jpg)
 
 - 点击 `download public gist` 输入 `6c091a7b4ddcb213e72d430dac23422f` 回车.
 
-![avatar](./pic/8.vscode-3.jpg)
+![avatar](/pic/8.vscode-3.jpg)
 
 - 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
 
