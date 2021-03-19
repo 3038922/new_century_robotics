@@ -66,16 +66,7 @@ if ($powershellVersion -ge "5.0.0.0") {
     else {
         Write-Host "开始下载PROS.zip" -ForegroundColor Green
         $client.DownloadFile('https://qzrobot.top/index.php/s/PSbyBdMJ2Ti8ZT8/download', 'c:/temp/PROS.zip')
-    }
-    Start-Sleep -Milliseconds 200  # 延迟0.2秒
-    if ($(Test-Path C:\temp\extern_script.zip)) {
-        Write-Host "c:\temp\extern_script.zip 已存在无需重新下载" -ForegroundColor Yellow
-    }
-    else {
-        Write-Host "开始下载extern_script.zip" -ForegroundColor Green
-        $client.DownloadFile('https://qzrobot.top/index.php/s/txT4NbJ4XLsBNCB/download', 'c:/temp/extern_script.zip')
-    }
-   
+    }   
     # 解压缩
     $isCcls = Test-Path C:\ccls
     if ($isCcls) {
@@ -132,17 +123,17 @@ if ($powershellVersion -ge "5.0.0.0") {
     $p = & { prosv5 --version } 2>&1
     if ($p -is [System.Management.Automation.ErrorRecord]) {
         Write-Host "pros-cli没有安装或者环境变量没有添加,开始安装" -ForegroundColor yellow
-        & pip.exe install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl -i https://mirrors.aliyun.com/pypi/simple/
+        & pip.exe install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/
     }
     else {
         Write-Host  $p -ForegroundColor Green
     }
 
     # 安装扩展脚本
-    $targetPath = "C:\Users\$env:UserName\AppData\Local\Programs\Python\Python38\Lib\site-packages\pros\common\ui\"
-    $tmpFileName = 'c:\temp\__init__.py'
-    Write-Host  "正在向 $targetPath 覆盖 __init__.py" -ForegroundColor Green
-    Copy-Item -Path $tmpFileName -Destination $targetPath -Force
+    # $targetPath = "C:\Users\$env:UserName\AppData\Local\Programs\Python\Python38\Lib\site-packages\pros\common\ui\"
+    # $tmpFileName = 'c:\temp\__init__.py'
+    # Write-Host  "正在向 $targetPath 覆盖 __init__.py" -ForegroundColor Green
+    # Copy-Item -Path $tmpFileName -Destination $targetPath -Force
 
     # $targetPath = "C:\Users\$env:UserName\AppData\Roaming\PROS\templates"
     # $tmpFileName = 'c:\temp\kernel@3.2.1'

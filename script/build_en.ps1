@@ -121,7 +121,7 @@ if ($powershellVersion -ge "5.0.0.0") {
     $p = & { prosv5 --version } 2>&1
     if ($p -is [System.Management.Automation.ErrorRecord]) {
         Write-Host "pros-cli No installation or environment variables added,Installing" -ForegroundColor yellow
-        & pip.exe install https://github.com/purduesigbots/pros-cli/releases/download/3.1.4/pros_cli_v5-3.1.4-py3-none-any.whl
+        & pip.exe install --upgrade pros-cli
     }
     else {
         Write-Host  $p -ForegroundColor Green
