@@ -118,7 +118,7 @@ if ($powershellVersion -ge "5.0.0.0") {
 
     #安装PROS工具链
     Write-Host "Checking pros-cli is installed"  -ForegroundColor Green
-    $p = & { prosv5 --version } 2>&1
+    $p = & { pros --version } 2>&1
     if ($p -is [System.Management.Automation.ErrorRecord]) {
         Write-Host "pros-cli No installation or environment variables added,Installing" -ForegroundColor yellow
         & pip.exe install --upgrade pros-cli
