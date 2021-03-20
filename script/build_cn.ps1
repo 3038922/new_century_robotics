@@ -1,7 +1,6 @@
 # 新世纪机器人社win10系统环境变量配置
 
-Write-Host "此版本使用新世纪机器人社(中国)安装源" -ForegroundColor Green
-
+Write-Host "此版本使用新世纪机器人学院(中国)安装源" -ForegroundColor Green
 # 必备软件安装检查
 Write-Host "正在检查cmake是否安装"  -ForegroundColor Green
 $p = & { cmake --version } 2>&1
@@ -49,6 +48,19 @@ $powershellVersion = $host.Version.ToString()
 Write-Host "创建临时文件夹 c:\temp" -ForegroundColor Green
 & mkdir c:/temp
 if ($powershellVersion -ge "5.0.0.0") {
+    #下载wirar
+    #下载wirar
+    $client = new-object System.Net.WebClient #创建下载对象
+    if ( $(Test-Path C:\temp\winrar.exe)) {
+        Write-Host "c:\temp\winrar.exe 已存在无需重新下载" -ForegroundColor Yellow
+    }
+    else {
+        Write-Host "开始下载winrar.exe" -ForegroundColor Green
+        $client.DownloadFile('https://qzrobot.top/index.php/s/EgsQdNJzZKjrGCz/download/WinRAR.exe', 'c:/temp/winrar.exe')
+    }
+    Start-Sleep -Milliseconds 200  # 延迟0.2秒
+    & c:\temp\winrar.exe /S /v /qn #执行安装 
+
     #下载各种压缩包
     $client = new-object System.Net.WebClient #创建下载对象
     
@@ -85,20 +97,21 @@ if ($powershellVersion -ge "5.0.0.0") {
         Write-Host "检测到 c:\llvm 文件夹已经存在,正在删除" -ForegroundColor Yellow
         Remove-Item C:\llvm\ -recurse -force
     }
+    #单步解压
+    $cmd = 'c:\Program Files\WinRAR\winrar.exe'
+    $args = 'x -ibck -y c:\temp\ninja+ccls+llvm.zip c:\'
     Write-Host "开始解压缩ninja+ccls+llvm.zip" -ForegroundColor Green
-    Expand-Archive -Path C:\temp\ninja+ccls+llvm.zip -DestinationPath  C:\
+    Start-Process  $cmd $args -Wait #解压缩zip
 
     $isPros = Test-Path 'C:\Program Files\PROS'
     if ($isPros) {
         Write-Host "检测到 C:\Program Files\PROS\ 文件夹已经存在,正在删除" -ForegroundColor Yellow
         Remove-Item -path 'C:\Program Files\PROS\' -recurse -force
     }
-    Write-Host "开始解压缩PROS.zip" -ForegroundColor Green
-    Expand-Archive -Path C:\temp\PROS.zip -DestinationPath 'C:\Program Files\'
+    $args = 'x  -ibck -y c:\temp\PROS.zip C:\Program Files\'
+    Write-Host "开始解压缩pros.zip" -ForegroundColor Green
+    Start-Process  $cmd $args -Wait #解压缩zip
 
-    Write-Host "开始解压缩extern_script.zip" -ForegroundColor Green
-    Expand-Archive -Path c:\temp\extern_script.zip -DestinationPath c:\temp\ -Force
-    
     #添加全局变量
     $path = [environment]::GetEnvironmentVariable('Path', 'machine') # 获取数据
     $addPath = @('C:\ccls\Release', 'C:\llvm\Release\bin', 'C:\llvm\Release\lib', 'C:\ninja', 'C:\Program Files\PROS\toolchain\usr\bin')
@@ -128,23 +141,6 @@ if ($powershellVersion -ge "5.0.0.0") {
     else {
         Write-Host  $p -ForegroundColor Green
     }
-
-    # 安装扩展脚本
-    # $targetPath = "C:\Users\$env:UserName\AppData\Local\Programs\Python\Python38\Lib\site-packages\pros\common\ui\"
-    # $tmpFileName = 'c:\temp\__init__.py'
-    # Write-Host  "正在向 $targetPath 覆盖 __init__.py" -ForegroundColor Green
-    # Copy-Item -Path $tmpFileName -Destination $targetPath -Force
-
-    # $targetPath = "C:\Users\$env:UserName\AppData\Roaming\PROS\templates"
-    # $tmpFileName = 'c:\temp\kernel@3.2.1'
-    # Write-Host  "正在向 $targetPath 覆盖 kernel@3.2.1" -ForegroundColor Green
-    # Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
-
-    # $targetPath = "C:\Users\$env:UserName\AppData\Roaming\PROS\templates"
-    # $tmpFileName = 'c:\temp\okapilib@4.0.4'
-    # Write-Host  "正在向 $targetPath 覆盖 okapilib@4.0.4" -ForegroundColor Green
-    # Copy-Item -Path $tmpFileName -Destination $targetPath -Recurse -Force
-
     Write-Host  "正在安装vscode插件 setting sync" -ForegroundColor Green
     & code --install-extension shan.code-settings-sync
 
