@@ -30,6 +30,19 @@ if ($powershellVersion -ge "5.0.0.0") {
     else {
         Write-Host  $p -ForegroundColor Green
     }
+    Write-Host "正在检查vscode是否安装"  -ForegroundColor Green
+    $p = & { code --version } 2>&1
+    if ($p -is [System.Management.Automation.ErrorRecord]) {
+        Write-Host "vscode没有安装或者环境变量没有添加" -ForegroundColor Red
+        Write-Host "开始下载vscode.exe" -ForegroundColor Green
+        $client.DownloadFile('https://qzrobot.top/index.php/s/ySZieKANW5GedZM/download/VSCode.exe', 'c:/temp/vscode.exe')
+        Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Start-Process 'c:\temp\vscode.exe'-Wait #执行安装
+        return
+    }
+    else {
+        Write-Host  $p -ForegroundColor Green
+    }
     Write-Host "正在检查git是否安装"  -ForegroundColor Green
     $p = & { git --version } 2>&1
     if ($p -is [System.Management.Automation.ErrorRecord]) {
@@ -54,20 +67,6 @@ if ($powershellVersion -ge "5.0.0.0") {
     else {
         Write-Host  $p -ForegroundColor Green
     }
-    Write-Host "正在检查vscode是否安装"  -ForegroundColor Green
-    $p = & { code --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "vscode没有安装或者环境变量没有添加" -ForegroundColor Red
-        Write-Host "开始下载vscode.exe" -ForegroundColor Green
-        $client.DownloadFile('https://qzrobot.top/index.php/s/ySZieKANW5GedZM/download/VSCode.exe', 'c:/temp/vscode.exe')
-        Start-Sleep -Milliseconds 200  # 延迟0.2秒
-        Start-Process 'c:\temp\vscode.exe'-Wait #执行安装
-        return
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-
     #下载各种压缩包
     if ( $(Test-Path C:\temp\ninja+ccls+llvm.zip)) {
         Write-Host "c:\temp\ninja+ccls+llvm.zip 已存在无需重新下载" -ForegroundColor Yellow
