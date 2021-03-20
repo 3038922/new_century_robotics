@@ -9,14 +9,15 @@ if ($powershellVersion -ge "5.0.0.0") {
     #下载wirar
     $client = new-object System.Net.WebClient #创建下载对象
     if ( $(Test-Path C:\temp\winrar.exe)) {
-        Write-Host "c:\temp\winrar.exe 已存在无需重新下载" -ForegroundColor Yellow
+        Write-Host "c:\temp\winrar.exe 已存在无需重新下载" -ForegroundColor Green
     }
     else {
         Write-Host "开始下载winrar.exe" -ForegroundColor Green
         $client.DownloadFile('https://qzrobot.top/index.php/s/EgsQdNJzZKjrGCz/download/WinRAR.exe', 'c:/temp/winrar.exe')
+        Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Write-Host "开始安装winrar.exe" -ForegroundColor Green
+        & c:\temp\winrar.exe /S /v /qn #执行安装 
     }
-    Start-Sleep -Milliseconds 200  # 延迟0.2秒
-    & c:\temp\winrar.exe /S /v /qn #执行安装 
     # 必备软件安装检查
     Write-Host "正在检查cmake是否安装"  -ForegroundColor Green
     $p = & { cmake --version } 2>&1
@@ -25,6 +26,7 @@ if ($powershellVersion -ge "5.0.0.0") {
         Write-Host "开始下载cmake.exe" -ForegroundColor Green
         $client.DownloadFile('https://qzrobot.top/index.php/s/9PpsXD9yxAd85sd/download/cmake.msi', 'c:/temp/cmake.msi')
         Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Write-Host "开始安装cmake.msi" -ForegroundColor Green
         Start-Process  'c:\temp\cmake.msi'-Wait #执行安装
     }
     else {
@@ -37,8 +39,8 @@ if ($powershellVersion -ge "5.0.0.0") {
         Write-Host "开始下载vscode.exe" -ForegroundColor Green
         $client.DownloadFile('https://qzrobot.top/index.php/s/ySZieKANW5GedZM/download/VSCode.exe', 'c:/temp/vscode.exe')
         Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Write-Host "开始安装vscode.exe" -ForegroundColor Green
         Start-Process 'c:\temp\vscode.exe'-Wait #执行安装
-        return
     }
     else {
         Write-Host  $p -ForegroundColor Green
@@ -50,6 +52,7 @@ if ($powershellVersion -ge "5.0.0.0") {
         Write-Host "开始下载git.exe" -ForegroundColor Green
         $client.DownloadFile('https://qzrobot.top/index.php/s/afkWMfGGrZxZcaR/download/Git.exe', 'c:/temp/Git.exe')
         Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Write-Host "开始安装Git.exe" -ForegroundColor Green
         Start-Process 'c:\temp\Git.exe'-Wait #执行安装
     }
     else {
@@ -62,6 +65,7 @@ if ($powershellVersion -ge "5.0.0.0") {
         Write-Host "开始下载python.exe" -ForegroundColor Green
         $client.DownloadFile('https://qzrobot.top/index.php/s/THniMLtpTa4j3j5/download/python.exe', 'c:/temp/python.exe')
         Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Write-Host "开始安装python.exe" -ForegroundColor Green
         Start-Process  'c:\temp\python.exe'-Wait #执行安装
     }
     else {
