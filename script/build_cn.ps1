@@ -1,54 +1,11 @@
 # 新世纪机器人社win10系统环境变量配置
 
 Write-Host "此版本使用新世纪机器人学院(中国)安装源" -ForegroundColor Green
-# 必备软件安装检查
-Write-Host "正在检查cmake是否安装"  -ForegroundColor Green
-$p = & { cmake --version } 2>&1
-if ($p -is [System.Management.Automation.ErrorRecord]) {
-    Write-Host "cmake没有安装或者环境变量没有添加" -ForegroundColor Red
-    Write-Host "本程序即将结束,请安装后再次尝试" -ForegroundColor Red
-    return
-}
-else {
-    Write-Host  $p -ForegroundColor Green
-}
-Write-Host "正在检查git是否安装"  -ForegroundColor Green
-$p = & { git --version } 2>&1
-if ($p -is [System.Management.Automation.ErrorRecord]) {
-    Write-Host "git没有安装或者环境变量没有添加" -ForegroundColor Red
-    Write-Host "本程序即将结束,请安装后再次尝试" -ForegroundColor Red
-    return
-}
-else {
-    Write-Host  $p -ForegroundColor Green
-}
-Write-Host "正在检查python是否安装"  -ForegroundColor Green
-$p = & { python --version } 2>&1
-if ($p -is [System.Management.Automation.ErrorRecord]) {
-    Write-Host "python没有安装或者环境变量没有添加" -ForegroundColor Red
-    Write-Host "本程序即将结束,请安装后再次尝试" -ForegroundColor Red
-    return
-}
-else {
-    Write-Host  $p -ForegroundColor Green
-}
-Write-Host "正在检查vscode是否安装"  -ForegroundColor Green
-$p = & { code --version } 2>&1
-if ($p -is [System.Management.Automation.ErrorRecord]) {
-    Write-Host "vscode没有安装或者环境变量没有添加" -ForegroundColor Red
-    Write-Host "本程序即将结束,请安装后再次尝试" -ForegroundColor Red
-    return
-}
-else {
-    Write-Host  $p -ForegroundColor Green
-}
-
 # powershell版本检查
 $powershellVersion = $host.Version.ToString()
 Write-Host "创建临时文件夹 c:\temp" -ForegroundColor Green
 & mkdir c:/temp
 if ($powershellVersion -ge "5.0.0.0") {
-    #下载wirar
     #下载wirar
     $client = new-object System.Net.WebClient #创建下载对象
     if ( $(Test-Path C:\temp\winrar.exe)) {
@@ -60,10 +17,58 @@ if ($powershellVersion -ge "5.0.0.0") {
     }
     Start-Sleep -Milliseconds 200  # 延迟0.2秒
     & c:\temp\winrar.exe /S /v /qn #执行安装 
+    # 必备软件安装检查
+    Write-Host "正在检查cmake是否安装"  -ForegroundColor Green
+    $p = & { cmake --version } 2>&1
+    if ($p -is [System.Management.Automation.ErrorRecord]) {
+        Write-Host "cmake没有安装或者环境变量没有添加" -ForegroundColor Red
+        Write-Host "开始下载cmake.exe" -ForegroundColor Green
+        $client.DownloadFile('https://qzrobot.top/index.php/s/9PpsXD9yxAd85sd/download/cmake.msi', 'c:/temp/cmake.msi')
+        Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Start-Process  'c:\temp\cmake.msi'-Wait #执行安装
+    }
+    else {
+        Write-Host  $p -ForegroundColor Green
+    }
+    Write-Host "正在检查git是否安装"  -ForegroundColor Green
+    $p = & { git --version } 2>&1
+    if ($p -is [System.Management.Automation.ErrorRecord]) {
+        Write-Host "git没有安装或者环境变量没有添加" -ForegroundColor Red
+        Write-Host "开始下载git.exe" -ForegroundColor Green
+        $client.DownloadFile('https://qzrobot.top/index.php/s/afkWMfGGrZxZcaR/download/Git.exe', 'c:/temp/Git.exe')
+        Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Start-Process 'c:\temp\Git.exe'-Wait #执行安装
+    }
+    else {
+        Write-Host  $p -ForegroundColor Green
+    }
+    Write-Host "正在检查python是否安装"  -ForegroundColor Green
+    $p = & { python --version } 2>&1
+    if ($p -is [System.Management.Automation.ErrorRecord]) {
+        Write-Host "python没有安装或者环境变量没有添加,重新安装,并注意添加环境变量" -ForegroundColor Red
+        Write-Host "开始下载python.exe" -ForegroundColor Green
+        $client.DownloadFile('https://qzrobot.top/index.php/s/THniMLtpTa4j3j5/download/python.exe', 'c:/temp/python.exe')
+        Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Start-Process  'c:\temp\python.exe'-Wait #执行安装
+    }
+    else {
+        Write-Host  $p -ForegroundColor Green
+    }
+    Write-Host "正在检查vscode是否安装"  -ForegroundColor Green
+    $p = & { code --version } 2>&1
+    if ($p -is [System.Management.Automation.ErrorRecord]) {
+        Write-Host "vscode没有安装或者环境变量没有添加" -ForegroundColor Red
+        Write-Host "开始下载vscode.exe" -ForegroundColor Green
+        $client.DownloadFile('https://qzrobot.top/index.php/s/ySZieKANW5GedZM/download/VSCode.exe', 'c:/temp/vscode.exe')
+        Start-Sleep -Milliseconds 200  # 延迟0.2秒
+        Start-Process 'c:\temp\vscode.exe'-Wait #执行安装
+        return
+    }
+    else {
+        Write-Host  $p -ForegroundColor Green
+    }
 
     #下载各种压缩包
-    $client = new-object System.Net.WebClient #创建下载对象
-    
     if ( $(Test-Path C:\temp\ninja+ccls+llvm.zip)) {
         Write-Host "c:\temp\ninja+ccls+llvm.zip 已存在无需重新下载" -ForegroundColor Yellow
     }
@@ -143,57 +148,6 @@ if ($powershellVersion -ge "5.0.0.0") {
     }
     Write-Host  "正在安装vscode插件 setting sync" -ForegroundColor Green
     & code --install-extension shan.code-settings-sync
-
-    # Write-Host "正在检查ninja是否安装"  -ForegroundColor Green
-    # $p = & { ninja --version } 2>&1
-    # if ($p -is [System.Management.Automation.ErrorRecord]) {
-    #     Write-Host "ninja没有安装或者环境变量没有添加" -ForegroundColor Red
-    #     Write-Host "请联系陈老师" -ForegroundColor Red
-    #     return 
-    # }
-    # else {
-    #     Write-Host  $p -ForegroundColor Green
-    # }
-    # Write-Host "正在检查clang是否安装"  -ForegroundColor Green
-    # $p = & { clang --version } 2>&1
-    # if ($p -is [System.Management.Automation.ErrorRecord]) {
-    #     Write-Host "clang没有安装或者环境变量没有添加" -ForegroundColor Red
-    #     Write-Host "请联系陈老师" -ForegroundColor Red
-    #     return 
-    # }
-    # else {
-    #     Write-Host  $p -ForegroundColor Green
-    # }
-    # Write-Host "正在检查ccls是否安装"  -ForegroundColor Green
-    # $p = & { ccls --version } 2>&1
-    # if ($p -is [System.Management.Automation.ErrorRecord]) {
-    #     Write-Host "ccls没有安装或者环境变量没有添加" -ForegroundColor Red
-    #     Write-Host "请联系陈老师" -ForegroundColor Red
-    #     return 
-    # }
-    # else {
-    #     Write-Host  $p -ForegroundColor Green
-    # }
-    # Write-Host "正在检查arm-none-eabi是否安装"  -ForegroundColor Green
-    # $p = & { arm-none-eabi-gcc --version } 2>&1
-    # if ($p -is [System.Management.Automation.ErrorRecord]) {
-    #     Write-Host "arm-none-eabi没有安装或者环境变量没有添加" -ForegroundColor Red
-    #     Write-Host "请联系陈老师" -ForegroundColor Red
-    #     return 
-    # }
-    # else {
-    #     Write-Host  $p -ForegroundColor Green
-    # }
-    # Write-Host "正在检查pros-cli是否安装"  -ForegroundColor Green
-    # $p = & { prosv5 --version } 2>&1
-    # if ($p -is [System.Management.Automation.ErrorRecord]) {
-    #     Write-Host "pros-cli没有安装或者环境变量没有添加" -ForegroundColor Red
-    #     Write-Host "请联系陈老师" -ForegroundColor Red
-    #     return 
-    # }
-    # else {
-    #     Write-Host  $p -ForegroundColor Green
-    # }
     Write-Host "正在删除临时下载存放文件夹"  -ForegroundColor Green
     Remove-Item C:\temp\ -recurse -force
     Write-Host "恭喜安装成功"  -ForegroundColor Green
