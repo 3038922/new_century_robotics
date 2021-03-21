@@ -30,7 +30,7 @@
 
 4. 安装 vscode
 
-- [下载](https://qzrobot.top/index.php/s/ySZieKANW5GedZM/download)
+- [下载](https://qzrobot.top/index.php/s/GjQZgGKfBDw2FBW/download)
 - 选择步骤如下：
 
 ![avatar](../pic/2.vscode.jpg)

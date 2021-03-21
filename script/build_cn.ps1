@@ -19,57 +19,29 @@ if ($powershellVersion -ge "5.0.0.0") {
         & c:\temp\winrar.exe /S /v /qn #执行安装 
     }
     # 必备软件安装检查
-    Write-Host "正在检查cmake是否安装"  -ForegroundColor Green
-    $p = & { cmake --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "cmake没有安装或者环境变量没有添加" -ForegroundColor Red
-        Write-Host "开始下载cmake.exe" -ForegroundColor Green
-        $client.DownloadFile('https://qzrobot.top/index.php/s/9PpsXD9yxAd85sd/download/cmake.msi', 'c:/temp/cmake.msi')
-        Start-Sleep -Milliseconds 200  # 延迟0.2秒
-        Write-Host "开始安装cmake.msi" -ForegroundColor Green
-        Start-Process  'c:\temp\cmake.msi'-Wait #执行安装
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "正在检查vscode是否安装"  -ForegroundColor Green
-    $p = & { code --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "vscode没有安装或者环境变量没有添加" -ForegroundColor Red
-        Write-Host "开始下载vscode.exe" -ForegroundColor Green
-        $client.DownloadFile('https://qzrobot.top/index.php/s/ySZieKANW5GedZM/download/VSCode.exe', 'c:/temp/vscode.exe')
-        Start-Sleep -Milliseconds 200  # 延迟0.2秒
-        Write-Host "开始安装vscode.exe" -ForegroundColor Green
-        Start-Process 'c:\temp\vscode.exe'-Wait #执行安装
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "正在检查git是否安装"  -ForegroundColor Green
-    $p = & { git --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "git没有安装或者环境变量没有添加" -ForegroundColor Red
-        Write-Host "开始下载git.exe" -ForegroundColor Green
-        $client.DownloadFile('https://qzrobot.top/index.php/s/afkWMfGGrZxZcaR/download/Git.exe', 'c:/temp/Git.exe')
-        Start-Sleep -Milliseconds 200  # 延迟0.2秒
-        Write-Host "开始安装Git.exe" -ForegroundColor Green
-        Start-Process 'c:\temp\Git.exe'-Wait #执行安装
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
-    }
-    Write-Host "正在检查python是否安装"  -ForegroundColor Green
-    $p = & { python --version } 2>&1
-    if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "python没有安装或者环境变量没有添加,重新安装,并注意添加环境变量" -ForegroundColor Red
-        Write-Host "开始下载python.exe" -ForegroundColor Green
-        $client.DownloadFile('https://qzrobot.top/index.php/s/THniMLtpTa4j3j5/download/python.exe', 'c:/temp/python.exe')
-        Start-Sleep -Milliseconds 200  # 延迟0.2秒
-        Write-Host "开始安装python.exe" -ForegroundColor Green
-        Start-Process  'c:\temp\python.exe'-Wait #执行安装
-    }
-    else {
-        Write-Host  $p -ForegroundColor Green
+    $soft =
+    @{name = 'cmake.msi'; url = '9PpsXD9yxAd85sd' },
+    @{name = 'code.exe'; url = 'GjQZgGKfBDw2FBW' },
+    @{name = 'git.exe'; url = 'afkWMfGGrZxZcaR' },
+    @{name = 'python.exe'; url = 'THniMLtpTa4j3j5' }
+    foreach ($it in $soft) {
+        $name = $it.name.Substring(0, $it.name.IndexOf('.')) 
+        Write-Host "正在检查 $name 是否安装"  -ForegroundColor Green
+        $p = Invoke-Expression($name + " --version") 2>&1
+        if ([String]::IsNullOrEmpty($p)) {
+            Write-Host $it.name "没有安装或者环境变量没有添加"-ForegroundColor Red
+            Write-Host "开始下载" $it.name -ForegroundColor Yellow
+            $newUrl = 'https://qzrobot.top/index.php/s/' + $it.url + '/download/' + $it.name
+            $newPath = 'c:/temp/' + $it.name
+            Write-Host  $newUrl    $newPath  -ForegroundColor Green
+            $client.DownloadFile($newUrl, $newPath)
+            Start-Sleep -Milliseconds 200  # 延迟0.2秒
+            Write-Host '开始安装' $it.name -ForegroundColor Green
+            Start-Process $newPath -Wait #执行安装
+        }
+        else {
+            Write-Host $p -ForegroundColor Green
+        }
     }
     #下载各种压缩包
     if ( $(Test-Path C:\temp\ninja+ccls+llvm.zip)) {
