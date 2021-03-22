@@ -7,5 +7,6 @@ else {
 
 }
 
-c:/temp/python-3.7.0.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
-https://www.jianshu.com/p/95c5194857b7
+#& msiexec /i "C:\temp\WinRAR.exe" TARGETDIR="C:\temp" /qb
+
+#c:/temp/python-3.7.0.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
