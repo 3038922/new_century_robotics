@@ -1,25 +1,22 @@
-$soft =
-@{name = 'cmake.msi'; url = '9PpsXD9yxAd85sd' },
-@{name = 'code.exe'; url = 'GjQZgGKfBDw2FBW' },
-@{name = 'git.exe'; url = 'afkWMfGGrZxZcaR' },
-@{name = 'python.exe'; url = 'THniMLtpTa4j3j5' }
-$client = new-object System.Net.WebClient #´´½¨ÏÂÔØ¶ÔÏó
-foreach ($it in $soft) {
-    $name = $it.name.Substring(0, $it.name.IndexOf('.')) 
-    Write-Host "ÕıÔÚ¼ì²é $name ÊÇ·ñ°²×°"  -ForegroundColor Green
-    $p = Invoke-Expression($name + " --version") 2>&1
-    if ([String]::IsNullOrEmpty($p)) {
-        Write-Host $it.name "Ã»ÓĞ°²×°»òÕß»·¾³±äÁ¿Ã»ÓĞÌí¼Ó"-ForegroundColor Red
-        Write-Host "¿ªÊ¼ÏÂÔØ" $it.name -ForegroundColor Yellow
-        $newUrl = 'https://qzrobot.top/index.php/s/' + $it.url + '/download/' + $it.name
-        $newPath = 'c:/temp/' + $it.name
-        Write-Host  $newUrl    $newPath  -ForegroundColor Green
-        $client.DownloadFile($newUrl, $newPath)
-        Start-Sleep -Milliseconds 200  # ÑÓ³Ù0.2Ãë
-        Write-Host '¿ªÊ¼°²×°' $it.name -ForegroundColor Green
-        Start-Process $newPath -Wait #Ö´ĞĞ°²×°
-    }
-    else {
-        Write-Host $p -ForegroundColor Green
-    }
+$ncrRoboticsPath = "c:\ncrRobotics\"
+$tmpPath = $ncrRoboticsPath + "temp\"
+if (!(Test-Path -Path $ncrRoboticsPath )) {
+    Write-Host "åˆ›å»ºncrRoboticsæ–‡ä»¶å¤¹ $path" -ForegroundColor Green
+    & mkdir $ncrRoboticsPath 
+}
+if (!(Test-Path -Path $tmpPath)) {
+    Write-Host "åˆ›å»ºä¸´æ—¶æ–‡ä»¶å¤¹ $tmpPath" -ForegroundColor Green
+    & mkdir $tmpPath
+}
+#ä¸‹è½½wirar
+$client = new-object System.Net.WebClient #åˆ›å»ºä¸‹è½½å¯¹è±¡
+if (Test-Path("C:\Program Files\WinRAR\WinRAR.exe")) {
+    Write-Host "winrar.exe å·²å­˜åœ¨æ— éœ€é‡æ–°ä¸‹è½½" -ForegroundColor Green
+}
+else {
+    Write-Host "å¼€å§‹ä¸‹è½½winrar.exe" -ForegroundColor Green
+    $client.DownloadFile('https://qzrobot.top/index.php/s/EgsQdNJzZKjrGCz/download/WinRAR.exe', $tmpPath + 'winrar.exe')
+    Start-Sleep -Milliseconds 200  # å»¶è¿Ÿ0.2ç§’
+    Write-Host "å¼€å§‹å®‰è£…winrar.exe" -ForegroundColor Green
+    Invoke-Expression($tmpPath + "winrar.exe /S /v /qn") 
 }

@@ -24,7 +24,7 @@ if ($powershellVersion -ge "5.0.0.0") {
         $client.DownloadFile('https://qzrobot.top/index.php/s/EgsQdNJzZKjrGCz/download/WinRAR.exe', $tmpPath + 'winrar.exe')
         Start-Sleep -Milliseconds 200  # 延迟0.2秒
         Write-Host "开始安装winrar.exe" -ForegroundColor Green
-        & $tmpPath winrar.exe /S /v /qn #执行安装 
+        Invoke-Expression($tmpPath + "winrar.exe /S /v /qn") 
     }
     # 必备软件安装检查
     $soft =
