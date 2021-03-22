@@ -20,3 +20,5 @@ else {
     Write-Host "开始安装winrar.exe" -ForegroundColor Green
     Invoke-Expression($tmpPath + "winrar.exe /S /v /qn") 
 }
+c:/temp/python-3.7.0.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
+https://www.jianshu.com/p/95c5194857b7
