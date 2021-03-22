@@ -1,130 +1,123 @@
-# æ–°ä¸–çºªæœºå™¨äººç¤¾win10ç³»ç»Ÿç¯å¢ƒå˜é‡é…ç½®
+function installRARZIP($name, $url, $myPath) {
+    #ÏÂÔØ
+    if (Test-Path($tmpPath + $name)) {
+        Write-Host  $name" ÒÑ´æÔÚÎŞĞèÖØĞÂÏÂÔØ" -ForegroundColor Yellow
+    }
+    else {
+        Write-Host "¿ªÊ¼ÏÂÔØ" $name -ForegroundColor Green
+        $client.DownloadFile(('https://qzrobot.top/index.php/s/' + $url + '/download/' + $name), ($tmpPath + $name))
+    }
+    Start-Sleep -Milliseconds 200  # ÑÓ³Ù0.2Ãë
+    $args = "x -ibck -y " + $tmpPath + $name + " $ncrRoboticsPath"
+    Write-Host "¿ªÊ¼½âÑ¹Ëõ" $name "²ÎÊı" $args -ForegroundColor Green
+    Start-Process  $winrar $args -Wait #½âÑ¹Ëõzip
+    #Ìí¼Ó»·¾³±äÁ¿
+    $EnvironmentPath = [environment]::GetEnvironmentVariable('Path', 'machine') # »ñÈ¡»·¾³±äÁ¿
+    if ($EnvironmentPath.split("; ") -Contains $myPath) {
+        Write-Host "»·¾³±äÁ¿:" $myPath "ÒÑ´æÔÚ" -ForegroundColor yellow 
+    }
+    else {
+        $EnvironmentPath += ($myPath + "; ")
+        Write-Host "»·¾³±äÁ¿:" $myPath "ÒÑÌí¼Ó" -ForegroundColor green 
+        [environment]::SetEnvironmentvariable("Path", $EnvironmentPath, "machine") #È·ÈÏÉèÖÃ»·¾³±äÁ¿ user machine
+    }
+}
 
-Write-Host "æ­¤ç‰ˆæœ¬ä½¿ç”¨æ–°ä¸–çºªæœºå™¨äººå­¦é™¢(ä¸­å›½)å®‰è£…æº" -ForegroundColor Green
-# powershellç‰ˆæœ¬æ£€æŸ¥
+
+# ĞÂÊÀ¼Í»úÆ÷ÈËÉçwin10ÏµÍ³»·¾³±äÁ¿ÅäÖÃ
+
+Write-Host "´Ë°æ±¾Ê¹ÓÃĞÂÊÀ¼Í»úÆ÷ÈËÑ§Ôº(ÖĞ¹ú)°²×°Ô´" -ForegroundColor Green
+# powershell°æ±¾¼ì²é
 $powershellVersion = $host.Version.ToString()
 $ncrRoboticsPath = "c:\ncrRobotics\"
 $tmpPath = $ncrRoboticsPath + "temp\"
 if (!(Test-Path -Path $ncrRoboticsPath )) {
-    Write-Host "åˆ›å»ºncrRoboticsæ–‡ä»¶å¤¹ $path" -ForegroundColor Green
+    Write-Host "´´½¨ncrRoboticsÎÄ¼ş¼Ğ $ncrRoboticsPath" -ForegroundColor Green
     & mkdir $ncrRoboticsPath 
 }
 if (!(Test-Path -Path $tmpPath)) {
-    Write-Host "åˆ›å»ºä¸´æ—¶æ–‡ä»¶å¤¹ $tmpPath" -ForegroundColor Green
+    Write-Host "´´½¨ÁÙÊ±ÎÄ¼ş¼Ğ $tmpPath" -ForegroundColor Green
     & mkdir $tmpPath
 }
 if ($powershellVersion -ge "5.0.0.0") {
-    #ä¸‹è½½wirar
-    $client = new-object System.Net.WebClient #åˆ›å»ºä¸‹è½½å¯¹è±¡
+    #ÏÂÔØwirar
+    $client = new-object System.Net.WebClient #´´½¨ÏÂÔØ¶ÔÏó
     if (Test-Path("C:\Program Files\WinRAR\WinRAR.exe")) {
-        Write-Host "winrar.exe å·²å­˜åœ¨æ— éœ€é‡æ–°ä¸‹è½½" -ForegroundColor Green
+        Write-Host "winrar.exe ÒÑ´æÔÚÎŞĞèÖØĞÂÏÂÔØ" -ForegroundColor Green
     }
     else {
-        Write-Host "å¼€å§‹ä¸‹è½½winrar.exe" -ForegroundColor Green
+        Write-Host "¿ªÊ¼ÏÂÔØwinrar.exe" -ForegroundColor Green
         $client.DownloadFile('https://qzrobot.top/index.php/s/EgsQdNJzZKjrGCz/download/WinRAR.exe', $tmpPath + 'winrar.exe')
-        Start-Sleep -Milliseconds 200  # å»¶è¿Ÿ0.2ç§’
-        Write-Host "å¼€å§‹å®‰è£…winrar.exe" -ForegroundColor Green
+        Start-Sleep -Milliseconds 200  # ÑÓ³Ù0.2Ãë
+        Write-Host "¿ªÊ¼°²×°winrar.exe" -ForegroundColor Green
         Invoke-Expression($tmpPath + "winrar.exe /S /v /qn") 
     }
-    # å¿…å¤‡è½¯ä»¶å®‰è£…æ£€æŸ¥
+    # ±Ø±¸Èí¼ş°²×°¼ì²é
     $soft =
-    @{name = 'cmake.msi'; url = '9PpsXD9yxAd85sd' },
-    @{name = 'code.exe'; url = 'GjQZgGKfBDw2FBW' },
-    @{name = 'git.exe'; url = 'afkWMfGGrZxZcaR' },
-    @{name = 'python.exe'; url = 'THniMLtpTa4j3j5' }
+    @{name = 'code.exe'; url = 'GjQZgGKfBDw2FBW'; args = ' /VERYSILENT /mergetasks=!runcode.desktopicon /ALLUSERS' },
+    @{name = 'git.exe'; url = 'afkWMfGGrZxZcaR'; args = ' /NORESTART /NOCANCEL /SP- /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /ALLUSERS /COMPONENTS="icons,ext\reg\shellhere,assoc,assoc_sh"' },
+    @{name = 'python.exe'; url = 'THniMLtpTa4j3j5'; args = ' /quiet InstallAllUsers=1 PrependPath=1 Include_test=0' }
     foreach ($it in $soft) {
         $name = $it.name.Substring(0, $it.name.IndexOf('.')) 
-        Write-Host "æ­£åœ¨æ£€æŸ¥ $name æ˜¯å¦å®‰è£…"  -ForegroundColor Green
+        Write-Host "ÕıÔÚ¼ì²é $name ÊÇ·ñ°²×°"  -ForegroundColor Green
         $p = Invoke-Expression($name + " --version") 2>&1
         if ([String]::IsNullOrEmpty($p)) {
-            Write-Host $it.name "æ²¡æœ‰å®‰è£…æˆ–è€…ç¯å¢ƒå˜é‡æ²¡æœ‰æ·»åŠ "-ForegroundColor Red
-            Write-Host "å¼€å§‹ä¸‹è½½" $it.name -ForegroundColor Yellow
-            $newUrl = 'https://qzrobot.top/index.php/s/' + $it.url + '/download/' + $it.name
-            $newPath = $tmpPath + $it.name
-            Write-Host  $newUrl  $newPath  -ForegroundColor Green
-            $client.DownloadFile($newUrl, $newPath)
-            Start-Sleep -Milliseconds 200  # å»¶è¿Ÿ0.2ç§’
-            Write-Host 'å¼€å§‹å®‰è£…' $it.name -ForegroundColor Green
-            Start-Process $newPath -Wait #æ‰§è¡Œå®‰è£…
+            Write-Host $it.name "Ã»ÓĞ°²×°»òÕß»·¾³±äÁ¿Ã»ÓĞÌí¼Ó"-ForegroundColor Red
+            Write-Host "¿ªÊ¼ÏÂÔØ" $it.name -ForegroundColor Yellow
+            $client.DownloadFile(('https://qzrobot.top/index.php/s/' + $it.url + '/download/' + $it.name), ($tmpPath + $it.name))
+            Start-Sleep -Milliseconds 200  # ÑÓ³Ù0.2Ãë
+            Write-Host '¿ªÊ¼°²×°' $it.name -ForegroundColor Green
+            Start-Process ($tmpPath + $it.name ) $it.args -Wait #Ö´ĞĞ°²×°
         }
         else {
             Write-Host $p -ForegroundColor Green
         }
     }
-    #ä¸‹è½½å„ç§å‹ç¼©åŒ…
-    
-    if (Test-Path ($ncrRoboticsPath + "ccls")) {
-        Write-Host "æ£€æµ‹åˆ° ccls æ–‡ä»¶å¤¹å·²ç»å­˜åœ¨, æ­£åœ¨åˆ é™¤" -ForegroundColor Yellow
-        Remove-Item ($ncrRoboticsPath + "ccls") -recurse -force
-    }
-    
-    if (Test-Path ($ncrRoboticsPath + "ninja")) {
-        Write-Host "æ£€æµ‹åˆ° ninja æ–‡ä»¶å¤¹å·²ç»å­˜åœ¨, æ­£åœ¨åˆ é™¤" -ForegroundColor Yellow
-        Remove-Item  ($ncrRoboticsPath + "ninja") -recurse -force
-    }
-    if (Test-Path ($ncrRoboticsPath + "llvm")) {
-        Write-Host "æ£€æµ‹åˆ° llvm æ–‡ä»¶å¤¹å·²ç»å­˜åœ¨, æ­£åœ¨åˆ é™¤" -ForegroundColor Yellow
-        Remove-Item  ($ncrRoboticsPath + "llvm") -recurse -force
-    }
-
+    #ÏÂÔØ¸÷ÖÖÑ¹Ëõ°ü
     $zip =
-    @{name = 'ninja+ccls+llvm.zip'; url = 'bTdZJ6SefSGbLzd' },
-    @{name = 'PROS.zip'; url = 'PSbyBdMJ2Ti8ZT8' }
-    $cmd = "$ncrRoboticsPath\WinRAR\winrar.exe"
+    @{name = 'cmake.rar'; url = '6bAiQPsa497goAe'; path = ($ncrRoboticsPath + "CMake\bin") },
+    @{name = 'ninja.rar'; url = 'dcSrTgns6qEfDw8'; path = ($ncrRoboticsPath + "ninja") },
+    @{name = 'LLVM.rar'; url = '8ZE2KoQLYSEqrpa'; path = ($ncrRoboticsPath + "llvm\Release\bin") },
+    @{name = 'ccls.rar'; url = '36qwxFrbbpydBJS'; path = ($ncrRoboticsPath + "ccls\Release") },
+    @{name = 'PROS.zip'; url = 'PSbyBdMJ2Ti8ZT8'; path = ($ncrRoboticsPath + "PROS\toolchain\usr\bin") }
+    $winrar = "C:\Program Files\WinRAR\winrar.exe"
     foreach ($it in $zip) {
-        #ä¸‹è½½
-        if (Test-Path($tmpPath + $it.name)) {
-            Write-Host  $it.name" å·²å­˜åœ¨æ— éœ€é‡æ–°ä¸‹è½½" -ForegroundColor Yellow
+        $name = $it.name.Substring(0, $it.name.IndexOf('.')) 
+        Write-Host "ÕıÔÚ¼ì²é $name ÊÇ·ñ°²×°"  -ForegroundColor Green
+        if (Test-Path ($ncrRoboticsPath + $name)) {
+            if ((Read-Host ("ÊÇ·ñ¸üĞÂ" + $it.name + "?[Y/N]")) -eq 'y') {
+                Write-Host "¼ì²âµ½ $name ÎÄ¼ş¼ĞÒÑ¾­´æÔÚ, ÕıÔÚÉ¾³ı" -ForegroundColor Yellow
+                Remove-Item ($ncrRoboticsPath + $name) -recurse -force
+                installRARZIP -name $it.name -url $it.url -myPath $it.path 
+            }
         }
         else {
-            Write-Host "å¼€å§‹ä¸‹è½½" $it.name -ForegroundColor Green
-            $newUrl = 'https://qzrobot.top/index.php/s/' + $it.url + '/download/' + $it.name
-            $newPath = $tmpPath + $it.name
-            Write-Host  $newUrl  $newPath  -ForegroundColor Green
-            $client.DownloadFile($newUrl, $newPath)
-        }
-        Start-Sleep -Milliseconds 200  # å»¶è¿Ÿ0.2ç§’
-        $args = "x -ibck -y " + $tmpPath + $it.name + " $ncrRoboticsPath"
-        Write-Host "å¼€å§‹è§£å‹ç¼©" $it.name "å‚æ•°" $args -ForegroundColor Green
-        Start-Process  $cmd $args -Wait #è§£å‹ç¼©zip
-    }
-    #æ·»åŠ å…¨å±€å˜é‡
-    $path = [environment]::GetEnvironmentVariable('Path', 'machine') # è·å–æ•°æ®
-    $addPath = ($ncrRoboticsPath + "ccls\Release"), ( $ncrRoboticsPath + "llvm\Release\bin"), ($ncrRoboticsPath + "llvm\Release\lib"), ( $ncrRoboticsPath + "ninja"), ($ncrRoboticsPath + "PROS\toolchain\usr\bin")
-    
-    foreach ($it in $addPath) { 
-        if ($path.split("; ") -Contains $it) {
-            Write-Host "ç¯å¢ƒå˜é‡: $it å·²å­˜åœ¨" -ForegroundColor yellow 
-        }
-        else {
-            $path += ($it + "; ")
-            Write-Host "ç¯å¢ƒå˜é‡: $it å·²æ·»åŠ " -ForegroundColor green 
+            installRARZIP -name $it.name -url $it.url -myPath $it.path 
         }
     }
-    [environment]::SetEnvironmentvariable("Path", $path, "machine") #è®¾ç½®ç¯å¢ƒå˜é‡ user machine
-    # pros_toolchainè®¾ç½®
-    Write-Host "æ­£åœ¨è®¾ç½®prosToolchainè·¯å¾„" -ForegroundColor Green
+    # pros_toolchainÉèÖÃ
+    Write-Host "ÕıÔÚÉèÖÃprosToolchainÂ·¾¶" -ForegroundColor Green
     $prosToolchainPath = "$ncrRoboticsPath\PROS\toolchain\usr"
-    [environment]::SetEnvironmentvariable("PROS_TOOLCHAIN", $prosToolchainPath, "machine") #è®¾ç½®ç¯å¢ƒå˜é‡ user machine
+    [environment]::SetEnvironmentvariable("PROS_TOOLCHAIN", $prosToolchainPath, "machine") #ÉèÖÃ»·¾³±äÁ¿ user machine
 
-    #å®‰è£…PROSå·¥å…·é“¾
-    Write-Host "æ­£åœ¨æ£€æŸ¥pros-cliæ˜¯å¦å®‰è£…"  -ForegroundColor Green
+    #°²×°PROS¹¤¾ßÁ´
+    Write-Host "ÕıÔÚ¼ì²épros-cliÊÇ·ñ°²×°"  -ForegroundColor Green
     $p = & { pros --version } 2>&1
     if ($p -is [System.Management.Automation.ErrorRecord]) {
-        Write-Host "pros-cliæ²¡æœ‰å®‰è£…æˆ–è€…ç¯å¢ƒå˜é‡æ²¡æœ‰æ·»åŠ , å¼€å§‹å®‰è£…" -ForegroundColor yellow
+        Write-Host "pros-cliÃ»ÓĞ°²×°»òÕß»·¾³±äÁ¿Ã»ÓĞÌí¼Ó, ¿ªÊ¼°²×°" -ForegroundColor yellow
         & pip.exe install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/
     }
     else {
         Write-Host  $p -ForegroundColor Green
     }
-    Write-Host  "æ­£åœ¨å®‰è£…vscodeæ’ä»¶ setting sync" -ForegroundColor Green
-    & code --install-extension shan.code-settings-sync
-    Write-Host "æ­£åœ¨åˆ é™¤ä¸´æ—¶ä¸‹è½½å­˜æ”¾æ–‡ä»¶å¤¹"  -ForegroundColor Green
-    Remove-Item $tmpPath\ -recurse -force
-    Write-Host "æ­å–œå®‰è£…æˆåŠŸ"  -ForegroundColor Green
+    Write-Host  "ÕıÔÚ°²×°vscode²å¼ş setting sync" -ForegroundColor Green
+    & code.exe --install-extension shan.code-settings-sync 
+    Write-Host "ÕıÔÚÉ¾³ıÁÙÊ±ÏÂÔØ´æ·ÅÎÄ¼ş¼Ğ"  -ForegroundColor Green
+    # Remove-Item $tmpPath\ -recurse -force
+    Write-Host "¹§Ï²°²×°³É¹¦"  -ForegroundColor Green
 }
 else {
-    Write-Host "powershellå½“å‰ç‰ˆæœ¬ä¸º:$powershellVersion, è¯·å‡çº§powershellè‡³äº5.xä»¥ä¸Š" -ForegroundColor Red
+    Write-Host "powershellµ±Ç°°æ±¾Îª:$powershellVersion, ÇëÉı¼¶powershellÖÁÓÚ5.xÒÔÉÏ" -ForegroundColor Red
 }
 
 
