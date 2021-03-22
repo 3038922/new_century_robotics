@@ -74,7 +74,7 @@
 
 8. 字体安装
 
-- [下载](https://qzrobot.top/index.php/s/b8DMCSHAEdD964J)
+- [下载](https://qzrobot.top/index.php/s/w2P4FQ2nYq744FJ/download)
 - 双击安装
 
 ## linux 下安装开发环境
