@@ -74,8 +74,8 @@
 
 8. 字体安装
 
-- [下载](https://qzrobot.top/index.php/s/D7NiNdiLbAZ4KDJ/download)
-- 双击安装
+- [下载](https://qzrobot.top/index.php/s/K6Lk8LFAAmsirip/download/font.rar)
+- 解压缩后,全选批量安装
 
 ## linux 下安装开发环境
 
