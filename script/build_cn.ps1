@@ -54,9 +54,9 @@ if ($powershellVersion -ge "5.0.0.0") {
     }
     # 必备软件安装检查
     $soft =
-    @{name = 'code.exe'; url = 'GjQZgGKfBDw2FBW'; args = ' /VERYSILENT /mergetasks=!runcode.desktopicon /ALLUSERS' },
-    @{name = 'git.exe'; url = 'afkWMfGGrZxZcaR'; args = ' /NORESTART /NOCANCEL /SP- /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /ALLUSERS /COMPONENTS="icons,ext\reg\shellhere,assoc,assoc_sh"' },
-    @{name = 'python.exe'; url = 'THniMLtpTa4j3j5'; args = ' /quiet InstallAllUsers=1 PrependPath=1 Include_test=0' }
+    @{name = 'python.exe'; url = 'THniMLtpTa4j3j5'; args = ' /quiet InstallAllUsers=1 PrependPath=1' },
+    @{name = 'code.exe'; url = 'GjQZgGKfBDw2FBW'; args = ' /verysilent /suppressmsgboxes /mergetasks=!runcode,desktopicon /ALLUSERS' },
+    @{name = 'git.exe'; url = 'afkWMfGGrZxZcaR'; args = ' /VERYSILENT /ALLUSERS /COMPONENTS="icons,ext\reg\shellhere,assoc,assoc_sh"' }
     foreach ($it in $soft) {
         $name = $it.name.Substring(0, $it.name.IndexOf('.')) 
         Write-Host "正在检查 $name 是否安装"  -ForegroundColor Green
