@@ -111,7 +111,7 @@ if ($powershellVersion -ge "5.0.0.0") {
         Write-Host  $p -ForegroundColor Green
     }
     Write-Host  "正在安装vscode插件 setting sync" -ForegroundColor Green
-    & code.exe --install-extension shan.code-settings-sync 
+    & code --install-extension shan.code-settings-sync 
     Write-Host "正在删除临时下载存放文件夹"  -ForegroundColor Green
     # Remove-Item $tmpPath\ -recurse -force
     Write-Host "恭喜安装成功"  -ForegroundColor Green
