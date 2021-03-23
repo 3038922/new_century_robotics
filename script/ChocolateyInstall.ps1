@@ -43,7 +43,8 @@ $searchUrl = ($packageRepo.Trim('/'), 'Packages()?$filter=(Id%20eq%20%27chocolat
 New-Item $env:ALLUSERSPROFILE\choco-cache -ItemType Directory -Force
 $env:TEMP = "$env:ALLUSERSPROFILE\choco-cache"
 
-$localChocolateyPackageFilePath = Join-Path $env:TEMP 'chocolatey.nupkg'
+$localChocolateyPackageFilePath = 'c:\ncrRobotics\temp\chocolatey.0.10.15.nupkg' 
+#$env:TEMP 'chocolatey.nupkg'
 $ChocoInstallPath = "$($env:SystemDrive)\ProgramData\Chocolatey\bin"
 $env:ChocolateyInstall = "$($env:SystemDrive)\ProgramData\Chocolatey"
 $env:Path += ";$ChocoInstallPath"
@@ -85,11 +86,11 @@ Fix-PowerShellOutputRedirectionBug
 # will typically produce a message for PowerShell v2 (just an info
 # message though)
 try {
-    # Set TLS 1.2 (3072), then TLS 1.1 (768), then TLS 1.0 (192)
+    # Set TLS 1.2 (3072), then TLS 1.1 (768), then TLS 1.0 (192), finally SSL 3.0 (48)
     # Use integers because the enumeration values for TLS 1.2 and TLS 1.1 won't
     # exist in .NET 4.0, even though they are addressable if .NET 4.5+ is
     # installed (.NET 4.5 is an in-place upgrade).
-    [System.Net.ServicePointManager]::SecurityProtocol = 3072 -bor 768 -bor 192
+    [System.Net.ServicePointManager]::SecurityProtocol = 3072 -bor 768 -bor 192 -bor 48
 }
 catch {
     Write-Output 'Unable to set PowerShell to use TLS 1.2 and TLS 1.1 due to old .NET Framework installed. If you see underlying connection closed or trust errors, you may need to upgrade to .NET Framework 4.5+ and PowerShell v3+.'
@@ -282,7 +283,7 @@ function Install-ChocolateyFromPackage {
 if (!(Test-Path $ChocoInstallPath)) {
     # download the package to the local path
     if (!(Test-Path $localChocolateyPackageFilePath)) {
-        Download-Package $searchUrl $localChocolateyPackageFilePath
+        #Download-Package $searchUrl $localChocolateyPackageFilePath
     }
 
     # Install Chocolatey
