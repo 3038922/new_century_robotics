@@ -100,13 +100,13 @@ Write-Host "正在检查pros-cli是否安装"  -ForegroundColor Green
 $p = & { pros --version } 2>&1
 if ($p -is [System.Management.Automation.ErrorRecord]) {
     Write-Host "pros-cli没有安装或者环境变量没有添加, 开始安装" -ForegroundColor yellow
-    & pip.exe install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/
+    powershell "& pip.exe install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/"
 }
 else {
     Write-Host  $p -ForegroundColor Green
 }
 Write-Host  "正在安装vscode插件 setting sync" -ForegroundColor Green
-& code --install-extension shan.code-settings-sync 
+powershell "& code --install-extension shan.code-settings-sync" 
 
 #GIT设置
 $gitName = Invoke-Expression("git config --global user.name") 2>&1
