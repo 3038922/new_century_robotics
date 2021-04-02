@@ -21,44 +21,7 @@
   `Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope LocalMachine` 本地计算机的所有用户删除执行策略
   `Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser`删除 作用域 的执行策略 
 
-3. 安装 cmake
-
-- [下载](https://qzrobot.top/index.php/s/9PpsXD9yxAd85sd/download)
-- 双击打开安装。请注意，此步骤选择第二条添加路径，如下所示。
-
-![avatar](../pic/1.cmake.jpg)
-
-4. 安装 vscode
-
-- [下载](https://qzrobot.top/index.php/s/GjQZgGKfBDw2FBW/download)
-- 选择步骤如下：
-
-![avatar](../pic/2.vscode.jpg)
-
-5. 安装 git
-
-- [下载](https://qzrobot.top/index.php/s/afkWMfGGrZxZcaR/download)
-- 选择步骤如下：
-
-![avatar](../pic/3.git-1.jpg)
-![avatar](../pic/3.git-2.jpg)
-
-- git 全局配置用户名 `git config --global user.name "nameVal"`
-- git 全局配置邮箱 `git config --global user.email "eamil@qq.com"`
-
-6. 安装 python
-
-- [下载](https://qzrobot.top/index.php/s/THniMLtpTa4j3j5/download)
-- 确保选中 `Add Python 3.x to Path`.
-- 然后选 `Install Now` 默认安装到 C 盘即可
-
-![avatar](../pic/4.python.jpg)
-
-![avatar](../pic/7.环境变量-1.jpg)
-
-- 执行完毕后,重新启动计算机。
-
-7. vscode 插件下载和设置
+3. vscode 插件下载和设置
 
 - 打开 vscode
 
@@ -72,10 +35,51 @@
 
 - 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
 
-8. 字体安装
+4. 字体安装
 
 - [下载](https://qzrobot.top/index.php/s/K6Lk8LFAAmsirip/download/font.rar)
 - 解压缩后,全选批量安装
+
+
+_____________________________________如果遇到问题,可以手动安装下列软件.一般不需要_______________________________________________
+1. 安装 cmake
+
+- [下载](https://qzrobot.top/index.php/s/9PpsXD9yxAd85sd/download)
+- 双击打开安装。请注意，此步骤选择第二条添加路径，如下所示。
+
+![avatar](../pic/1.cmake.jpg)
+
+2. 安装 vscode
+
+- [下载](https://qzrobot.top/index.php/s/GjQZgGKfBDw2FBW/download)
+- 选择步骤如下：
+
+![avatar](../pic/2.vscode.jpg)
+
+3. 安装 git
+
+- [下载](https://qzrobot.top/index.php/s/afkWMfGGrZxZcaR/download)
+- 选择步骤如下：
+
+![avatar](../pic/3.git-1.jpg)
+![avatar](../pic/3.git-2.jpg)
+
+- git 全局配置用户名 `git config --global user.name "nameVal"`
+- git 全局配置邮箱 `git config --global user.email "eamil@qq.com"`
+
+4. 安装 python
+
+- [下载](https://qzrobot.top/index.php/s/THniMLtpTa4j3j5/download)
+- 确保选中 `Add Python 3.x to Path`.
+- 然后选 `Install Now` 默认安装到 C 盘即可
+
+![avatar](../pic/4.python.jpg)
+
+![avatar](../pic/7.环境变量-1.jpg)
+
+- 执行完毕后,重新启动计算机。
+
+
 
 ## linux 下安装开发环境
 
