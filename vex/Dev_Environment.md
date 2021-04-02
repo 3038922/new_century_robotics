@@ -42,21 +42,15 @@
 
 
 ## 如果遇到问题,可以手动安装下列软件.一般不需要
-1. 安装 cmake
 
-- [下载](https://qzrobot.top/index.php/s/9PpsXD9yxAd85sd/download)
-- 双击打开安装。请注意，此步骤选择第二条添加路径，如下所示。
-
-![avatar](../pic/1.cmake.jpg)
-
-2. 安装 vscode
+1. 安装 vscode
 
 - [下载](https://qzrobot.top/index.php/s/GjQZgGKfBDw2FBW/download)
 - 选择步骤如下：
 
 ![avatar](../pic/2.vscode.jpg)
 
-3. 安装 git
+2. 安装 git
 
 - [下载](https://qzrobot.top/index.php/s/afkWMfGGrZxZcaR/download)
 - 选择步骤如下：
@@ -67,7 +61,7 @@
 - git 全局配置用户名 `git config --global user.name "nameVal"`
 - git 全局配置邮箱 `git config --global user.email "eamil@qq.com"`
 
-4. 安装 python
+3. 安装 python
 
 - [下载](https://qzrobot.top/index.php/s/THniMLtpTa4j3j5/download)
 - 确保选中 `Add Python 3.x to Path`.
