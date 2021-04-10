@@ -2,9 +2,12 @@
 
 - [English Document](./readme.md)
 
-## 开发环境安装及配置
+## 自动开发环境安装及配置
 
 - [开发环境安装及配置](./vex/Dev_Environment.md)
+## 手动开发环境安装及配置
+
+- [开发环境安装及配置](./vex/Manual_Installation.md)
 
 ## 关于免密登录
 
