@@ -1,7 +1,8 @@
 # 新世纪机器人（公益）文档（WIN10-64bit 1909）
 
 - [English Document](./readme.md)
-
+## 常见问题和错误
+- [常见问题和错误](./vex/issues.md)
 ## 自动开发环境安装及配置
 
 - [开发环境安装及配置](./vex/Dev_Environment.md)

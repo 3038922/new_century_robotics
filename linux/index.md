@@ -48,3 +48,12 @@ echo net.ipv4.tcp_congestion_control=bbr >> /etc/sysctl.conf
 ## 后台运行程序
 
 `nohub xxxx &`
+
+## 硬盘扩容
+- 查看硬盘分区结构 `lsblk`
+- 查看剩余容量 `vgdisplay`
+- 先执行这个命令扩容. 236G 是你希望扩大到多少.不是新增.
+lvextend -L 236G /dev/mapper/ubuntu--vg-ubuntu--lv
+- 再执行这个
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+- 最后`df -h` 看看是否增大了.
