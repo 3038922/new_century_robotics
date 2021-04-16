@@ -8,7 +8,7 @@
 4. 创建一个容器
 
 ```sh
-docker run -itd --add-host qzrobot.top:10.195.106.43 --add-host onlyoffice.qzrobot.top:127.0.0.1 -p 8086:80 --restart=always --name="onlyoffice" \
+docker run -itd --add-host qzrobot.top:10.195.106.231 -p 3003:80 --restart=always --name="onlyoffice" \
  -v /app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice \
  -v /app/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data \
  -v /app/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice \
