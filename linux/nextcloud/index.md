@@ -10,3 +10,9 @@ docker pull nextcloud
 - `docker exec --user www-data nextcloud php occ upgrade` 升级
 ## 设置定时任务
 - `docker exec --user www-data nextcloud php cron.php`
+
+## 常用软件安装
+'apt update'
+`apt install libmagickcore-6.q16-6-extra ffmpeg smbclient`
+`service apache2 restart`
+`service php7.4-fpm restart`
