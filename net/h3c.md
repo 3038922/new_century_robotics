@@ -1,4 +1,9 @@
 # h3c交换机配置
+## 常用查看命令
+- 可使用如下命令查看交换机配置了哪些IP地址 `dis ip int brief`   `dis int brief`
+- 可使用如下命令查看VLAN IP的配置：`dis cu int vlan`
+- 查看所有 IP `dis arp`
+- 查看接口下的IP地址+MAC地址 `dis arp int gi 1/0/1`
 ## 配置VLAN
 - 查看VLAN `dis vlan 100` 
 ### 配置交换端口GigabitEthernet1/0/1和2为Trunk端口，并使其允许VLAN100的报文携带VLAN Tag通过。  如果不配置，这些接口默认vlan 1
