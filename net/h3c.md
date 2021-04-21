@@ -1,9 +1,11 @@
 # h3c交换机配置
 ## 常用查看命令
-- 可使用如下命令查看交换机配置了哪些IP地址 `dis ip int brief`   `dis int brief`
-- 可使用如下命令查看VLAN IP的配置：`dis cu int vlan`
+- 查看VLAN IP 简略 `dis ip int brief`   
+- 查看端口信息 简略`dis int brief`
+- 查看VLAN IP的配置：`dis cu int vlan`
 - 查看所有 IP `dis arp`
 - 查看接口下的IP地址+MAC地址 `dis arp int gi 1/0/1`
+
 ## 时间同步核心
 ```
 interface Vlan-interface 1000
