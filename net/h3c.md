@@ -10,6 +10,7 @@
 ```
 interface Vlan-interface 1000
 ntp-service broadcast-client
+clock timezone beijing add 8
 ```
 ## 配置VLAN
 - 查看VLAN `dis vlan 111` 
