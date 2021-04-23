@@ -13,9 +13,9 @@ ntp-service broadcast-client
 clock timezone beijing add 8
 ```
 ## 配置VLAN
-- 查看VLAN `dis vlan 111` 
-- 创建VLAN  `vlan 111`
-- 把端口加入VLAN  `port gi 1/0/29 to gi 1/0/34`
+- 查看VLAN `dis vlan 11` 
+- 创建VLAN  `vlan 11`
+- 把端口加入VLAN  `port gi 1/0/37 to gi 1/0/38`
 ### 配置交换端口 trunk 可以通过多个VLAN  access 本身只能通过一个vlan
 - 批量改端口 `int ra g1/0/2  to  g1/0/12`
 - 改PVID `port trunk pvid vlan XXXX`
@@ -60,6 +60,13 @@ dhcp server ip-pool ikuai
 
 ### 关闭无线 DHCP 
 `undo dhcp server ip-pool wuxian`
-
+### 配置SNMP3
+- 开启SNMP版本 `snmp-agent sys-info version v2c`
+- 禁用V3版本 `undo snmp-agent sys-info version v3`
+- 新增组织 `snmp-agent community write newcenturyschool`
+- 可选
+- 允许向网管工作站（NMS）1.1.1.2/24发送Trap报文，使用的团体名为public。
+`snmp-agent trap enable`
+`target-host trap address udp-domain 1.1.1.2 params securityname newceturyschool v1`
 ### IGMP
 - 多播是 4类地址 224-239 服务器是目的地址
