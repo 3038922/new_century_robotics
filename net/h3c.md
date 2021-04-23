@@ -5,7 +5,7 @@
 - 查看VLAN IP的配置：`dis cu int vlan`
 - 查看所有 IP `dis arp`
 - 查看接口下的IP地址+MAC地址 `dis arp int gi 1/0/1`
-
+- 查看连接的计算机的名字 `dis ndp`
 ## 时间同步核心
 ```
 interface Vlan-interface 1000
