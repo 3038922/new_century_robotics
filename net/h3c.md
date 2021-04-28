@@ -40,6 +40,65 @@ clock timezone beijing add 8
     int vlan 11
     ip address 192.168.11.1 255.255.255.0                    //配置vlan 100 网关和掩码：注意要和dhcp网关配置一致，否则网络也不通
 ```
+## 链路聚合
+```
+二层聚合：
+
+一、静态聚合
+
+[SW]int Bridge-Aggregation 1
+
+[SW-Ethernet1/0/1]port link-aggregation group 1
+
+[SW-Ethernet1/0/2]port link-aggregation group 1
+
+[SW-Bridge-Aggregation1]port link-type trunk
+
+[SW-Bridge-Aggregation1]port trunk permit vlan all 必须先加入端口再起Trunk，要不然会出错
+
+二、动态聚合
+
+int Bridge-Aggaregation 1
+
+[SW-Bridge-Aggregation1]link-aggregation mode dynamic
+
+[SW-Ethernet1/0/1]port link-aggregation group 1
+
+[SW-Ethernet1/0/2]port link-aggregation group 1
+
+[SW-Bridge-Aggregation1]port link-type trunk
+
+[SW-Bridge-Aggregation1]port trunk permit vlan all
+
+查看命令：
+
+display link-aggregation summary
+
+[S1]display link-aggregation verbose
+
+负载分担：
+
+[S1]link-aggregation load-sharing mode destination-mac 两端都配置（貌似接口也可以配置）
+
+三层聚合：
+
+[R2]int Route-Aggregation 1
+
+[R2-Route-Aggregation1]ip add 12.1.1.2 24
+
+[R2]int g0/0
+
+[R2-GigabitEthernet0/0]port link-aggregation group 1
+
+[R2-GigabitEthernet0/0]int g0/1
+
+[R2-GigabitEthernet0/1]port link-aggregation group 1
+
+负载分担：
+
+[R1]link-aggregation global load-sharing mode source-ip destination-ip基于源IP，目的IP
+```
+
 ## DHCP
 - 开打DHCP `dhcp enable`
 
