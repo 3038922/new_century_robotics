@@ -10,9 +10,12 @@ docker pull nextcloud
 - `docker exec --user www-data nextcloud php occ upgrade` 升级
 ## 设置定时任务
 - `docker exec --user www-data nextcloud php cron.php`
+## 解除上传速度限制
+`docker exec --user www-data nextcloud php occ config:app:set files max_chunk_size --value 0`
 
+## 修复丢失的索因
+`docker exec --user www-data nextcloud php occ db:add-missing-indices`
 ## 常用软件安装
-'apt update'
-`apt install libmagickcore-6.q16-6-extra ffmpeg smbclient`
+`docker exec --user root nextcloud apt update && apt install libmagickcore-6.q16-6-extra ffmpeg smbclient -y`
 `service apache2 restart`
 `service php7.4-fpm restart`
