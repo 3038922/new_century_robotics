@@ -19,7 +19,7 @@ docker pull nextcloud
 `docker exec --user www-data nextcloud php occ onlyoffice:documentserver --check`
 
 ## 常用软件安装
-`docker exec --user root nextcloud apt update`
-`docker exec --user root nextcloud apt install libmagickcore-6.q16-6-extra ffmpeg smbclient -y`
-`docker exec --user root nextcloud service apache2 restart`
-`docker exec --user root nextcloud service php7.4-fpm restart`
+- `docker exec --user root nextcloud apt update`
+- `docker exec --user root nextcloud apt install libmagickcore-6.q16-6-extra ffmpeg smbclient -y`
+- `docker exec --user root nextcloud service apache2 restart`
+- `docker exec --user root nextcloud service php7.4-fpm restart`
