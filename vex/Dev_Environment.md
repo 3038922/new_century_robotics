@@ -2,14 +2,14 @@
 
 1. 安装 Visual Studio2019 并配置 C ++开发环境
 
-- [下载](https://qzrobot.top/index.php/s/ckFtR2YwynSrSiz/download)
+- [下载](https://qzrobot.top/index.php/s/iaToJ5kXgJcSZEN/download/)
 - 安装的时候选择`使用C++的桌面开发`和 `使用c++的Linux开发`
 
 ![avatar](../pic/0.visualstudio.jpg)
 
 2. 使用脚本自动化安装和配置环境变量
 
-- [下载](https://qzrobot.top/index.php/s/wzNnD2JW59ocTpH/download)
+- [下载](https://qzrobot.top/index.php/s/mCYYdKwRjpb5JrY/download/)
 
 - 我将此脚本另存在桌面,点击左上角文件,点击`以管理员身份打开 windows powershell`
 - 输入 `Set-ExecutionPolicy Unrestricted` 将执行策略设置为 Unrestricted
@@ -37,7 +37,7 @@
 
 4. 字体安装
 
-- [下载](https://qzrobot.top/index.php/s/K6Lk8LFAAmsirip/download/font.rar)
+- [下载](https://qzrobot.top/index.php/s/5dzkSdCxLGRo3Sa/download/)
 - 解压缩后,全选批量安装
 
 - 执行完毕后,重新启动计算机。
