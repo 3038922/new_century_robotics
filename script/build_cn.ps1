@@ -45,21 +45,21 @@ if (Test-Path($winrar)) {
 }
 else {
     Write-Host "开始下载winrar.exe" -ForegroundColor Green
-    $client.DownloadFile('https://qzrobot.top/index.php/s/EgsQdNJzZKjrGCz/download/WinRAR.exe', $tmpPath + 'winrar.exe')
+    $client.DownloadFile('https://qzrobot.top/index.php/s/RtFjoSR5Z2Skrnq/download/WinRAR.exe', $tmpPath + 'winrar.exe')
     Start-Sleep -Milliseconds 200  # 延迟0.2秒
     Write-Host "开始安装winrar.exe" -ForegroundColor Green
     Invoke-Expression($tmpPath + "winrar.exe /S /v /qn") 
 }
 # 必备软件安装检查
 $soft =
-@{name = 'python.exe'; url = 'THniMLtpTa4j3j5'; args = (' /quiet InstallAllUsers=1 PrependPath=1') },
-@{name = 'code.exe'; url = 'GjQZgGKfBDw2FBW'; args = (' /verysilent /suppressmsgboxes /mergetasks=!runcode,desktopicon /ALLUSERS') },
-@{name = 'git.exe'; url = 'afkWMfGGrZxZcaR'; args = (' /VERYSILENT /ALLUSERS /COMPONENTS="icons,ext\reg\shellhere,assoc,assoc_sh"') },
-@{name = 'cmake.rar'; url = '6bAiQPsa497goAe'; path = ($ncrRoboticsPath + "CMake\bin") },
-@{name = 'ninja.rar'; url = 'dcSrTgns6qEfDw8'; path = ($ncrRoboticsPath + "ninja") },
-@{name = 'LLVM.rar'; url = '8ZE2KoQLYSEqrpa'; path = ($ncrRoboticsPath + "llvm\Release\bin") },
-@{name = 'ccls.rar'; url = '36qwxFrbbpydBJS'; path = ($ncrRoboticsPath + "ccls\Release") },
-@{name = 'PROS.zip'; url = 'PSbyBdMJ2Ti8ZT8'; path = ($ncrRoboticsPath + "PROS\toolchain\usr\bin") }
+@{name = 'python.exe'; url = 'iGrYQCqotTWZn6e'; args = (' /quiet InstallAllUsers=1 PrependPath=1') },
+@{name = 'code.exe'; url = 'KBZt4TjzGGBbkeH'; args = (' /verysilent /suppressmsgboxes /mergetasks=!runcode,desktopicon /ALLUSERS') },
+@{name = 'git.exe'; url = 'aHPm5H9622DyLRg'; args = (' /VERYSILENT /ALLUSERS /COMPONENTS="icons,ext\reg\shellhere,assoc,assoc_sh"') },
+@{name = 'cmake.rar'; url = 't79cLNq6CifyfGS'; path = ($ncrRoboticsPath + "CMake\bin") },
+@{name = 'ninja.rar'; url = 'Nd2P2Rnx9c6Gnmo'; path = ($ncrRoboticsPath + "ninja") },
+@{name = 'LLVM.rar'; url = 'T8KFKR6xHeDy9kj'; path = ($ncrRoboticsPath + "llvm\Release\bin") },
+@{name = 'ccls.rar'; url = 'KYAc4zpC6r3xZ7z'; path = ($ncrRoboticsPath + "ccls\Release") },
+@{name = 'PROS.zip'; url = 'DsYXwWWa2asN5Ar'; path = ($ncrRoboticsPath + "PROS\toolchain\usr\bin") }
 foreach ($it in $soft) {
     $name = $it.name.Substring(0, $it.name.IndexOf('.')) 
     $suffix = $it.name.Substring($it.name.IndexOf('.') + 1) #后缀名
