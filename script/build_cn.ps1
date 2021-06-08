@@ -57,7 +57,7 @@ else {
 # 必备软件安装检查
 $soft =
 @{name = 'python.exe'; url = 'iGrYQCqotTWZn6e'; args = (' /quiet InstallAllUsers=1 PrependPath=1 Shortcuts=1 Include_pip=1') },
-@{name = 'code.exe'; url = 'KBZt4TjzGGBbkeH'; args = (' /verysilent /suppressmsgboxes /mergetasks=!runcode,desktopicon /ALLUSERS') },
+@{name = 'code.exe'; url = 'KBZt4TjzGGBbkeH'; args = (' /verysilent /suppressmsgboxes /ALLUSERS /mergetasks=!runcode,desktopicon,quicklaunchicon,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath') },
 @{name = 'git.exe'; url = 'aHPm5H9622DyLRg'; args = (' /VERYSILENT /ALLUSERS /COMPONENTS="icons,ext\reg\shellhere,assoc,assoc_sh"') },
 @{name = 'cmake.rar'; url = 't79cLNq6CifyfGS'; path = ($ncrRoboticsPath + "CMake\bin") },
 @{name = 'ninja.rar'; url = 'Nd2P2Rnx9c6Gnmo'; path = ($ncrRoboticsPath + "ninja") },
@@ -104,7 +104,7 @@ Write-Host "正在检查pros-cli是否安装"  -ForegroundColor Green
 $p = & { pros --version } 2>&1
 if ($p -is [System.Management.Automation.ErrorRecord]) {
     Write-Host "pros-cli没有安装或者环境变量没有添加, 开始安装" -ForegroundColor yellow
-    powershell "& pip.exe install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/"
+    powershell "& C:\Users\$env:UserName\AppData\Local\Programs\Python\Python38\Scripts\pip.exe install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/"
 }
 else {
     Write-Host  $p -ForegroundColor Green
