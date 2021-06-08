@@ -93,7 +93,7 @@ foreach ($it in $soft) {
 }
 # pros_toolchain设置
 Write-Host "正在设置prosToolchain路径" -ForegroundColor Green
-[environment]::SetEnvironmentvariable("PROS_TOOLCHAIN", "$ncrRoboticsPath\PROS\toolchain\usr", "machine") #设置环境变量 user machine
+[environment]::SetEnvironmentvariable("PROS_TOOLCHAIN", $ncrRoboticsPath + "PROS\toolchain\usr", "machine") #设置环境变量 user machine
 
 #安装PROS工具链
 Write-Host "正在检查pros-cli是否安装"  -ForegroundColor Green
