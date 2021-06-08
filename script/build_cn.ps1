@@ -9,9 +9,9 @@ function installRARZIP($name, $url, $myPath) {
         $client.DownloadFile(('https://qzrobot.top/index.php/s/' + $url + '/download/' + $name), ($tmpPath + $name))
     }
     Start-Sleep -Milliseconds 200  # 延迟0.2秒
-    $args = "x -ibck -y " + $tmpPath + $name + " $ncrRoboticsPath"
-    Write-Host "开始解压缩" $name "参数" $args -ForegroundColor Green
-    Start-Process  $winrar $args -Wait #解压缩zip
+    $iArgs = "x -ibck -y " + $tmpPath + $name + " $ncrRoboticsPath"
+    Write-Host "开始解压缩" $name "参数" $iArgs -ForegroundColor Green
+    Start-Process  $winrar $iArgs -Wait #解压缩zip
     #添加环境变量
     $EnvironmentPath = [environment]::GetEnvironmentVariable('Path', 'machine') # 获取环境变量
     if ($EnvironmentPath.split("; ") -Contains $myPath) {
