@@ -1,14 +1,14 @@
 # 手动安装常规软件
 1. 安装 vscode
 
-- [下载](https://qzrobot.top/index.php/s/GjQZgGKfBDw2FBW/download)
+- [下载](https://qzrobot.top/index.php/s/KBZt4TjzGGBbkeH/download)
 - 选择步骤如下：
 
 ![avatar](../pic/2.vscode.jpg)
 
 2. 安装 git
 
-- [下载](https://qzrobot.top/index.php/s/afkWMfGGrZxZcaR/download)
+- [下载](https://qzrobot.top/index.php/s/aHPm5H9622DyLRg/download)
 - 选择步骤如下：
 
 ![avatar](../pic/3.git-1.jpg)
@@ -19,7 +19,7 @@
 
 3. 安装 python
 
-- [下载](https://qzrobot.top/index.php/s/THniMLtpTa4j3j5/download)
+- [下载](https://qzrobot.top/index.php/s/iGrYQCqotTWZn6e/download)
 - 确保选中 `Add Python 3.x to Path`.
 - 然后选 `Install Now` 默认安装到 C 盘即可
 
