@@ -27,6 +27,10 @@ function installRARZIP($name, $url, $myPath) {
 
 # 新世纪机器人社win10系统环境变量配置
 Write-Host "此版本使用新世纪机器人学院(中国)安装源" -ForegroundColor Green
+Write-Host "请关闭所有类似360、腾讯管家等有可能拦截系统修改的安全软件，防止系统安装出错" -ForegroundColor Green
+Write-Host "确认关闭后，请按【回车】键继续..." -ForegroundColor Green
+pause
+Write-Host "安装开始" -ForegroundColor Green
 $ncrRoboticsPath = "c:\ncrRobotics\"
 $tmpPath = $ncrRoboticsPath + "temp\"
 if (!(Test-Path -Path $ncrRoboticsPath )) {
@@ -52,7 +56,7 @@ else {
 }
 # 必备软件安装检查
 $soft =
-@{name = 'python.exe'; url = 'iGrYQCqotTWZn6e'; args = (' /quiet InstallAllUsers=1 PrependPath=1') },
+@{name = 'python.exe'; url = 'iGrYQCqotTWZn6e'; args = (' /quiet InstallAllUsers=1 PrependPath=1 Shortcuts=1 Include_pip=1') },
 @{name = 'code.exe'; url = 'KBZt4TjzGGBbkeH'; args = (' /verysilent /suppressmsgboxes /mergetasks=!runcode,desktopicon /ALLUSERS') },
 @{name = 'git.exe'; url = 'aHPm5H9622DyLRg'; args = (' /VERYSILENT /ALLUSERS /COMPONENTS="icons,ext\reg\shellhere,assoc,assoc_sh"') },
 @{name = 'cmake.rar'; url = 't79cLNq6CifyfGS'; path = ($ncrRoboticsPath + "CMake\bin") },
