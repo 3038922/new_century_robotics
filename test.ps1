@@ -1,6 +1,39 @@
-# æ–°ä¸–çºªæœºå™¨äººç¤¾win10ç³»ç»Ÿç¯å¢ƒå˜é‡é…ç½®
-Write-Host "æ­¤ç‰ˆæœ¬ä½¿ç”¨æ–°ä¸–çºªæœºå™¨äººå­¦é™¢(ä¸­å›½)å®‰è£…æº" -ForegroundColor Green
-Write-Host "è¯·å…³é—­æ‰€æœ‰ç±»ä¼¼360ã€è…¾è®¯ç®¡å®¶ç­‰æœ‰å¯èƒ½æ‹¦æˆªç³»ç»Ÿä¿®æ”¹çš„å®‰å…¨è½¯ä»¶ï¼Œé˜²æ­¢ç³»ç»Ÿå®‰è£…å‡ºé”™" -ForegroundColor Green
-Write-Host "ç¡®è®¤å…³é—­åï¼Œè¯·æŒ‰ã€å›è½¦ã€‘é”®ç»§ç»­..." -ForegroundColor Green
+# ĞÂÊÀ¼Í»úÆ÷ÈËÉçwin10ÏµÍ³»·¾³±äÁ¿ÅäÖÃ
+Write-Host "´Ë°æ±¾Ê¹ÓÃĞÂÊÀ¼Í»úÆ÷ÈËÑ§Ôº(ÖĞ¹ú)°²×°Ô´" -ForegroundColor Green
+Write-Host "Çë¹Ø±ÕËùÓĞÀàËÆ360¡¢ÌÚÑ¶¹Ü¼ÒµÈÓĞ¿ÉÄÜÀ¹½ØÏµÍ³ĞŞ¸ÄµÄ°²È«Èí¼ş£¬·ÀÖ¹ÏµÍ³°²×°³ö´í" -ForegroundColor Green
+Write-Host "È·ÈÏ¹Ø±Õºó£¬Çë°´¡¾»Ø³µ¡¿¼ü¼ÌĞø..." -ForegroundColor Green
 pause
-Write-Host "å¼€å§‹å®‰è£…" -ForegroundColor Green
+Write-Host "¿ªÊ¼°²×°" -ForegroundColor Green
+$ncrRoboticsPath = "c:\ncrRobotics\"
+$tmpPath = $ncrRoboticsPath + "temp\"
+$winrar = "C:\Program Files\WinRAR\winrar.exe"
+
+#visualstudio
+if (Test-Path("C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC")) {
+    Write-Host "vs2019 ÒÑ°²×°" -ForegroundColor Green
+}
+else {
+    # ÏÂÔØvsÑ¹Ëõ°ü
+    $vsRar = $tmpPath + "vs2019.rar"
+    $client = new-object System.Net.WebClient #´´½¨ÏÂÔØ¶ÔÏó
+    if (Test-Path($vsRar)) {
+        Write-Host "$vsRar ÒÑ´æÔÚÎŞĞèÖØĞÂÏÂÔØ" -ForegroundColor Green
+    }
+    else {
+        Write-Host "¿ªÊ¼ÏÂÔØ vs2019.rar" -ForegroundColor Green
+        $client.DownloadFile('https://qzrobot.top/index.php/s/TRZwkD9dJNxZoWk/download/vs2019.rar', $tmpPath + 'vs2019.rar')
+        Start-Sleep -Milliseconds 200  # ÑÓ³Ù0.2Ãë
+    }
+    # ½âÑ¹Ëõ
+    $vs = $tmpPath + "vs2019"
+    if (Test-Path($vs)) {
+        Write-Host "$vs ÒÑ´æÔÚÎŞĞè½âÑ¹" -ForegroundColor Green
+    }
+    else {
+        Write-Host "¿ªÊ¼½âÑ¹Ëõ vs2019.rar" -ForegroundColor Green
+        $iArgs = "x -ibck -y " + $tmpPath + "vs2019.rar" + " $tmpPath"
+        Start-Process  $winrar $iArgs -Wait #½âÑ¹Ëõzip
+    }
+    Write-Host "ÕıÔÚ°²×° vs2019" -ForegroundColor Green
+    powershell "& $vs\vs_Community.exe --noWeb --add Microsoft.VisualStudio.Workload.NativeDesktop -add Microsoft.VisualStudio.Workload.NativeCrossPlat --includeRecommended"
+}
