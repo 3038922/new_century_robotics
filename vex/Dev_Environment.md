@@ -2,7 +2,9 @@
 
 1. 安装 Visual Studio2019 并配置 C ++开发环境
 
-- [下载](https://qzrobot.top/index.php/s/iaToJ5kXgJcSZEN/download/vs_community.exe)
+- [下载](https://qzrobot.top/index.php/s/TRZwkD9dJNxZoWk/download/vs2019.rar)
+- 解压缩到桌面
+- 双击`vs_setup.exe`进行安装
 - 安装的时候选择`使用C++的桌面开发`和 `使用c++的Linux开发`
 
 ![avatar](../pic/0.visualstudio.jpg)
