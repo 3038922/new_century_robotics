@@ -39,5 +39,5 @@
 - 可以先打开 `C:\Users\你的用户名\.ssh\`
 - 然后用`vscode`打开`id_rsa.pub`
 - `ctrl+A`全选 `ctrl+c` 复制
-  ![avatar](./pic/免密登录.jpg)
+  ![avatar](../pic/免密登录.jpg)
 - 随便找个项目用`SSH`下载试试
