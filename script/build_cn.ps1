@@ -104,7 +104,7 @@ Write-Host "正在检查pros-cli是否安装"  -ForegroundColor Green
 $p = & { pros --version } 2>&1
 if ($p -is [System.Management.Automation.ErrorRecord]) {
     Write-Host "pros-cli没有安装或者环境变量没有添加, 开始安装" -ForegroundColor yellow
-    powershell "& C:\Users\$env:UserName\AppData\Local\Programs\Python\Python38\Scripts\pip.exe install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/"
+    powershell "& C:\Program Files\Python38\Scripts\pip.exe install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/"
 }
 else {
     Write-Host  $p -ForegroundColor Green
