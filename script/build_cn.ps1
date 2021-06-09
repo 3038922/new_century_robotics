@@ -82,7 +82,7 @@ else {
         Start-Process  $winrar $iArgs -Wait #解压缩zip
     }
     Write-Host "正在安装 vs2019" -ForegroundColor Green
-    Start-Process ("C:\ncrRobotics\temp\vs2019\vs_Community.exe") " --noweb --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.NativeCrossPlat --add Microsoft.VisualStudio.Component.VC.Llvm.ClangToolset --add Microsoft.VisualStudio.Component.VC.Llvm.Clang --includeRecommended" -Wait
+    Start-Process ("C:\ncrRobotics\temp\vs2019\vs_Community.exe") " --quiet --noweb --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.NativeCrossPlat --add Microsoft.VisualStudio.Component.VC.Llvm.ClangToolset --add Microsoft.VisualStudio.Component.VC.Llvm.Clang --includeRecommended" -Wait
 }
 # 必备软件安装检查
 $soft =
