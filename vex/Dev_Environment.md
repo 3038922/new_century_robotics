@@ -1,15 +1,6 @@
 # 开发环境安装及配置
 
-1. 安装 Visual Studio2019 并配置 C ++开发环境
-
-- [下载](https://qzrobot.top/index.php/s/TRZwkD9dJNxZoWk/download/vs2019.rar)
-- 解压缩到桌面
-- 双击`vs_setup.exe`进行安装
-- 安装的时候选择`使用C++的桌面开发`和 `使用c++的Linux开发`
-
-![avatar](../pic/0.visualstudio.jpg)
-
-2. 使用脚本自动化安装和配置环境变量
+1. 使用脚本自动化安装和配置环境变量
 
 - [下载](https://qzrobot.top/index.php/s/mCYYdKwRjpb5JrY/download/build_cn.ps1)
 
@@ -23,7 +14,7 @@
   `Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope LocalMachine` 本地计算机的所有用户删除执行策略
   `Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser`删除 作用域 的执行策略 
 
-3. vscode 插件下载和设置
+2. vscode 插件下载和设置
 
 - 打开 vscode
 
@@ -37,7 +28,7 @@
 
 - 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
 
-4. 字体安装
+3. 字体安装
 
 - [下载](https://qzrobot.top/index.php/s/5dzkSdCxLGRo3Sa/download/font.rar)
 - 解压缩后,全选批量安装
