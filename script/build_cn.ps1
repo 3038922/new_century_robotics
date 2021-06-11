@@ -42,7 +42,7 @@ if (!(Test-Path -Path $tmpPath)) {
     & mkdir $tmpPath
 }
 #下载winrar
-$winrar = "C:\Program Files\WinRAR\winrar.exe"
+$winrar = "C:\PROGRA~1\WinRAR\winrar.exe"
 $client = new-object System.Net.WebClient #创建下载对象
 if (Test-Path($winrar)) {
     Write-Host "winrar.exe 已存在无需重新下载" -ForegroundColor Green
@@ -56,7 +56,7 @@ else {
 }
 #下载安装visual studio2019
 #visualstudio
-if (Test-Path("C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC")) {
+if (Test-Path("C:\PROGRA~2\Microsoft Visual Studio\2019\Community\VC")) {
     Write-Host "vs2019 已安装" -ForegroundColor Green
 }
 else {
@@ -88,7 +88,7 @@ else {
 $soft =
 @{name = 'python.exe'; url = 'iGrYQCqotTWZn6e'; args = (' /quiet InstallAllUsers=1 PrependPath=1 Shortcuts=1 Include_pip=1') },
 @{name = 'code.exe'; url = 'KBZt4TjzGGBbkeH'; args = (' /verysilent /suppressmsgboxes /ALLUSERS /mergetasks=!runcode,desktopicon,quicklaunchicon,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath') },
-@{name = 'git.exe'; url = 'aHPm5H9622DyLRg'; args = (' /verysilent /NORESTART /COMPONENTS=icons,icons\desktop,ext,ext\shellhere,ext\guihere,gitlfs,assoc,assoc_sh') },
+@{name = 'git.exe'; url = 'aHPm5H9622DyLRg'; args = (' /verysilent /NORESTART /COMPONENTS=icons,icons\desktop,ext,ext\shellhere,ext\guihere,gitlfs,assoc,assoc_sh,autoupdate') },
 @{name = 'cmake.rar'; url = 't79cLNq6CifyfGS'; path = ($ncrRoboticsPath + "CMake\bin") },
 @{name = 'ninja.rar'; url = 'Nd2P2Rnx9c6Gnmo'; path = ($ncrRoboticsPath + "ninja") },
 @{name = 'LLVM.rar'; url = 'T8KFKR6xHeDy9kj'; path = ($ncrRoboticsPath + "llvm\Release\bin") },
@@ -143,24 +143,24 @@ Write-Host  "正在安装vscode插件 setting sync" -ForegroundColor Green
 powershell "& code --install-extension shan.code-settings-sync" 
 
 #GIT设置
-$gitName = Invoke-Expression("git config --global user.name") 2>&1
+$gitName = Invoke-Expression("C:\PROGRA~1\Git\cmd\git.exe config --global user.name") 2>&1
 if ([String]::IsNullOrEmpty($gitName)) {
     $gitName = (Read-Host "请输入您的git用户名如:dog,pig,mouse") 
-    Invoke-Expression("git config --global user.name  $gitName")
+    Invoke-Expression("C:\PROGRA~1\Git\cmd\git.exe config --global user.name  $gitName")
     Write-Host "已设置为:$gitName" -ForegroundColor Green
 }
 else {
-    Write-Host "git用户名已配置为:" $(Invoke-Expression("git config --global user.name")) -ForegroundColor green
+    Write-Host "git用户名已配置为:" $(Invoke-Expression("C:\PROGRA~1\Git\cmd\git.exe config --global user.name")) -ForegroundColor green
 }
 
-$gitEmail = Invoke-Expression("git config --global user.email") 2>&1
+$gitEmail = Invoke-Expression("C:\PROGRA~1\Git\cmd\git.exe config --global user.email") 2>&1
 if ([String]::IsNullOrEmpty($gitEmail)) {
     $gitEmail = (Read-Host "请输入您的git Email 如:8888@qq.com") 
-    Invoke-Expression("git config --global user.email  $gitEmail")
+    Invoke-Expression("C:\PROGRA~1\Git\cmd\git.exe config --global user.email  $gitEmail")
     Write-Host "已设置为:$gitEmail" -ForegroundColor Green
 }
 else {
-    Write-Host "git email已配置为:" $(Invoke-Expression("git config --global user.email")) -ForegroundColor green
+    Write-Host "git email已配置为:" $(Invoke-Expression("C:\PROGRA~1\Git\cmd\git.exe config --global user.email")) -ForegroundColor green
 }
 
 Write-Host "正在删除临时下载存放文件夹"  -ForegroundColor Green
