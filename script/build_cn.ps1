@@ -140,12 +140,13 @@ else {
     Write-Host  $p -ForegroundColor Green
 }
 Write-Host  "正在安装vscode插件 setting sync" -ForegroundColor Green
-powershell "& code --install-extension shan.code-settings-sync" 
+& C:\Users\$env:UserName\AppData\Local\Programs\"Microsoft VS Code"\bin\code --install-extension shan.code-settings-sync
+
 
 #GIT设置
 $gitName = Invoke-Expression("C:\PROGRA~1\Git\cmd\git.exe config --global user.name") 2>&1
 if ([String]::IsNullOrEmpty($gitName)) {
-    $gitName = (Read-Host "请输入您的git用户名如:dog,pig,mouse") 
+    $gitName = (Read-Host "请输入您的git用户名如:dog, pig, mouse") 
     Invoke-Expression("C:\PROGRA~1\Git\cmd\git.exe config --global user.name  $gitName")
     Write-Host "已设置为:$gitName" -ForegroundColor Green
 }
@@ -165,7 +166,7 @@ else {
 
 Write-Host "正在删除临时下载存放文件夹"  -ForegroundColor Green
 # Remove-Item $tmpPath\ -recurse -force
-Write-Host "恭喜安装成功,请务必重启电脑!"  -ForegroundColor Green
+Write-Host "恭喜安装成功, 请务必重启电脑!"  -ForegroundColor Green
 
 
 
