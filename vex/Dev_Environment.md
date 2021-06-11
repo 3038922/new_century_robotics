@@ -14,11 +14,14 @@
 
 2. vscode 插件下载和设置
 - 打开 vscode
-- 按下 `ctrl + shift + p` 输入 `sync download setting`
-![avatar](../pic/8.vscode-2.jpg)
-- 点击 `download public gist` 输入 `6c091a7b4ddcb213e72d430dac23422f` 回车.
-![avatar](../pic/8.vscode-3.jpg)
-- 如果没有弹出上面的页面,输入 `SYNC Reset extended settings` 然后点击 `download public gist`
+- 按下 `ctrl + shift + p` 
+- 输入 `sync advanced options`
+![avatar](../pic/sync1.jpg)
+- 然后选择 `sync 打开设置`
+![avatar](../pic/sync2.jpg)
+- 在Gist ID 里 输入 `6c091a7b4ddcb213e72d430dac23422f` 回车.
+![avatar](../pic/sync3.jpg)
+- 最后按 `crtl+alt+d`下载插件
 
 3. 字体安装
 - [下载](https://qzrobot.top/index.php/s/5dzkSdCxLGRo3Sa/download/font.rar)
