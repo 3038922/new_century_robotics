@@ -165,7 +165,7 @@ else {
 
 Write-Host "正在删除临时下载存放文件夹"  -ForegroundColor Green
 # Remove-Item $tmpPath\ -recurse -force
-Write-Host "恭喜安装成功"  -ForegroundColor Green
+Write-Host "恭喜安装成功,请务必重启电脑!"  -ForegroundColor Green
 
 
 
