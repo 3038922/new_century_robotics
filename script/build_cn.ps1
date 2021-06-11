@@ -88,7 +88,7 @@ else {
 $soft =
 @{name = 'python.exe'; url = 'iGrYQCqotTWZn6e'; args = (' /quiet InstallAllUsers=1 PrependPath=1 Shortcuts=1 Include_pip=1') },
 @{name = 'code.exe'; url = 'KBZt4TjzGGBbkeH'; args = (' /verysilent /suppressmsgboxes /ALLUSERS /mergetasks=!runcode,desktopicon,quicklaunchicon,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath') },
-@{name = 'git.exe'; url = 'aHPm5H9622DyLRg'; args = (' /verysilent /ALLUSERS /COMPONENTS="icons,ext\reg\shellhere,assoc_sh"') },
+@{name = 'git.exe'; url = 'aHPm5H9622DyLRg'; args = (' /verysilent /NORESTART /COMPONENTS=icons,icons\desktop,ext,ext\shellhere,ext\guihere,gitlfs,assoc,assoc_sh') },
 @{name = 'cmake.rar'; url = 't79cLNq6CifyfGS'; path = ($ncrRoboticsPath + "CMake\bin") },
 @{name = 'ninja.rar'; url = 'Nd2P2Rnx9c6Gnmo'; path = ($ncrRoboticsPath + "ninja") },
 @{name = 'LLVM.rar'; url = 'T8KFKR6xHeDy9kj'; path = ($ncrRoboticsPath + "llvm\Release\bin") },
