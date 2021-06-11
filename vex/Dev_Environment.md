@@ -15,6 +15,8 @@
 
 2. vscode 插件下载和设置
 - 打开 vscode
+- 选择`微软账号`或者 `github账号`登录.
+![avatar](../pic/sync4.jpg)
 - 按下 `ctrl + shift + p` 
 - 输入 `sync advanced options`
 
@@ -30,6 +32,8 @@
 3. 字体安装
 - [下载](https://qzrobot.top/index.php/s/5dzkSdCxLGRo3Sa/download/font.rar)
 - 解压缩后,全选批量安装
+
+![avatar](../pic/font.jpg)
 - 执行完毕后,重新启动计算机。
 
 ## 开发环境装好后要设置代码仓库的免密登录,不然不能下载代码
