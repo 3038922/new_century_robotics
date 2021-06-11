@@ -3,6 +3,7 @@
 1. 使用脚本自动化安装和配置环境变量
 - [下载](https://qzrobot.top/index.php/s/mCYYdKwRjpb5JrY/download/build_cn.ps1)
 - 我将此脚本另存在桌面,点击左上角文件,点击`以管理员身份打开 windows powershell`
+
 ![avatar](../pic/7.环境变量-1.jpg)
 - 输入 `Set-ExecutionPolicy Unrestricted` 将执行策略设置为 Unrestricted
 - 再输入 `./build_cn.ps1`
@@ -16,12 +17,15 @@
 - 打开 vscode
 - 按下 `ctrl + shift + p` 
 - 输入 `sync advanced options`
+
 ![avatar](../pic/sync1.jpg)
 - 然后选择 `sync 打开设置`
+
 ![avatar](../pic/sync2.jpg)
 - 在Gist ID 里 输入 `6c091a7b4ddcb213e72d430dac23422f` 回车.
+
 ![avatar](../pic/sync3.jpg)
-- 最后按 `crtl+alt+d`下载插件
+- 最后按 `cttl + alt + d`下载插件
 
 3. 字体安装
 - [下载](https://qzrobot.top/index.php/s/5dzkSdCxLGRo3Sa/download/font.rar)
