@@ -1,0 +1,272 @@
+substitutions:
+  device_name: energy-home
+
+esphome:
+  name: ${device_name}
+  platform: ESP32
+  board: esp32dev
+
+logger:
+  baud_rate: 0 # (UART logging interferes with pzem)
+  level: DEBUG
+
+# Enable Home Assistant API
+api:
+  password: "8888888888"
+ota:
+  password: "8888888888"
+
+web_server:
+  port: 80
+
+wifi:
+  ssid: "yezi"
+  password: "8888888888"
+  fast_connect: true
+  ap:
+    ssid: "esp32-home"
+    password: "8888888888"
+
+captive_portal:
+
+uart:
+  - tx_pin: GPIO3
+    rx_pin: GPIO1
+    baud_rate: 9600
+    stop_bits: 1
+
+modbus:
+
+binary_sensor:
+  - platform: status
+    name: "${device_name} Status"
+
+sensor:
+  - platform: pzemac
+    id: pzemac3
+    energy:
+      name: "energy_ac3"
+      id: "energy_ac3"
+      filters:
+        - multiply: 0.002
+      unit_of_measurement: kWh
+      accuracy_decimals: 1
+    current:
+      name: "current_ac3"
+      id: "current_ac3"
+      accuracy_decimals: 1
+    voltage:
+      name: "voltage_ac3"
+      id: "voltage_ac3"
+      filters:
+        - multiply: 1
+      accuracy_decimals: 1
+    frequency:
+      name: "frequency_ac3"
+      id: "frequency_ac3"
+      accuracy_decimals: 1
+    power_factor:
+      name: "factor_ac3"
+      id: "factor_ac3"
+      accuracy_decimals: 1
+    power:
+      name: "power_ac3"
+      id: "power_ac3"
+      filters:
+        - multiply: 1
+      accuracy_decimals: 0
+    update_interval: never
+    address: 3
+
+  - platform: pzemac
+    id: pzemac4
+    energy:
+      name: "energy_ac4"
+      id: "energy_ac4"
+      filters:
+        - multiply: 0.002
+      unit_of_measurement: kWh
+      accuracy_decimals: 1
+    current:
+      name: "current_ac4"
+      id: "current_ac4"
+      accuracy_decimals: 1
+    voltage:
+      name: "voltage_ac4"
+      id: "voltage_ac4"
+      filters:
+        - multiply: 1
+      accuracy_decimals: 1
+    frequency:
+      name: "frequency_ac4"
+      id: "frequency_ac4"
+      accuracy_decimals: 1
+    power_factor:
+      name: "factor_ac4"
+      id: "factor_ac4"
+      accuracy_decimals: 1
+    power:
+      name: "power_ac4"
+      id: "power_ac4"
+      filters:
+        - multiply: 1
+      accuracy_decimals: 0
+    update_interval: never
+    address: 4
+
+  - platform: pzemac
+    id: pzemac5
+    energy:
+      name: "energy_ac5"
+      id: "energy_ac5"
+      filters:
+        - multiply: 0.002
+      unit_of_measurement: kWh
+      accuracy_decimals: 1
+    current:
+      name: "current_ac5"
+      id: "current_ac5"
+      accuracy_decimals: 1
+    voltage:
+      name: "voltage_ac5"
+      id: "voltage_ac5"
+      filters:
+        - multiply: 1
+      accuracy_decimals: 1
+    frequency:
+      name: "frequency_ac5"
+      id: "frequency_ac5"
+      accuracy_decimals: 1
+    power_factor:
+      name: "factor_ac5"
+      id: "factor_ac5"
+      accuracy_decimals: 1
+    power:
+      name: "power_ac5"
+      id: "power_ac5"
+      filters:
+        - multiply: 1
+      accuracy_decimals: 0
+    update_interval: never
+    address: 5
+
+  - platform: pzemac
+    id: pzemac6
+    energy:
+      name: "energy_ac6"
+      id: "energy_ac6"
+      filters:
+        - multiply: 0.002
+      unit_of_measurement: kWh
+      accuracy_decimals: 1
+    current:
+      name: "current_ac6"
+      id: "current_ac6"
+      accuracy_decimals: 1
+    voltage:
+      name: "voltage_ac6"
+      id: "voltage_ac6"
+      filters:
+        - multiply: 1
+      accuracy_decimals: 1
+    frequency:
+      name: "frequency_ac6"
+      id: "frequency_ac6"
+      accuracy_decimals: 1
+    power_factor:
+      name: "factor_ac6"
+      id: "factor_ac6"
+      accuracy_decimals: 1
+    power:
+      name: "power_ac6"
+      id: "power_ac6"
+      filters:
+        - multiply: 1
+      accuracy_decimals: 0
+    update_interval: never
+    address: 6
+
+  - platform: total_daily_energy
+    name: "energy_ac3_daily"
+    power_id: power_ac3
+    id: energy_ac3_daily
+    unit_of_measurement: kWh
+    accuracy_decimals: 1
+    icon: mdi:counter
+    filters:
+      - multiply: 0.001
+
+  - platform: total_daily_energy
+    name: "energy_ac4_daily"
+    power_id: power_ac4
+    id: energy_ac4_daily
+    unit_of_measurement: kWh
+    accuracy_decimals: 1
+    icon: mdi:counter
+    filters:
+      - multiply: 0.001
+
+  - platform: total_daily_energy
+    name: "energy_ac5_daily"
+    power_id: power_ac5
+    id: energy_ac5_daily
+    unit_of_measurement: kWh
+    accuracy_decimals: 1
+    icon: mdi:counter
+    filters:
+      - multiply: 0.001
+
+  - platform: total_daily_energy
+    name: "energy_ac6_daily"
+    power_id: power_ac6
+    id: energy_ac6_daily
+    unit_of_measurement: kWh
+    accuracy_decimals: 1
+    icon: mdi:counter
+    filters:
+      - multiply: 0.001
+
+  - platform: template
+    name: "other_power"
+    id: "other_power"
+    device_class: energy
+    state_class: measurement
+    unit_of_measurement: W
+    accuracy_decimals: 1
+    lambda: |-
+      return id(power_ac3).state - id(power_ac4).state - id(power_ac5).state - id(power_ac6).state ;
+
+  - platform: template
+    name: "energy_other_daily"
+    id: "energy_other_daily"
+    icon: mdi:counter
+    device_class: energy
+    state_class: measurement
+    unit_of_measurement: kWh
+    accuracy_decimals: 1
+    lambda: |-
+      return id(energy_ac3_daily).state - id(energy_ac4_daily).state - id(energy_ac5_daily).state - id(energy_ac6_daily).state ;
+
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+switch:
+  - platform: restart
+    name: "${device_name}_Restart"
+
+  - platform: uart
+    name: "${device_name}_Reset"
+    data: [0x01, 0x42, 0x80, 0x11]
+
+interval:
+  - interval: 5s
+    then:
+      - delay: 150ms
+      - lambda: "id(pzemac3).update();"
+      - delay: 150ms
+      - lambda: "id(pzemac4).update();"
+      - delay: 150ms
+      - lambda: "id(pzemac5).update();"
+      - delay: 150ms
+      - lambda: "id(pzemac6).update();"
