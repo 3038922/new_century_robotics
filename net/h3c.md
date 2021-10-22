@@ -18,6 +18,7 @@ clock timezone beijing add 8
 - 把端口加入VLAN  `port gi 1/0/37 to gi 1/0/38`
 ### 配置交换端口 trunk 可以通过多个VLAN  access 本身只能通过一个vlan
 - 批量改端口 `int ra g1/0/2  to  g1/0/12`
+- 批量改端口 `port-group manual ap` `group-member g 4/0/11 to g 4/0/24` `port group member ap`
 - 改PVID `port trunk pvid vlan XXXX`
 - 配置电脑 AP之类的
 ``` 
