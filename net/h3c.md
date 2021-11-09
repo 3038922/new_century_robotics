@@ -130,3 +130,13 @@ dhcp server ip-pool ikuai
 `target-host trap address udp-domain 1.1.1.2 params securityname newceturyschool v1`
 ### IGMP
 - 多播是 4类地址 224-239 服务器是目的地址
+
+### HUAWEI S5720 LACP 聚合协议
+`load-balance ? ` 查看负载均衡模式
+`disp eth-trunk 31` 查看聚合状态
+`dis load-balance mode` 查看当前聚合策略
+
+
+### H3C 查看聚合组
+`display link-aggregation verbose Bridge-Aggregation`
+`link-aggregation load-sharing mode destination-mac` 设置聚合策略
