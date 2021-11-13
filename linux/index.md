@@ -22,17 +22,6 @@
 2.  查看目录的所有共享目录 `smbclient //192.168.31.199/ncrNas -U dataswap`
 3.  连接共享目录 `smbclient //192.168.31.199/ncrNas/ -U dataswap`
 4.  临时挂载下 方便拷贝 `mount -t cifs -o username=dataswap,password=xxx //192.168.31.199/ncrNas ./tmp`
-
-## 重启后任务
-
-1. 检查各种 WEB 服务器
-2. 检查 docker 被还原的服务 如 onlyoffice
-3. 检查 aria2
-4. 检查 smb 挂载
-5. 检查 v2ray
-
-## TCP 连接数限制
-
 ## TCP BBR 加速
 
 ```
@@ -57,3 +46,15 @@ lvextend -L 236G /dev/mapper/ubuntu--vg-ubuntu--lv
 - 再执行这个
 resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
 - 最后`df -h` 看看是否增大了.
+
+## ZFS
+- 磁盘容量及分区状况（不能查看未挂载分区） `df -hl`
+- 磁盘容量及分区状况（可以查看未挂载分区） `fdisk -l` `lsblk -f`
+-  /lib 目录大小 `du -sh /lib`
+- /lib 子目录大小 `du -sh /lib/*`
+- 安装 `apt install zfsutils`
+- 创建ZFS池"zfs2" `zpool create pool-name raidz2 /dev/sdc /dev/sdd /dev/sde /dev/sdf`
+- 查看状态 `zpool status`
+- 当检查 ZFS 状态时，池将通知你需要知道的所有更新。要更新池，请运行如下命令 `zpool upgrade pool-name`
+- 也可以使用如下命令更新所有 ZFS 池 `zpool upgrade -a`
+- 当然，你也可以随时向池中添加新的磁盘驱动器，只需使用 zpool 指定池名称和驱动器位置即可 `zpool add pool-name /dev/sdx`
