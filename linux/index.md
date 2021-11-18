@@ -46,20 +46,20 @@ lvextend -L 236G /dev/mapper/ubuntu--vg-ubuntu--lv
 - 再执行这个
 resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
 - 最后`df -h` 看看是否增大了.
-
+## 格式化
+- 删除机械硬盘的 Windows 分区 `fdisk /dev/sda`
+- 将机械硬盘格式化为 ext4 `mkfs.ext4 /dev/sda`
+- 挂载机械硬盘 `mkdir /mnt/data` `mount /dev/sda /mnt/data` ` df -Th`
+- 设置开机自动挂载 `在 /etc/fstab 中追加 /dev/sda /mnt/data ext4 defaults 0 0`
+- 重启后验证 `lsblk -f`
 ## ZFS
 - 磁盘容量及分区状况（不能查看未挂载分区） `df -hl`
 - 磁盘容量及分区状况（可以查看未挂载分区） `fdisk -l` `lsblk -f`
 -  /lib 目录大小 `du -sh /lib`
 - /lib 子目录大小 `du -sh /lib/*`
 - 安装 `apt install zfsutils`
-- 创建ZFS池"zfs2" `zpool create pool-name raidz2 /dev/sdc /dev/sdd /dev/sde /dev/sdf`
+- 创建ZFS池"zfs2" `zpool create ares raidz2 /dev/sda /dev/sdb /dev/sdc /dev/sdd /dev/sde`
 - 查看状态 `zpool status`
 - 当检查 ZFS 状态时，池将通知你需要知道的所有更新。要更新池，请运行如下命令 `zpool upgrade pool-name`
 - 也可以使用如下命令更新所有 ZFS 池 `zpool upgrade -a`
 - 当然，你也可以随时向池中添加新的磁盘驱动器，只需使用 zpool 指定池名称和驱动器位置即可 `zpool add pool-name /dev/sdx`
-- 删除机械硬盘的 Windows 分区 `fdisk /dev/sda`
-- 将机械硬盘格式化为 ext4 `mkfs.ext4 /dev/sda`
-- 挂载机械硬盘 `mkdir /mnt/data` `mount /dev/sda /mnt/data` ` df -Th`
-- 设置开机自动挂载 `在 /etc/fstab 中追加 /dev/sda /mnt/data ext4 defaults 0 0`
-- 重启后验证 `lsblk -f`
