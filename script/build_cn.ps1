@@ -68,7 +68,7 @@ else {
     }
     else {
         Write-Host "开始下载 vs2022.rar" -ForegroundColor Green
-        $client.DownloadFile('https://qzrobot.top/index.php/s/TRZwkD9dJNxZoWk/download/vs2022.rar', $tmpPath + 'vs2022.rar')
+        $client.DownloadFile('https://qzrobot.top/index.php/s/LQAgqJRXJ4XdqmW/download/vs2022.rar', $tmpPath + 'vs2022.rar')
         Start-Sleep -Milliseconds 200  # 延迟0.2秒
     }
     # 解压缩
