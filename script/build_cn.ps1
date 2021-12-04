@@ -54,35 +54,35 @@ else {
     Write-Host "开始安装winrar.exe" -ForegroundColor Green
     Invoke-Expression($tmpPath + "winrar.exe /S /v /qn") 
 }
-#下载安装visual studio2019
+#下载安装visual studio2022
 #visualstudio
-if (Test-Path("C:\PROGRA~2\Microsoft Visual Studio\2019\Community\VC")) {
-    Write-Host "vs2019 已安装" -ForegroundColor Green
+if (Test-Path("C:\PROGRA~2\Microsoft Visual Studio\2022\Community\VC")) {
+    Write-Host "vs2022 已安装" -ForegroundColor Green
 }
 else {
     # 下载vs压缩包
-    $vsRar = $tmpPath + "vs2019.rar"
+    $vsRar = $tmpPath + "vs2022.rar"
     $client = new-object System.Net.WebClient #创建下载对象
     if (Test-Path($vsRar)) {
         Write-Host "$vsRar 已存在无需重新下载" -ForegroundColor Green
     }
     else {
-        Write-Host "开始下载 vs2019.rar" -ForegroundColor Green
-        $client.DownloadFile('https://qzrobot.top/index.php/s/TRZwkD9dJNxZoWk/download/vs2019.rar', $tmpPath + 'vs2019.rar')
+        Write-Host "开始下载 vs2022.rar" -ForegroundColor Green
+        $client.DownloadFile('https://qzrobot.top/index.php/s/TRZwkD9dJNxZoWk/download/vs2022.rar', $tmpPath + 'vs2022.rar')
         Start-Sleep -Milliseconds 200  # 延迟0.2秒
     }
     # 解压缩
-    $vs = $tmpPath + "vs2019"
+    $vs = $tmpPath + "vs2022"
     if (Test-Path($vs)) {
         Write-Host "$vs 已存在无需解压" -ForegroundColor Green
     }
     else {
-        Write-Host "开始解压缩 vs2019.rar" -ForegroundColor Green
-        $iArgs = "x -ibck -y " + $tmpPath + "vs2019.rar" + " $tmpPath"
+        Write-Host "开始解压缩 vs2022.rar" -ForegroundColor Green
+        $iArgs = "x -ibck -y " + $tmpPath + "vs2022.rar" + " $tmpPath"
         Start-Process  $winrar $iArgs -Wait #解压缩zip
     }
-    Write-Host "正在安装 vs2019" -ForegroundColor Green
-    Start-Process ("C:\ncrRobotics\temp\vs2019\vs_Community.exe") " --quiet --noweb --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.NativeCrossPlat --add Microsoft.VisualStudio.Component.VC.Llvm.ClangToolset --add Microsoft.VisualStudio.Component.VC.Llvm.Clang --includeRecommended" -Wait
+    Write-Host "正在安装 vs2022" -ForegroundColor Green
+    Start-Process ("C:\ncrRobotics\temp\vs2022\vs_Community.exe") " --quiet --noweb --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.NativeCrossPlat --add Microsoft.VisualStudio.Component.VC.Llvm.ClangToolset --add Microsoft.VisualStudio.Component.VC.Llvm.Clang --includeRecommended" -Wait
 }
 # 必备软件安装检查
 $soft =
