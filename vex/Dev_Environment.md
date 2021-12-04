@@ -9,7 +9,6 @@
 - 再输入 `./build_cn.ps1`
 - 如果无法执行 
   如果还不行 试试输入`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`   再重复之前的操作
-- 百度这两个命令会导致系统出错 不要使用
   `Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope LocalMachine` 本地计算机的所有用户删除执行策略
   `Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser`删除 作用域 的执行策略 
 
