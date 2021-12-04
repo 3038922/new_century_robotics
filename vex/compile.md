@@ -18,3 +18,7 @@
 `cmake -H. -BRelease -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang-cl -DCMAKE_PREFIX_PATH="c:/ncrRobotics/llvm/Release"`
 
 2. `ninja -C Release`
+
+## visual studio 本地化
+构建离线包 `C:\ncrRobotics\temp\vs2021\vs_Community.exe --layout "C:\ncrRobotics\temp\vs2021" --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.NativeCrossPlat --add Microsoft.VisualStudio.Component.VC.Llvm.ClangToolset --add Microsoft.VisualStudio.Component.VC.Llvm.Clang --includeRecommended --lang zh-CN`
+安装离线包 `C:\ncrRobotics\temp\vs2021\vs_Community.exe --noweb --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Workload.NativeCrossPlat --add Microsoft.VisualStudio.Component.VC.Llvm.ClangToolset --add Microsoft.VisualStudio.Component.VC.Llvm.Clang --includeRecommended`
