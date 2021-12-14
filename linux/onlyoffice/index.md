@@ -20,7 +20,7 @@ docker run -itd --add-host qzrobot.top:10.195.106.231 -p 3003:80 --restart=alway
 - 进入容器 `docker exec -it onlyoffice /bin/bash`
 - 删除老字体 `rm -rf /usr/share/fonts/*` `rm -rf /var/www/onlyoffice/documentserver/core-fonts/*`
 - 再将字体全部下载到容器的`/usr/share/fonts`目录下。
-- 在容器内执行 `/usr/bin/documentserver-generate-allfonts.sh`
+- 在容器内执行 ` fc-cache -f -v` `/usr/bin/documentserver-generate-allfonts.sh`
 - 将浏览器缓存清空，即可正常使用。
 ## 字号问题
 中文还是习惯小初、小四之类的。<br>
