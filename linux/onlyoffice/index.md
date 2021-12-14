@@ -17,28 +17,25 @@ docker run -itd --add-host qzrobot.top:10.195.106.231 -p 3003:80 --restart=alway
 
 ## 安装中文字体
 
-- 进入容器 `docker exec -it distracted_mayer /bin/bash`
-- 如果 nextcloud 无法挂载 onlyoffice
-
-  1. 就进去 onlyoffice 虚拟机 修改 `nano /etc/hosts`
-  2. 加入`qzrobot.top` 和 `onlyoffice.qzrobot.top` 的重定向
-
-- 查看正在运行的 docker `docker ps -a`
-- 更换字体
-
-  1. 删除内置字体`rm -rf /var/www/onlyoffice/documentserver/core-fonts/*` `rm -rf /usr/share/fonts/*`
-  2. 复制进 docker 内 `docker cp ./fonts/ 7603321130e4:/usr/share/fonts/truetype/custom`
-  3. 修改字体权限 `chmod -R 644 /usr/share/fonts`
-  4. 清缓存 `fc-cache -f -v`
-  5. 导入新字体。 `docker exec -it onlyoffice documentserver-generate-allfonts.sh`
-
-- 把当前镜像保存成一个 image 并保存成 tar 文件保存。
-  `docker commit -a "jingying.cn" -m "onlyoffice-chinesefonts" [镜像 id] onlyoffice:v1 -a 作者 -m 镜像描述 最后是镜像名称和版本`
-
-- 把镜像保存成 tar 文件，tar 镜像的加载可以用 docker load -i [镜像.tar] 加载
-
-docker save -o onlyoffice-chinesefonts.tar onlyoffice:v1
-
+- 进入容器 `docker exec -it onlyoffice /bin/bash`
+- 删除老字体 `rm -rf /usr/share/fonts/*` `rm -rf /var/www/onlyoffice/documentserver/core-fonts/*`
+- 再将字体全部下载到容器的`/usr/share/fonts`目录下。
+- 在容器内执行 `/usr/bin/documentserver-generate-allfonts.sh`
+- 将浏览器缓存清空，即可正常使用。
+## 字号问题
+中文还是习惯小初、小四之类的。<br>
+将<br>
+/var/www/onlyoffice/documentserver/web-apps/apps/documenteditor/main/<br>
+目录下的app.js做修改即可。<br>
+注意：一共有6个app.js文件，我只修改了文档编辑器的电脑版本。其他如电子表格、幻灯片及移动版本没有修改。因为基本用不到。
+<br>
+app.js需要从容器拷贝出来后修改，直接修改未必会成功。<br>
+在app.js中查找`{value:8,displayValue:"8"}`字符串，将相应字符串替换为:<br>
+```
+{value:42,displayValue:"初号"},{value:36,displayValue:"小初"},{value:26,displayValue:"一号"},{value:24,displayValue:"小一"},{value:22,displayValue:"二号"},{value:18,displayValue:"小二"},{value:16,displayValue:"三号"},{value:15,displayValue:"小三"},{value:14,displayValue:"四号"},{value:12,displayValue:"小四"},{value:10.5,displayValue:"五号"},{value:9,displayValue:"小五"},{value:7.5,displayValue:"六号"},{value:6.5,displayValue:"小六"},{value:5.5,displayValue:"七号"},{value:5,displayValue:"八号"},
+```
+<br>
+建议保留后面的value:48等值。
 ## 更新 onlyoffice
 
 1. 关闭 ONLYOFFICE
