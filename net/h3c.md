@@ -39,15 +39,14 @@ clock timezone beijing add 8
 - 注意:在创建VLAN接口之前，对应的VLAN必须已经存在。
 ```
     int vlan 11
-    ip address 192.168.11.1 255.255.255.0                    //配置vlan 100 网关和掩码：注意要和dhcp网关配置一致，否则网络也不通
+    ip address 192.168.11.1 255.255.255.0 //配置vlan 100 网关和掩码：注意要和dhcp网关配置一致，否则网络也不通
 ```
 ## 链路聚合
-```
 二层聚合：
 
 一、静态聚合
 
-[SW]int Bridge-Aggregation 1
+1. `int Bridge-Aggregation xxx`
 
 [SW-Ethernet1/0/1]port link-aggregation group 1
 
@@ -98,8 +97,6 @@ display link-aggregation summary
 负载分担：
 
 [R1]link-aggregation global load-sharing mode source-ip destination-ip基于源IP，目的IP
-```
-
 ## DHCP
 - 开打DHCP `dhcp enable`
 
