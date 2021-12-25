@@ -7,6 +7,10 @@
 - `service-type telnet`
 - `telnet server enable`
 - 开启网页登录 `ip http enable`
+## 配置时间
+改时区 `clock timezone BJ add 08:00:00`
+- `ntp-service enable`
+- 设置时间服务器 `ntp-service unicast-server 10.255.0.1`
 ## 常用查看命令
 - 查看VLAN IP 简略 `dis ip int brief`   
 - 查看端口信息 简略`dis int brief`
