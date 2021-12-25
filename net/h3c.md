@@ -6,6 +6,7 @@
 - `password simple 密码`
 - `service-type telnet`
 - `telnet server enable`
+- 开启网页登录 `ip http enable`
 ## 常用查看命令
 - 查看VLAN IP 简略 `dis ip int brief`   
 - 查看端口信息 简略`dis int brief`
