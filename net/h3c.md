@@ -1,4 +1,11 @@
 # h3c交换机配置
+## 配置TELNET 登录
+- 配置虚拟终端接口认证方式`user-interface vty 0 4` 
+- 设置认证方式 `authentication-mode scheme` 
+- 设置本地认证用户名 `local-user 用户名` 
+- `password simple 密码`
+- `service-type telnet`
+- `telnet server enable`
 ## 常用查看命令
 - 查看VLAN IP 简略 `dis ip int brief`   
 - 查看端口信息 简略`dis int brief`
