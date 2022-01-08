@@ -5,6 +5,9 @@
 - kill  进程 pid
 
 ## ufw 会导致 v2raya局域网共享失效.
+- # 要允许DNS的传入传出
+`ufw allow from 192.168.250.0/24`
+`ufw route allow in on bond0 out  on bond0 to any from 192.168.250.0/24`
 - # 允许输入链
 `ufw allow from 192.168.1.0/24`
 # 允许转发链
