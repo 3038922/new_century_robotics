@@ -6,12 +6,12 @@
 
 ## ufw 会导致 v2raya局域网共享失效.
 - # 要允许DNS的传入传出
-`ufw allow from 192.168.250.0/24`
-`ufw route allow in on bond0 out  on bond0 to any from 192.168.250.0/24`
+`ufw allow from 10.255.0.0/24`
+`ufw route allow in on bond0 out  on bond0 to any from 10.255.0.0/24`
 - # 允许输入链
-`ufw allow from 192.168.1.0/24`
+`ufw allow from 10.255.0.0/24`
 # 允许转发链
-`ufw route allow in on bond0 out  on bond0 to any from 192.168.1.0/24`
+`ufw route allow in on bond0 out  on bond0 to any from 10.255.0.0/24`
 # 重载规则
 `ufw reload`
 # 最后查看规则应该有类似的两条规则
