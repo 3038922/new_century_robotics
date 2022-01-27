@@ -3,6 +3,9 @@
 ## 常用命令
 
 - 查看匹配名字的进程 `ps aux|grep xxx`
+## 关闭系统DNS
+`systemctl stop systemd-resolved`
+`systemctl disable systemd-resolved`
 
 ## SMB 共享
 
