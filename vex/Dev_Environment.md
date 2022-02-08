@@ -29,7 +29,7 @@
 - 最后按 `cttl + alt + d`下载插件
 
 3. 字体安装
-- [下载](https://qzrobot.top/index.php/s/TbQknrr6kgbJNQT/download/font.rar)
+- [下载](https://qzrobot.top/index.php/s/FQANZCKxwaWwiqC/download/font.rar)
 - 解压缩后,全选批量安装
 
 ![avatar](../pic/font.jpg)
