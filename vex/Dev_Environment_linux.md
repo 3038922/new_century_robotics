@@ -44,7 +44,11 @@ deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
   `sudo apt fonts-firacode` 这个我没试过 不知道可以不可以,如果还是很丑就自己去网盘上下 一个个装.....
 
 9. 装个 `oh-my-zsh` 美化下,可选 
-  `sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"`
+   修改默认终端为zsh `chsh -s /bin/zsh` 然后输入 `zsh`进入zsh 
+   安装oh my zsh(国内源) `sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"`
+   `vim .zshrc`修改主题,我用 `ZSH_THEME="agnoster"` 有很多插件和主题可以装,自己百度
+   使其生效 `source .zshrc`
+
    这个属于个性化修改,不需要都一样,自己百度.
 
 <!-- 2. Install SDL2 `sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev`
