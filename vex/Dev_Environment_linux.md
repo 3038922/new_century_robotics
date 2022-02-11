@@ -16,7 +16,7 @@ deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
    换好 `ctrl+x`然后`回车`确认更改后退出
 
 2. 更新系统 `sudo apt update && apt upgrade -y`
-3. 安装常用软件和开发软件:`sudo apt install git curl cmake  python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget -y`
+3. 安装常用软件和开发软件:`sudo apt install git curl cmake  python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn -y`
 4. 修改DNS `sudo vim /etc/systemd/resolved.conf`
    很容易找到DNS位置，默认已被注释，去掉#号，添加自己的dns地址  `DNS=192.168.250.3 202.96.113.34` 
    保存并退出 `:wq` 
