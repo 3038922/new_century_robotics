@@ -32,12 +32,15 @@
   +-----------------+
 ```
 
-- 生成的密匙文件在 `C:\Users\你的用户名\.ssh\id_rsa.pub` 里
+- 生成的密匙文件在 
+  - linux 
+  直接使用命令 `cat /home/你的用户名/.ssh/id_rsa.pub` 查看 并且复制粘贴到`代码仓库`里
+    ![avatar](../pic/免密登录.jpg)
 
-### 上传密匙
+  - windows 
+  - 可以先打开 `C:\Users\你的用户名\.ssh\`
+  - 然后用`vscode`打开`id_rsa.pub`
+  - `ctrl+A`全选 `ctrl+c` 复制
+    ![avatar](../pic/免密登录.jpg)
 
-- 可以先打开 `C:\Users\你的用户名\.ssh\`
-- 然后用`vscode`打开`id_rsa.pub`
-- `ctrl+A`全选 `ctrl+c` 复制
-  ![avatar](../pic/免密登录.jpg)
 - 随便找个项目用`SSH`下载试试
