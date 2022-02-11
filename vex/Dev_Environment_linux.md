@@ -36,6 +36,17 @@ deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
    先装同步插件 `code --install-extension shan.code-settings-sync`
    然后按图点 `Download Public Gist` 输入`6c091a7b4ddcb213e72d430dac23422f` 回车.
    ![avatar](../pic/sync_main.jpg)
+
+7. 安装vex相关开软件
+   以后再说最近不用.
+
+8. 装个字体好看点
+  `sudo apt fonts-firacode` 这个我没试过 不知道可以不可以,如果还是很丑就自己去网盘上下 一个个装.....
+
+9. 装个 `oh-my-zsh` 美化下,可选 
+  `sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"`
+   这个属于个性化修改,不需要都一样,自己百度.
+
 <!-- 2. Install SDL2 `sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev`
 3. Install `vscode`
 4. Install `prosv5` -->
