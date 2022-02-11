@@ -37,8 +37,8 @@ deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
    然后按图点 `Download Public Gist` 输入`6c091a7b4ddcb213e72d430dac23422f` 回车.
    ![avatar](../pic/sync_main.jpg)
 7. 设置git名字和email
-    输入你的名字: `git config --global user.name xxx` 比如 `dog cat`
-    输入你的Email:`git config --global user.email xxxx@qq.com` 比如 `1234@qq.com`
+    输入你的名字: `git config --global user.name "xxx"` 比如 `"dog" "cat"`
+    输入你的Email:`git config --global user.email "xxxx@qq.com"` 比如 `"1234@qq.com"`
 8. 安装vex相关开软件
    以后再说最近不用.
 
