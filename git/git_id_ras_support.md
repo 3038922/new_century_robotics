@@ -6,7 +6,7 @@
 ### 创建密匙
 
 - 先输入 `ssh-keygen -t rsa`
-- 之后一路回车
+- 之后一路回车 类似下面这样
 
 ```sh
   fdipzone@ubuntu:~\$ ssh-keygen -t rsa
