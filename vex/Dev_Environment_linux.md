@@ -43,7 +43,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted univer
    以后再说最近不用.
 
 9. 装个字体好看点
-  - `sudo apt fonts-firacode` 这个我没试过 不知道可以不可以,如果还是很丑就自己去网盘上下 一个个装.....
+  - `sudo apt install fonts-firacode` 这个我没试过 不知道可以不可以,如果还是很丑就自己去网盘上下 一个个装.....
 
 10. 装个 `oh-my-zsh` 美化下,可选 
   -  修改默认终端为zsh `chsh -s /bin/zsh` 然后输入 `zsh`进入zsh 
