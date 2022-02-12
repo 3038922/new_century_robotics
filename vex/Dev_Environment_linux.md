@@ -42,10 +42,12 @@ deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted univer
 8. 安装vex相关开软件
    以后再说最近不用.
 
-9. 装个字体好看点
-  - `sudo apt install fonts-firacode` 这个我没试过 不知道可以不可以,如果还是很丑就自己去网盘上下 一个个装.....
+9. 然后去完成免密登陆 
+   - [GIT 免密登录](../git/git_id_ras_support.md)
 
-10. 装个 `oh-my-zsh` 美化下,可选 
+
+
+  - 装个 `oh-my-zsh` 美化下,可选 
   -  修改默认终端为zsh `chsh -s /bin/zsh` 然后输入 `zsh`进入zsh 
   - 安装oh my zsh(国内源) `sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"`
   - `vim .zshrc`修改主题,我用 `ZSH_THEME="agnoster"` 有很多插件和主题可以装,自己百度
