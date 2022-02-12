@@ -18,7 +18,7 @@ deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe m
 deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
 ```
    换好 `ctrl+x`然后`回车`确认更改后退出
-   更新系统 `sudo apt update && apt upgrade -y`
+   更新系统 `sudo apt update && sudo apt upgrade -y`
 
 3. 安装常用软件和开发软件:`sudo apt install git curl cmake  python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn -y`
 
