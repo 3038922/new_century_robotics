@@ -1,8 +1,10 @@
 ## linux ubuntu-20.04
 1. 修改DNS `sudo nano /etc/systemd/resolved.conf`
-   很容易找到DNS位置，默认已被注释，去掉#号，添加自己的dns地址  `DNS=192.168.250.3 202.96.113.34` 
-   保存并退出 `:wq` 
-   最后 `sudo systemctl restart systemd-resolved && systemctl enable systemd-resolved`
+   - 很容易找到DNS位置，默认已被注释，去掉#号，添加自己的dns地址  `DNS=192.168.250.3 202.96.113.34` 
+   - 保存并退出 `:wq` 
+   - `rm -rf /etc/resolv.conf`
+   - `ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
+   - 最后 `sudo systemctl restart systemd-resolved && systemctl enable systemd-resolved`
 
 2. 换源 `sudo nano /etc/apt/sources.list` 更换成下面的
 ```
