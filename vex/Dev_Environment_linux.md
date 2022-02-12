@@ -28,7 +28,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted univer
 
 5. 安装vscode 
 - 手动方式 
-   `wget https://qzrobot.top/index.php/s/e39TKeQKcWRBBqG/download/code.deb &&  apt install ./code.deb`
+   `wget https://qzrobot.top/index.php/s/e39TKeQKcWRBBqG/download/code.deb && sudo apt install ./code.deb`
 - 自动方式
    - `wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -`
    - `sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"`
