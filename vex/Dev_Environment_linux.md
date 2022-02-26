@@ -1,6 +1,6 @@
 ## linux ubuntu-20.04
 1. 修改DNS `sudo nano /etc/systemd/resolved.conf`
-   - 很容易找到DNS位置，默认已被注释，去掉#号，添加自己的dns地址  `DNS=10.255.0.204 202.96.113.34` 
+   - 很容易找到DNS位置，默认已被注释，去掉#号，添加自己的dns地址  `DNS=10.255.0.253 202.96.113.34` 
    - 保存并退出 `:wq` 
    - `sudo rm -rf /etc/resolv.conf`
    - `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
