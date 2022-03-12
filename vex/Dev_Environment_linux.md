@@ -50,6 +50,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted univer
 10. 安装机器人程序开发环境
    - [机器人开发环境](./pros_dev.md)
 
+## 其他
   - 装个 `oh-my-zsh` 美化下,可选 
   -  修改默认终端为zsh `chsh -s /bin/zsh` 然后输入 `zsh`进入zsh 
   - 安装oh my zsh(国内源) `sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"`
