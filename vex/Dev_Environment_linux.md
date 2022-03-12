@@ -47,7 +47,8 @@ deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted univer
 9. 然后去完成免密登陆 
    - [GIT 免密登录](../git/git_id_ras_support.md)
 
-
+10. 安装机器人程序开发环境
+   - [机器人开发环境](./pros_dev.md)
 
   - 装个 `oh-my-zsh` 美化下,可选 
   -  修改默认终端为zsh `chsh -s /bin/zsh` 然后输入 `zsh`进入zsh 

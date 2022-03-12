@@ -9,6 +9,9 @@
 ## 关于免密登录
 
 - [GIT 免密登录](./git/git_id_ras_support.md)
+## linux PROS开发环境搭建
+
+- [linuxPROS开发环境搭建](./vex/pros_dev.md)
 
 ## win10自动开发环境安装及配置
 
