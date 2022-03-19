@@ -1,7 +1,26 @@
 # ceph
-- 参考 `https://blog.csdn.net/caiyqn/article/details/106303492`
+## 删除OSD
+1. 移除 `pveceph osd out 0`
+2. 停止服务 `ceph osd down 0` 或者 `systemctl stop ceph-osd@0.service`
+3. 移除挂载 `umount /var/lib/ceph/osd/ceph-0`
+4. 从crush map 中移除osd `ceph osd crush remove osd.0`
+5. 删除故障osd的密钥 `ceph auth del osd.0`
+6. 删除故障osd `ceph osd rm 0`
+7. 销毁 `pveceph osd destroy 0`
+
+
+## 如果删不掉用这个方法
+1. 查看当前表明 `dmsetup ls`
+2. 查看谁在占用 `lsblk`
+3. 移除`dmsetup remove ceph-**`
+4. 然后进UI格式化
+
+
+## 重新导入已有节点
+`ceph-volume lvm activate --all`
 
 ## 网络规划
+- 参考 `https://blog.csdn.net/caiyqn/article/details/106303492`
 - 最好先去网盘下载好安装包 这货安装奇慢
 - 先挂载 `mount -t cifs -o username=dataswap,password=protoss //10.255.0.199/ncrNas ./tmp`
 - 然后复制 `cp -R /root/tmp/ceph/* /var/cache/apt/archives` apt安装包存放位置 `/var/cache/apt/archives`
@@ -72,14 +91,3 @@ rbd块设备存储
 - 设置新的副本数为2
 `ceph osd pool set pve-pool size 2`
 
-## 为集群安装ceph Dashboard
-
-- 在pve-store1上执行
-```
-apt install ceph-mgr-dashboard -y
-ceph mgr module enable dashboard
-ceph dashboard create-self-signed-cert
-ceph dashboard ac-user-create admin admin123 administrator（其中 admin是用户名 admin123是密码 administrator指定用户是管理员）
-systemctl restart ceph-mgr@pve-store1.service
-```
-- 访问https://10.8.20.241:8443，使用用户名admin密码admin123登录即可。
