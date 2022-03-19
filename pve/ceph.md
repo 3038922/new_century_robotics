@@ -16,7 +16,7 @@
 4. 然后进UI格式化
 
 
-## 重新导入已有节点
+## 重新激活已有节点
 `ceph-volume lvm activate --all`
 
 ## 网络规划
