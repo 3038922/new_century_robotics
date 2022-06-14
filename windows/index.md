@@ -18,3 +18,9 @@ Set-PoshPrompt -Theme Paradox
 `choco install winmtr-redux`
 `choco install iperf3`
 `choco install telnet`
+
+## 配置静态路由
+`route print` 查看下静态路由和网卡号码
+
+`route add -p 192.168.168.0 mask 255.255.255.0 192.168.168.254 metric 2 if 4` metric 是优先级 if 是网卡号
+`route delete 0.0.0.0 mask 0.0.0.0 10.255.0.2` 删除静态路由
