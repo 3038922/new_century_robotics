@@ -8,20 +8,56 @@ http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquir
 http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
 http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true install vim -y
 ```
-3. 常用源
+3. 阿里源
 ```
-deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse 
-deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse 
-deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse 
-deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse 
-deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse 
-deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse 
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse 
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse 
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse 
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+
+## Pre-released source, not recommended.
+# deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+
 ```
-4.默认源
+4. 中科大源
+```
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+
+## Pre-released source, not recommended.
+# deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+```
+5. 清华源
+```
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+
+## Pre-released source, not recommended.
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+```
+6. 默认源
 ```
 #deb cdrom:[Ubuntu 20.04 LTS _Focal Fossa_ - Release amd64 (20200423)]/ focal main restricted
 
