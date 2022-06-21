@@ -1,1 +1,1 @@
-`rsync -avz --progress /pve/ /pve/`同步
+`rsync -avz --progress /pveZfs3/ root@10.255.0.204:/pveZfs1/`同步
