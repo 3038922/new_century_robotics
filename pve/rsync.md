@@ -1,1 +1,2 @@
-`rsync -avz --progress /pveZfs3/ root@10.255.0.204:/pveZfs1/`同步
+- `rsync -avz --progress /pve1Zfs2/ root@10.255.0.204:/pveZfs1/`同步
+- `rsync -avz --progress /pve1Zfs2/mediabakup/pvenasZfs2/av root@10.255.0.207:/pve3Zfs1/subvol-203-disk-0/av` 直接远程同步
