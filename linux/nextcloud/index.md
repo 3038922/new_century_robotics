@@ -14,7 +14,9 @@ docker pull nextcloud
 `sudo -u www php /www/wwwroot/qzrobot.top/occ config:app:set files max_chunk_size --value 0`
 
 ## 修复丢失的索因
+`sudo -u www php /www/wwwroot/qzrobot.top/occ db:add-missing-columns`
 `sudo -u www php /www/wwwroot/qzrobot.top/occ db:add-missing-indices`
+`sudo -u www php /www/wwwroot/qzrobot.top/occ db:add-missing-primary-keys`
 ## 检查ONLYOFFICE连接状态
 `sudo -u www php /www/wwwroot/qzrobot.top/occ onlyoffice:documentserver --check`
 
