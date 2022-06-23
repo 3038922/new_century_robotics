@@ -21,3 +21,12 @@ docker pull nextcloud
 ## 解决软连接错误
 `ln -s /www/wwwroot/qzrobot.top/subfolder_name/ocm-provider/ /www/wwwroot/qzrobot.top`
 `ln -s /www/wwwroot/qzrobot.top/subfolder_name/ocs-provider/ /www/wwwroot/qzrobot.top`
+
+## 在重置数据备份或数据库备份后，应当先使用
+`sudo -u www php /www/wwwroot/qzrobot.top/occ maintenance:data-fingerprint`
+## 更新数据库mimetype并刷新文件缓存
+`sudo -u www php /www/wwwroot/qzrobot.top/occ maintenance:mimetype:update-db`
+## 更新mimetypelist.js 
+`sudo -u www php /www/wwwroot/qzrobot.top/occ maintenance:mimetype:update-js`
+## 修复安装
+`sudo -u www php /www/wwwroot/qzrobot.top/occ maintenance:repair`
