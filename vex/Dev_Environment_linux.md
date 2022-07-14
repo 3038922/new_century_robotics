@@ -34,7 +34,7 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 
 http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
-http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true install vim git curl cmake  python3-pip ninja-build gcc llvm clang rar zsh vim ccls software-properties-common apt-transport-https wget openvpn  google-chrome-stable code -y
+http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true install vim git curl cmake  clangd python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi google-chrome-stable code -y
 ```
 
 - (如果自动装失败) 下载 chrome `wget https://qzrobot.top/index.php/s/k6oYH3gN7pkQ89e/download/google-chrome-stable_current_amd64.deb && sudo apt install ./google-chrome-stable_current_amd64.deb`
@@ -50,7 +50,8 @@ http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquir
    - 输入你的名字: `git config --global user.name "xxx"` 比如 `"dog" "cat"`
    - 输入你的Email:`git config --global user.email "xxxx@qq.com"` 比如 `"1234@qq.com"`
 8. 安装vex相关开软件
-   以后再说最近不用.
+   - `pip install --upgrade pros-cli`
+   - ``
 
 9. 然后去完成免密登陆 
    - [GIT 免密登录](../git/git_id_ras_support.md)
