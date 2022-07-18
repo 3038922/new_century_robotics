@@ -20,10 +20,16 @@ deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe m
 ```
 - 换好 `ctrl+x`然后`回车`确认更改后退出
 - 更新系统
+- 先使用本地服务器更新
 ``` 
-sudoapt update && sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
-sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true upgrade -y
+sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
+sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true upgrade --fix-missing -y
+```   
+- 再使用外部服务器更新
 ```
+sudo apt update && sudo apt upgrade -y
+```
+
 
 3. 安装常用软件和开发软件:
 ```
@@ -50,13 +56,11 @@ sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o A
    - 输入你的名字: `git config --global user.name "xxx"` 比如 `"dog" "cat"`
    - 输入你的Email:`git config --global user.email "xxxx@qq.com"` 比如 `"1234@qq.com"`
 8. 安装vex相关开软件
-   - `pip install --upgrade pros-cli`
+   - `pip install --upgrade pros-cli -i https://pypi.tuna.tsinghua.edu.cn/simple`
 
 9. 然后去完成免密登陆 
    - [GIT 免密登录](../git/git_id_ras_support.md)
 
-10. 安装机器人程序开发环境
-   - [机器人开发环境](./pros_dev.md)
 
 ## 其他
   - 装个 `oh-my-zsh` 美化下,可选 

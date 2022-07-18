@@ -34,7 +34,12 @@
 
 - 生成的密匙文件在 
   - linux 
-  直接使用命令 `cat /home/你的用户名/.ssh/id_rsa.pub` 查看 并且复制粘贴到`代码仓库`里
+  直接使用命令 `cat /home/你的用户名/.ssh/id_rsa.pub` 
+```
+cd ~
+cat .ssh/id_rsa.pub
+```
+  查看 并且复制粘贴到`代码仓库`里
     ![avatar](../pic/免密登录.jpg)
 
   - windows 
