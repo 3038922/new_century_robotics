@@ -4,7 +4,7 @@
    - 保存并退出 `:wq` 
    - `sudo rm -rf /etc/resolv.conf`
    - `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
-   - 最后 `sudo systemctl restart systemd-resolved && systemctl enable systemd-resolved`
+   - 最后 `sudo systemctl restart systemd-resolved && sudo systemctl enable systemd-resolved`
 
 2. 换源 `sudo nano /etc/apt/sources.list` 更换成下面的
 ```
