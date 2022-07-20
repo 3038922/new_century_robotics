@@ -1,5 +1,5 @@
 ## linux ubuntu-20.04
-1. 修改DNS `sudo nano /etc/systemd/resolved.conf`
+1. 能正常上网请忽略此步骤.如果无法上网,请修改DNS `sudo nano /etc/systemd/resolved.conf`
    - 很容易找到DNS位置，默认已被注释，去掉#号，添加自己的dns地址  `DNS=10.255.0.253 202.96.113.34` 
    - 保存并退出 `:wq` 
    - `sudo rm -rf /etc/resolv.conf`
@@ -7,7 +7,7 @@
    - 最后 `sudo systemctl restart systemd-resolved && sudo systemctl enable systemd-resolved`
 
 
-2. 换源 `sudo nano /etc/apt/sources.list` 更换成下面的
+2. `ubuntu22.04`不需要此步骤.换源 `sudo nano /etc/apt/sources.list` 更换成下面的
 ```
 deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
@@ -25,13 +25,13 @@ deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted univers
 - 更新系统
 - 先使用本地服务器更新,速度快
 ``` 
+sudo apt update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true upgrade --fix-missing -y
 ```   
 - 再使用外部服务器更新,速度慢
-```
-sudo apt update && sudo apt upgrade -y
-```
+` sudo apt update && sudo apt upgrade -y`
+
 
 2. 安装常用软件和开发软件:
    - 添加vscode 和 chrome下载源.很慢.可以先不添加,手动装.
