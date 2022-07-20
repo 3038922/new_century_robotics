@@ -6,42 +6,49 @@
    - `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
    - 最后 `sudo systemctl restart systemd-resolved && sudo systemctl enable systemd-resolved`
 
+
 2. 换源 `sudo nano /etc/apt/sources.list` 更换成下面的
 ```
 deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
 
-# deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
-# deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
-# deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
-# deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
 ```
 - 换好 `ctrl+x`然后`回车`确认更改后退出
 - 更新系统
-- 先使用本地服务器更新
+- 先使用本地服务器更新,速度快
 ``` 
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true upgrade --fix-missing -y
 ```   
-- 再使用外部服务器更新
+- 再使用外部服务器更新,速度慢
 ```
 sudo apt update && sudo apt upgrade -y
 ```
 
-
-3. 安装常用软件和开发软件:
+2. 安装常用软件和开发软件:
+   - 添加vscode 和 chrome下载源.很慢.可以先不添加,手动装.
 ```
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-
+```
+- 安装软件
+- 先装更新和安装 vscode 和 chrome `sudo apt update && sudo apt install google-chrome-stable code -y`
+```
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true install vim git curl cmake  clangd-13 python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi google-chrome-stable code -y
 ```
+
 
 - (如果自动装失败) 下载 chrome `wget https://qzrobot.top/index.php/s/k6oYH3gN7pkQ89e/download/google-chrome-stable_current_amd64.deb && sudo apt install ./google-chrome-stable_current_amd64.deb`
 
