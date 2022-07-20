@@ -43,7 +43,7 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 ```
 - 安装软件
-- 先装更新和安装 vscode 和 chrome `sudo apt update && sudo apt install google-chrome-stable code -y`
+- 先装更新和安装 vscode 和 chrome (会很慢,外部下载)`sudo apt update && sudo apt install google-chrome-stable code -y`
 ```
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true install vim git curl cmake  clangd-13 python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi -y
