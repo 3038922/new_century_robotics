@@ -36,8 +36,8 @@ sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o A
 2. 安装常用软件和开发软件:
    - 添加vscode 和 chrome下载源.很慢.可以先不添加,手动装.
 ```
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/googlechrom-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/googlechrom-keyring.gpg
 
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
