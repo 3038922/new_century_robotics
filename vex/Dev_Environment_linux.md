@@ -1,31 +1,7 @@
 ## linux ubuntu-22.04
-### 升级到ubuntu 22.04
-`sudo do-release-upgrade -d`
-1. 能正常上网请忽略此步骤.如果无法上网,请修改DNS `sudo nano /etc/systemd/resolved.conf`
-   - 很容易找到DNS位置，默认已被注释，去掉#号，添加自己的dns地址  `DNS=10.255.0.253 202.96.113.34` 
-   - 保存并退出 `:wq` 
-   - `sudo rm -rf /etc/resolv.conf`
-   - `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
-   - 最后 `sudo systemctl restart systemd-resolved && sudo systemctl enable systemd-resolved`
+### 升级到ubuntu 22.04 `sudo do-release-upgrade -d`
 
-
-2. `ubuntu22.04`不需要此步骤.换源 `sudo nano /etc/apt/sources.list` 更换成下面的
-```
-deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
-```
-- 换好 `ctrl+x`然后`回车`确认更改后退出
-- 更新系统
-- 先使用本地服务器更新,速度快
+1. 更新升级
 ``` 
 sudo apt update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
@@ -36,26 +12,16 @@ sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o A
 
 
 2. 安装常用软件和开发软件:
-   - 添加vscode 和 chrome下载源.很慢.可以先不添加,手动装.
-```
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/googlechrom-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/googlechrom-keyring.gpg
 
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-```
 - 安装软件
-- 先装更新和安装 vscode 和 chrome (会很慢,外部下载)`sudo apt update && sudo apt install google-chrome-stable code -y`
 ```
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true install vim git curl cmake  clangd python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi -y
 ```
 
-
-- (如果自动装失败) 下载 chrome `wget https://qzrobot.top/index.php/s/k6oYH3gN7pkQ89e/download/google-chrome-stable_current_amd64.deb && sudo apt install ./google-chrome-stable_current_amd64.deb`
-
-- (如果自动装失败) 安装vscode 
-   `wget https://qzrobot.top/index.php/s/e39TKeQKcWRBBqG/download/code.deb && sudo apt install ./code.deb`
+- 先装更新和安装 vscode 和 chrome
+- `wget https://qzrobot.top/index.php/s/k6oYH3gN7pkQ89e/download/google-chrome-stable_current_amd64.deb && sudo apt install ./google-chrome-stable_current_amd64.deb`
+- `wget https://qzrobot.top/index.php/s/e39TKeQKcWRBBqG/download/code.deb && sudo apt install ./code.deb`
 
 6. 给vscode装插件
    - 先装同步插件 `code --install-extension shan.code-settings-sync`
