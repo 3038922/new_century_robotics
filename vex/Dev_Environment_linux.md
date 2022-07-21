@@ -1,39 +1,28 @@
 ## linux ubuntu-22.04
-### 升级到ubuntu 22.04 `sudo do-release-upgrade -d`
-
-1. 更新升级
-``` 
+## 升级到ubuntu 22.04 `sudo do-release-upgrade -d`
+1. 一键部署
+```
 sudo apt update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true upgrade --fix-missing -y
-```   
-- 再使用外部服务器更新,速度慢
-` sudo apt update && sudo apt upgrade -y`
-
-
-2. 安装常用软件和开发软件:
-
-- 安装软件
-```
+sudo apt update && sudo apt upgrade -y
+sudo apt update  \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
 sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true install vim git curl cmake  clangd python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi -y
+wget https://qzrobot.top/index.php/s/k6oYH3gN7pkQ89e/download/google-chrome-stable_current_amd64.deb && sudo apt install ./google-chrome-stable_current_amd64.deb
+wget https://qzrobot.top/index.php/s/e39TKeQKcWRBBqG/download/code.deb && sudo apt install ./code.deb
+code --install-extension shan.code-settings-sync
+sudo pip install --upgrade pros-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-- 先装更新和安装 vscode 和 chrome
-- `wget https://qzrobot.top/index.php/s/k6oYH3gN7pkQ89e/download/google-chrome-stable_current_amd64.deb && sudo apt install ./google-chrome-stable_current_amd64.deb`
-- `wget https://qzrobot.top/index.php/s/e39TKeQKcWRBBqG/download/code.deb && sudo apt install ./code.deb`
-
-6. 给vscode装插件
-   - 先装同步插件 `code --install-extension shan.code-settings-sync`
+2. 给vscode装插件
    - 然后按图点 `Download Public Gist` 输入`6c091a7b4ddcb213e72d430dac23422f` 回车.
    - ![avatar](../pic/sync_main.jpg)
-7. 设置git名字和email
+3. 设置git名字和email
    - 输入你的名字: `git config --global user.name "xxx"` 比如 `"dog" "cat"`
    - 输入你的Email:`git config --global user.email "xxxx@qq.com"` 比如 `"1234@qq.com"`
-8. 安装vex相关开软件
-   - `sudo pip install --upgrade pros-cli -i https://pypi.tuna.tsinghua.edu.cn/simple`
 
-9. 然后去完成免密登陆 
+4. 然后去完成免密登陆 
    - [GIT 免密登录](../git/git_id_ras_support.md)
 
 
