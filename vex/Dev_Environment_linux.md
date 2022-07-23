@@ -13,7 +13,7 @@ EOF" && \
 sudo apt update && sudo apt upgrade -y &&\
 sudo apt install vim git curl cmake  clangd python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi  google-chrome-stable code -y && \
 sudo code --no-sandbox --user-data-dir --install-extension shan.code-settings-sync -y && sudo apt autoremove -y && \
-sudo pip install --upgrade pros-cli -i https://pypi.tuna.tsinghua.edu.cn/simple -y
+sudo pip install --upgrade pros-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 2. 给vscode装插件
