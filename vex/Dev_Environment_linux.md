@@ -2,17 +2,18 @@
 ## 升级到ubuntu 22.04 `sudo do-release-upgrade -d`
 1. 一键部署
 ```
-sudo apt update && \
-sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
-sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true upgrade --fix-missing -y &&\
+sudo bash -c "cat << EOF > /etc/apt/sources.list && apt update 
+deb [arch=amd64] https://source.qzrobot.top/mirror/mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+deb [arch=amd64] https://source.qzrobot.top/mirror/mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb [arch=amd64] https://source.qzrobot.top/mirror/mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+deb [arch=amd64] https://source.qzrobot.top/mirror/mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+deb [arch=amd64] https://source.qzrobot.top/mirror/packages.microsoft.com/repos/code stable main
+deb [arch=amd64] https://source.qzrobot.top/mirror//dl.google.com/linux/chrome/deb stable main
+EOF" && \
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y &&\
-sudo apt update  &&\
-sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true update && \
-sudo http_proxy=http://10.255.0.194:3142 apt-get -o pkgProblemResolver=true -o Acquire::http=true install vim git curl cmake  clangd python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi -y && \
-wget https://qzrobot.top/index.php/s/k6oYH3gN7pkQ89e/download/google-chrome-stable_current_amd64.deb && sudo apt install ./google-chrome-stable_current_amd64.deb -y && \
-wget https://qzrobot.top/index.php/s/e39TKeQKcWRBBqG/download/code.deb && sudo apt install ./code.deb && \
-code --install-extension shan.code-settings-sync -y && \
-sudo pip install --upgrade pros-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
+sudo apt install vim git curl cmake  clangd python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi  google-chrome-stable code -y && \
+sudo code --install-extension shan.code-settings-sync -y && \
+sudo pip install --upgrade pros-cli -i https://pypi.tuna.tsinghua.edu.cn/simple -y
 ```
 
 2. 给vscode装插件
