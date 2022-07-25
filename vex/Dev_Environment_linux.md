@@ -14,7 +14,11 @@ EOF" && \
 sudo apt update && sudo apt upgrade -y &&\
 sudo apt install vim git curl cmake  clangd python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi fonts-firacode google-chrome-stable code -y && \
 sudo code --no-sandbox --user-data-dir --install-extension shan.code-settings-sync -y && sudo apt autoremove -y && \
-sudo pip install --upgrade pros-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
+sudo pip install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/ && \
+sudo snap remove firefox && \
+chsh -s /bin/zsh && \
+zsh && \
+sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"
 ```
 
 2. 给vscode装插件
@@ -30,8 +34,6 @@ sudo pip install --upgrade pros-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ## 其他
   - 装个 `oh-my-zsh` 美化下,可选 
-  -  修改默认终端为zsh `chsh -s /bin/zsh` 然后输入 `zsh`进入zsh 
-  - 安装oh my zsh(国内源) `sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"`
   - `vim .zshrc`修改主题,我用 `ZSH_THEME="agnoster"` 有很多插件和主题可以装,自己百度
   - 使其生效 `source .zshrc`
 
