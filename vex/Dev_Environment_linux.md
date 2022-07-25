@@ -33,10 +33,8 @@ sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh
 
 
 ## 其他
-  - 装个 `oh-my-zsh` 美化下,可选 
-  - `vim .zshrc`修改主题,我用 `ZSH_THEME="agnoster"` 有很多插件和主题可以装,自己百度
+  - `oh-my-zsh` 更改主题 `vim .zshrc`修改主题,我用 `ZSH_THEME="agnoster"` 有很多插件和主题可以装,自己百度
   - 使其生效 `source .zshrc`
-
   - 这个属于个性化修改,不需要都一样,自己百度.vim也可以装很多插件变成IDE
   - TIM 微信等安装`sudo wget -O- https://deepin-wine.i-m.dev/setup.sh | sh`  
 <!-- 2. Install SDL2 `sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev`
