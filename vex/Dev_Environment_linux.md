@@ -11,7 +11,6 @@ deb [arch=amd64] https://source.qzrobot.top/mirror/mirrors.aliyun.com/ubuntu/ ja
 deb [arch=amd64 trusted=yes] https://source.qzrobot.top/mirror/packages.microsoft.com/repos/code stable main
 deb [arch=amd64 trusted=yes] https://source.qzrobot.top/mirror/dl.google.com/linux/chrome/deb stable main
 EOF" && \
-
 sudo apt update && sudo apt upgrade -y &&\
 sudo apt install vim git curl cmake  clangd python3-pip ninja-build gcc llvm clang rar zsh vim  software-properties-common apt-transport-https wget openvpn  gcc-arm-none-eabi fonts-firacode google-chrome-stable code -y && \
 sudo code --no-sandbox --user-data-dir --install-extension shan.code-settings-sync -y && sudo apt autoremove -y && \
