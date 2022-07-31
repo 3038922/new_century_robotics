@@ -16,6 +16,7 @@ sudo apt install vim git curl cmake  clangd python3-pip ninja-build gcc llvm cla
 code --install-extension shan.code-settings-sync  && sudo apt autoremove -y && \
 sudo pip install --upgrade pros-cli -i https://mirrors.aliyun.com/pypi/simple/ && \
 sudo snap remove firefox && \
+cd ~ && \
 sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)" 
 ```
 
