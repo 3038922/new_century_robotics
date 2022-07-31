@@ -21,7 +21,7 @@ sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh
 ```
 
 2. 给vscode装插件
-   - 然后按图点 `Download Public Gist` 输入`6c091a7b4ddcb213e72d430dac23422f` 回车.
+   - 然后按图点 `Download Public Gist` 输入`0f4f4bae3f3a436d468287dab2b66f0d` 回车.
    - ![avatar](../pic/sync_main.jpg)
 3. 设置git名字和email
    - 输入你的名字: `git config --global user.name "xxx"` 比如 `"dog" "cat"`
